@@ -4,7 +4,7 @@
 <meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1">
 <title>Education — Muskaan Hussain</title>
 <style>
-:root{--bg:#191410;--ink:#f3eee4;--gold:#e8b56a;--line:rgba(243,238,228,.16)}
+:root{--bg:#201b16;--ink:#f3eee4;--gold:#e8b56a;--line:rgba(243,238,228,.16)}
 *{margin:0;padding:0;box-sizing:border-box}
 html{scroll-behavior:smooth}
 body{background:var(--bg);color:var(--ink);font-family:Georgia,'Times New Roman',serif}
@@ -24,7 +24,7 @@ header{position:sticky;top:0;z-index:50;background:rgba(25,20,16,.9);backdrop-fi
 
 .feature{max-width:1240px;margin:60px auto 0;padding:0 28px;display:grid;grid-template-columns:1.5fr 1fr;gap:12px}
 @media(max-width:900px){.feature{grid-template-columns:1fr}}
-.ph{position:relative;overflow:hidden;border:1px solid var(--line);background:#100d0a}
+.ph{position:relative;overflow:hidden;border:1px solid var(--line);background:#181410}
 .ph img{width:100%;height:100%;object-fit:cover;display:block;filter:blur(14px) brightness(.7);transform:scale(1.06);transition:filter 1.8s .2s ease,transform 2s .2s cubic-bezier(.22,.9,.3,1)}
 .ph.show img{filter:blur(0) brightness(1);transform:scale(1)}
 .ph:hover img{transform:scale(1.03)}
@@ -40,7 +40,7 @@ header{position:sticky;top:0;z-index:50;background:rgba(25,20,16,.9);backdrop-fi
 .topics h2{text-align:center;font-size:clamp(24px,3vw,36px);font-weight:400;margin-bottom:34px}
 .topics h2 em{font-style:italic;color:var(--gold)}
 .tg{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:12px}
-.tc{border:1px solid var(--line);padding:26px 22px;background:#1f1913;opacity:0;transform:translateY(20px);transition:opacity .8s,transform .8s}
+.tc{border:1px solid var(--line);padding:26px 22px;background:#272119;opacity:0;transform:translateY(20px);transition:opacity .8s,transform .8s}
 .tc.show{opacity:1;transform:none}
 .tc .n{font-family:Georgia,serif;font-style:italic;font-size:26px;color:var(--gold)}
 .tc h3{font-size:16.5px;font-weight:400;margin:12px 0 8px}
@@ -52,11 +52,15 @@ header{position:sticky;top:0;z-index:50;background:rgba(25,20,16,.9);backdrop-fi
 .quotebar a{font-family:Arial,sans-serif;display:inline-block;margin-top:30px;font-size:10.5px;letter-spacing:.24em;text-transform:uppercase;color:var(--ink);text-decoration:none;border:1px solid var(--line);padding:10px 20px;transition:.3s}
 .quotebar a:hover{background:var(--gold);border-color:var(--gold);color:#191410}
 
-#dim{position:fixed;inset:0;z-index:64;pointer-events:none;background:radial-gradient(circle 340px at var(--mx,50%) var(--my,40%),transparent 0%,rgba(0,0,0,.05) 55%,rgba(0,0,0,.18) 100%)}
+#dim{position:fixed;inset:0;z-index:64;pointer-events:none;background:radial-gradient(circle 340px at var(--mx,50%) var(--my,40%),transparent 0%,rgba(0,0,0,.02) 55%,rgba(0,0,0,.08) 100%)}
 #glow{position:fixed;inset:0;z-index:65;pointer-events:none;mix-blend-mode:screen;background:radial-gradient(circle 210px at var(--mx,50%) var(--my,40%),rgba(255,205,130,.30),rgba(232,181,106,.10) 45%,transparent 70%)}
 #cur{position:fixed;z-index:200;left:0;top:0;width:14px;height:14px;border-radius:50%;pointer-events:none;background:#ffcf87;box-shadow:0 0 16px 5px rgba(255,205,130,.85),0 0 44px 16px rgba(232,181,106,.35);transform:translate(-50%,-50%)}
 footer{border-top:1px solid var(--line);padding:36px 28px;text-align:center;font-family:Arial,sans-serif;font-size:10.5px;letter-spacing:.22em;text-transform:uppercase;opacity:.6}
 footer a{color:var(--gold);text-decoration:none}
+
+body::after{content:"";position:fixed;inset:0;z-index:1;pointer-events:none;opacity:.5;
+background-image:repeating-linear-gradient(0deg,rgba(255,250,240,.022) 0 1px,transparent 1px 3px),repeating-linear-gradient(90deg,rgba(255,250,240,.018) 0 1px,transparent 1px 3px),repeating-linear-gradient(45deg,rgba(255,250,240,.008) 0 2px,transparent 2px 6px);}
+#cur.hot{background:#ff5a4d;box-shadow:0 0 16px 5px rgba(255,90,77,.85),0 0 44px 16px rgba(255,90,77,.35);}
 </style>
 </head>
 <body>
@@ -111,5 +115,6 @@ d.addEventListener('mousemove',function(e){r.style.setProperty('--mx',e.clientX+
 const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('show');io.unobserve(e.target);}}),{threshold:.12});
 document.querySelectorAll('.ph,.tc').forEach(el=>io.observe(el));
 </script>
+<script>document.addEventListener('mouseover',function(e){var c=document.getElementById('cur');if(!c)return;var t=e.target.closest('a,button,[onclick],.card,.pc,.proj,.ftile,.feature,.tab');c.classList.toggle('hot',!!t);});</script>
 </body>
 </html>
