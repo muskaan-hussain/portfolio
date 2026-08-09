@@ -267,11 +267,17 @@ footer{padding:1.8rem 1.4rem;flex-direction:column;gap:.8rem}
 
 .jscene .art svg{filter:blur(5px);opacity:.55;transition:filter 1.6s .3s ease,opacity 1.4s .3s;}
 .jscene.lit .art svg{filter:blur(0);opacity:1;}
-#spot{position:fixed;inset:0;z-index:70;pointer-events:none;background:radial-gradient(560px at var(--mx,50%) var(--my,40%),rgba(232,181,106,.10),rgba(232,181,106,.035) 42%,transparent 72%)}
+
+/* dark room + cursor light v2 */
+#dim{position:fixed;inset:0;z-index:64;pointer-events:none;background:radial-gradient(circle 460px at var(--mx,50%) var(--my,40%),transparent 0%,rgba(0,0,0,.38) 55%,rgba(0,0,0,.72) 100%)}
+#glow{position:fixed;inset:0;z-index:65;pointer-events:none;mix-blend-mode:screen;background:radial-gradient(circle 300px at var(--mx,50%) var(--my,40%),rgba(255,205,130,.28),rgba(232,181,106,.10) 45%,transparent 70%)}
+#cur{position:fixed;z-index:200;left:0;top:0;width:14px;height:14px;border-radius:50%;pointer-events:none;background:#ffcf87;box-shadow:0 0 14px 4px rgba(255,205,130,.75),0 0 40px 14px rgba(232,181,106,.3);transform:translate(-50%,-50%);transition:width .2s,height .2s}
+.jscene .art:hover{transform:scale(1.02);transition:transform 1s cubic-bezier(.22,.9,.3,1)}
 </style>
 </head>
 <body>
-<div id="spot"></div>
+<div id="dim"></div><div id="glow"></div><div id="cur"></div>
+
 
 <div class="cursor-ring"></div>
 <div class="cursor-dot"></div>
@@ -647,6 +653,10 @@ const rvIO=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.ta
 document.querySelectorAll('.rv').forEach(el=>rvIO.observe(el));
 
 
+</script>
+<script>
+(function(){var d=document,r=d.documentElement,c=d.getElementById('cur');
+d.addEventListener('mousemove',function(e){r.style.setProperty('--mx',e.clientX+'px');r.style.setProperty('--my',e.clientY+'px');if(c){c.style.left=e.clientX+'px';c.style.top=e.clientY+'px';}});})();
 </script>
 </body>
 </html>
