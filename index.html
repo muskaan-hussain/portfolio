@@ -273,6 +273,11 @@ background-image:repeating-linear-gradient(0deg,rgba(255,250,240,.022) 0 1px,tra
 #cur.hot{background:#ff5a4d;box-shadow:0 0 16px 5px rgba(255,90,77,.85),0 0 44px 16px rgba(255,90,77,.35);}
 .jt{background:rgba(15,13,11,.66);backdrop-filter:blur(5px);padding:1.6rem 1.8rem;border-radius:2px;}
 .end>*{position:relative;z-index:3;}
+
+.jscene[onclick] .art{outline:1.5px solid rgba(213,84,92,.7);outline-offset:-6px;background:rgba(213,84,92,.05);transition:background .4s,outline-color .4s;}
+.jscene[onclick]:hover .art{background:rgba(213,84,92,.13);outline-color:#e8626b;}
+.jscene[onclick] .art::after{content:"Click to enter →";position:absolute;right:14px;bottom:10px;font-family:Arial,sans-serif;font-size:.58rem;letter-spacing:.28em;text-transform:uppercase;color:#e8626b;opacity:0;transition:opacity .4s;}
+.jscene[onclick]:hover .art::after{opacity:1;}
 </style>
 </head>
 <body>
@@ -330,7 +335,6 @@ background-image:repeating-linear-gradient(0deg,rgba(255,250,240,.022) 0 1px,tra
     </div>
 
     <div class="jscene" data-i="5" onclick="location.href='bim.html'" style="cursor:pointer" title="Step inside BIM">
-      <style>.jscene[data-i="5"] .art{outline:1.5px solid rgba(192,74,82,.65);outline-offset:-6px;background:rgba(192,74,82,.06);} .jscene[data-i="5"]:hover .art{background:rgba(192,74,82,.12);}</style>
       <div class="art"><svg viewBox="0 0 600 400">
         <line class="ln soft d d1" pathLength="1" x1="90" y1="345" x2="510" y2="345"/>
         <path class="ln d d1" pathLength="1" d="M220 320 L220 180 L300 140 L380 180 L380 320 L300 360 Z"/>
