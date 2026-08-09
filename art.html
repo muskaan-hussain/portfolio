@@ -4,7 +4,7 @@
 <meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1">
 <title>The First Studio — Muskaan Hussain</title>
 <style>
-:root{--bg:#0d0a07;--ink:#e9e2d5;--gold:#e8b56a;--line:rgba(232,181,106,.25)}
+:root{--bg:#0d0a07;--ink:#f3eee4;--gold:#e8b56a;--line:rgba(232,181,106,.25)}
 *{margin:0;padding:0;box-sizing:border-box}
 html{scroll-behavior:smooth}
 body{background:var(--bg);color:var(--ink);font-family:Georgia,'Times New Roman',serif;overflow-x:hidden}
@@ -26,7 +26,7 @@ header{position:sticky;top:0;z-index:50;background:rgba(13,10,7,.88);backdrop-fi
 .hero.in .k,.hero.in h1{opacity:1;transform:none}
 /* story */
 .story{max-width:760px;margin:0 auto;padding:90px 28px 40px}
-.story p{font-size:17.5px;line-height:1.95;opacity:.86;margin-bottom:28px;opacity:0;transform:translateY(22px);transition:opacity 1s,transform 1s}
+.story p{font-size:17.5px;line-height:1.95;opacity:.95;margin-bottom:28px;opacity:0;transform:translateY(22px);transition:opacity 1s,transform 1s}
 .story p.show{opacity:.86;transform:none}
 .story .quote{border-left:2px solid var(--gold);padding:6px 0 6px 24px;font-style:italic;font-size:20px;color:var(--gold);margin:44px 0;opacity:0;transform:translateY(22px);transition:1s}
 .story .quote.show{opacity:1;transform:none}
@@ -62,8 +62,8 @@ footer{border-top:1px solid var(--line);padding:38px 28px;text-align:center;font
 footer a{color:var(--gold);text-decoration:none}
 
 /* dark room + cursor light v2 */
-#dim{position:fixed;inset:0;z-index:64;pointer-events:none;background:radial-gradient(circle 520px at var(--mx,50%) var(--my,40%),transparent 0%,rgba(0,0,0,.10) 55%,rgba(0,0,0,.34) 100%)}
-#glow{position:fixed;inset:0;z-index:65;pointer-events:none;mix-blend-mode:screen;background:radial-gradient(circle 300px at var(--mx,50%) var(--my,40%),rgba(255,205,130,.28),rgba(232,181,106,.10) 45%,transparent 70%)}
+#dim{position:fixed;inset:0;z-index:64;pointer-events:none;background:radial-gradient(circle 340px at var(--mx,50%) var(--my,40%),transparent 0%,rgba(0,0,0,.05) 55%,rgba(0,0,0,.18) 100%)}
+#glow{position:fixed;inset:0;z-index:65;pointer-events:none;mix-blend-mode:screen;background:radial-gradient(circle 210px at var(--mx,50%) var(--my,40%),rgba(255,205,130,.34),rgba(232,181,106,.12) 45%,transparent 70%)}
 #cur{position:fixed;z-index:200;left:0;top:0;width:14px;height:14px;border-radius:50%;pointer-events:none;background:#ffcf87;box-shadow:0 0 14px 4px rgba(255,205,130,.75),0 0 40px 14px rgba(232,181,106,.3);transform:translate(-50%,-50%);transition:width .2s,height .2s}
 </style>
 </head>
