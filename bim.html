@@ -95,7 +95,8 @@ background-image:repeating-linear-gradient(0deg,rgba(255,250,240,.022) 0 1px,tra
     <p>Architecture isn't just a structure — it's a symbiotic relationship with the earth. The Celestial Trio reimagines the urban high-rise as a living system: three twisted towers whose aerodynamic form cuts energy loss, wrapped in vertical gardens, crowned by a solar-powered rooftop sanctuary with rainwater collection, and lit through a sun-enclosed atrial collector that powers the building. A mid-level refuge carries a native-planted ecosystem into the sky, while industrialized, prefabricated construction keeps the build fast, precise, and safe. The once-fading silhouette of nature, reintegrated with society.</p>
     <div class="book" id="ethosBook">
       <div class="book-stage" id="bookStage">
-        <img class="page" id="bookPageImg" alt="">
+        <img class="page" id="bookPageA" alt="">
+        <img class="page" id="bookPageB" alt="">
       </div>
       <div class="book-zone left" id="bookPrevZone" title="Previous page"></div>
       <div class="book-zone right" id="bookNextZone" title="Next page"></div>
@@ -141,14 +142,15 @@ const BOOK_PAGES=[
 
 (function(){
   const stage=document.getElementById('bookStage');
-  let img=document.getElementById('bookPageImg');
+  const pgA=document.getElementById('bookPageA'), pgB=document.getElementById('bookPageB');
   const prevBtn=document.getElementById('bookPrev'),nextBtn=document.getElementById('bookNext');
   const prevZone=document.getElementById('bookPrevZone'),nextZone=document.getElementById('bookNextZone');
   const countEl=document.getElementById('bookCount');
   const expandBtn=document.getElementById('bookExpand');
   const ROMAN=['I','II','III','IV','V','VI','VII','VIII','IX','X'];
-  let idx=0, animating=false;
-  img.src=BOOK_PAGES[0];
+  let idx=0, animating=false, topIsA=true;
+  pgA.src=BOOK_PAGES[0]; pgA.style.zIndex=2;
+  pgB.src=BOOK_PAGES[0]; pgB.style.zIndex=1;
   function updateUI(){
     countEl.textContent=(ROMAN[idx]||(idx+1))+' / '+(ROMAN[BOOK_PAGES.length-1]||BOOK_PAGES.length);
     prevBtn.disabled= idx===0;
@@ -158,24 +160,31 @@ const BOOK_PAGES=[
     const newIdx=idx+dir;
     if(animating||newIdx<0||newIdx>=BOOK_PAGES.length) return;
     animating=true;
-    const back=document.createElement('img');
-    back.className='page incoming';
-    back.src=BOOK_PAGES[newIdx];
-    stage.insertBefore(back, img);
-    void img.offsetWidth;
-    img.style.transformOrigin = dir>0 ? 'left center':'right center';
-    img.classList.add('flipping');
-    requestAnimationFrame(()=>{ img.style.transform='rotateY('+(dir>0?-100:100)+'deg)'; });
+    const front = topIsA ? pgA : pgB;
+    const back  = topIsA ? pgB : pgA;
+    back.src = BOOK_PAGES[newIdx];
+    back.classList.remove('flipping');
+    back.style.transform='none';
+    back.style.zIndex=1;
+    front.style.zIndex=3;
+    front.style.transformOrigin = dir>0 ? 'left center':'right center';
+    void front.offsetWidth;
+    requestAnimationFrame(()=>{
+      front.classList.add('flipping');
+      front.style.transform='rotateY('+(dir>0?-100:100)+'deg)';
+    });
     const done=()=>{
-      img.removeEventListener('transitionend',done);
-      if(img.parentElement) stage.removeChild(img);
-      back.classList.remove('incoming');
-      img=back;
+      front.removeEventListener('transitionend',done);
+      front.classList.remove('flipping');
+      front.style.transform='none';
+      front.style.zIndex=1;
+      back.style.zIndex=2;
+      topIsA=!topIsA;
       idx=newIdx;
       animating=false;
       updateUI();
     };
-    img.addEventListener('transitionend',done,{once:true});
+    front.addEventListener('transitionend',done,{once:true});
     setTimeout(()=>{ if(animating) done(); },900);
   }
   prevBtn.onclick=()=>go(-1);
