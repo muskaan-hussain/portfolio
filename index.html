@@ -211,6 +211,19 @@ box-shadow:0 0 0 4px #0d0c0b,0 0 0 5px rgba(216,172,98,.12);opacity:.45;transiti
 .gthumb.on,.gthumb:hover{opacity:1;box-shadow:0 0 0 4px #0d0c0b,0 0 0 5px rgba(232,181,106,.55);}
 @media(max-width:700px){.gstage{height:52vh;}}
 
+/* ---------- COMPLETED PROJECTS — placeholder until the project data lands ---------- */
+.projects{padding:9rem 4vw 7rem;text-align:center;position:relative;}
+.projects .p-sub{max-width:560px;margin:-1.8rem auto 3.6rem;font-family:'Cormorant Garamond',serif;font-style:italic;font-size:1.1rem;color:var(--grey);line-height:1.6;}
+.pgrid{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:1.6rem;max-width:1100px;margin:0 auto;}
+.pcard{position:relative;aspect-ratio:4/3;border:1px dashed rgba(216,172,98,.32);background:rgba(15,13,11,.55);
+display:flex;flex-direction:column;align-items:center;justify-content:center;gap:1rem;transition:border-color .4s,background .4s;}
+.pcard:hover{border-color:rgba(232,181,106,.6);background:rgba(20,17,13,.8);}
+.pcard .tag{display:flex;align-items:center;gap:.6rem;font-size:.56rem;letter-spacing:.42em;text-transform:uppercase;color:var(--glow);}
+.pcard .tag::before{content:'';width:6px;height:6px;border-radius:50%;background:var(--glow);animation:cpulse 1.8s ease-in-out infinite;}
+.pcard .t{font-family:'Cormorant Garamond',serif;font-weight:300;font-size:1.45rem;color:var(--bone);}
+.pcard .d{font-size:.58rem;letter-spacing:.3em;text-transform:uppercase;color:var(--grey);}
+@media(max-width:700px){.projects{padding:6rem 1.4rem 4rem}.pgrid{gap:1rem}}
+
 /* ---------- END / CONTACT — her horse, deep in the dark ---------- */
 .end{min-height:92vh;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:7rem 2rem;position:relative;overflow:hidden;
 background:
@@ -318,6 +331,7 @@ background-image:repeating-linear-gradient(0deg,rgba(255,250,240,.022) 0 1px,tra
     <li><a href="https://payhip.com/Archpainted" target="_blank" data-hover>Archpainted</a></li>
     <li><a href="https://www.linkedin.com/in/muskaan-hussain-a46868176/" target="_blank" data-hover>LinkedIn</a></li>
     <li><a href="gallery-3d-space.html" data-hover>Gallery</a></li>
+    <li><a href="#projects" data-hover>Projects</a></li>
     <li><a class="resume-btn" href="resume.pdf" target="_blank" download="Muskaan_Hussain_Resume.pdf" data-hover>Resume</a></li>
     <li><a class="resume-btn" href="portfolio.pdf" download="Muskaan_Hussain_Portfolio.pdf" data-hover>Portfolio</a></li>
   </ul>
@@ -536,6 +550,20 @@ background-image:repeating-linear-gradient(0deg,rgba(255,250,240,.022) 0 1px,tra
 <!-- ================= END ================= -->
 <!-- ================= THE PAINTINGS ================= -->
 
+
+<!-- ================= COMPLETED PROJECTS ================= -->
+<section class="projects" id="projects">
+  <div class="p-head rv">
+    <div class="k">Completed projects</div>
+    <h2>Built work, <em>coming soon.</em></h2>
+    <p class="p-sub">A record of the projects I've coordinated and delivered — being assembled now.</p>
+  </div>
+  <div class="pgrid rv">
+    <div class="pcard"><span class="tag">Under construction</span><span class="t">Project one</span><span class="d">Details soon</span></div>
+    <div class="pcard"><span class="tag">Under construction</span><span class="t">Project two</span><span class="d">Details soon</span></div>
+    <div class="pcard"><span class="tag">Under construction</span><span class="t">Project three</span><span class="d">Details soon</span></div>
+  </div>
+</section>
 
 <section class="end" id="contact">
   <div class="k">The walk continues</div>
