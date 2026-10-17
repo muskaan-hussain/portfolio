@@ -41,6 +41,21 @@ section{padding:70px 0}
 .tc .tag{font-size:.56rem;letter-spacing:.34em;text-transform:uppercase;color:var(--gold)}
 .tc .t{font-family:'Cormorant Garamond',serif;font-size:1.45rem;line-height:1.15;color:#fbf3e4}
 .tc .d{font-size:.84rem;line-height:1.65;color:#e2d8c6}
+/* statement beside the reel */
+.split{display:grid;grid-template-columns:1fr 320px;gap:4rem;align-items:start;margin-top:.5rem}
+.beats .pull{font-size:clamp(1.4rem,2.4vw,1.9rem);margin-bottom:2rem}
+.beat{display:grid;grid-template-columns:44px 1fr;gap:1rem;padding:1.1rem 0;border-top:1px solid var(--line)}
+.beat:last-child{border-bottom:1px solid var(--line)}
+.beat i{font-family:'Cormorant Garamond',serif;font-style:italic;font-size:1.2rem;color:var(--gold);padding-top:.15rem}
+.beat b{display:block;font-family:'Cormorant Garamond',serif;font-weight:400;font-size:1.45rem;line-height:1.15;color:#fbf3e4;margin-bottom:.3rem}
+.beat p{font-size:.9rem;line-height:1.65;color:#b7ae9f}
+.side{position:sticky;top:110px}
+.side .phone{width:100%}
+.side-k{margin-top:1.3rem;font-size:.58rem;letter-spacing:.34em;text-transform:uppercase;color:var(--gold)}
+.side-t{font-family:'Cormorant Garamond',serif;font-size:1.3rem;line-height:1.25;margin-top:.4rem;color:#f3eee4}
+.side .stat{margin-top:1rem}
+.side .stat b{font-size:2rem}
+@media(max-width:800px){.split{grid-template-columns:1fr;gap:2rem}.side{position:static}.side .phone{max-width:280px}}
 /* the demo */
 .demo{display:grid;grid-template-columns:300px 1fr;gap:3rem;align-items:center;margin-top:2rem}
 .phone{border-radius:28px;border:1px solid rgba(232,181,106,.45);padding:8px;background:#0a0908;box-shadow:0 40px 90px rgba(0,0,0,.6),0 0 60px rgba(232,181,106,.08)}
@@ -114,28 +129,27 @@ footer a{color:var(--gold);text-decoration:none}
 <section id="statement">
   <div class="wrap">
     <div class="k">Statement of work and passion</div>
-    <div class="statement">
-      <p>Technology in construction is the area I am most passionate about. My focus is on building tools and automations that make construction management and BIM workflows faster, more consistent, and less repetitive. I have already begun doing this through my professional work and research across projects in the US, UK, and India, and it is the direction I want to continue developing.</p>
-      <p>Through my experience and conversations with construction teams, I have seen companies use powerful software without fully using the automation capabilities already available in Excel, Revit, BIM platforms, APIs, and scripting environments. Many repetitive tasks can be reduced through relatively small technical changes, and those changes add up when they are repeated across teams, projects, and months of work.</p>
-      <div class="pull">Having worked both on site and on the technology side, I want to bridge the two, so what is built in the model and what happens in the field stay connected.</div>
-      <p>I use AI primarily to learn, test ideas, and accelerate development. The finished solution does not necessarily need AI to function. AI can help me understand logic, test an approach, or develop a VBA command, Python script, Dynamo workflow, or Revit API tool, while the final automation can run independently as code. This also helps maintain privacy because useful tools can operate without sending sensitive project or company information to external AI systems.</p>
+    <div class="split">
+      <div class="beats">
+        <div class="pull" style="margin-top:0">Having worked both on site and on the technology side, I want to bridge the two, so what is built in the model and what happens in the field stay connected.</div>
+        <div class="beat"><i>01</i><div><b>Build the small tools</b><p>Teams run powerful software and never touch the automation already inside Excel, Revit, APIs and scripts. Small fixes, repeated across teams and months, add up.</p></div></div>
+        <div class="beat"><i>02</i><div><b>Use AI to build, not to run</b><p>AI helps me test logic and write a VBA command, Python script, Dynamo workflow or Revit API tool. The finished tool runs on its own, as code.</p></div></div>
+        <div class="beat"><i>03</i><div><b>Keep project data private</b><p>Because the tools run independently, nothing sensitive has to leave the project to reach an external AI.</p></div></div>
+        <div class="beat"><i>04</i><div><b>Scale what works</b><p>A workflow that saves one project engineer an hour becomes valuable when it is refined and used across teams and projects.</p></div></div>
+      </div>
+      <div class="side">
+        <div class="phone"><video src="media/revit-claude.mp4" poster="media/revit-poster.jpg" controls playsinline preload="metadata"></video></div>
+        <div class="side-k">Revit + Claude · one prompt</div>
+        <div class="side-t">A full critical path, straight out of the model, with every assumption visible.</div>
+        <div class="stat"><div><b>24</b><span>activities</span></div><div><b>12</b><span>critical</span></div><div><b>182</b><span>workdays</span></div></div>
+      </div>
     </div>
   </div>
 </section>
 
 <section id="tools" style="background:linear-gradient(180deg,transparent,rgba(201,151,76,.07) 40%,rgba(201,151,76,.07) 70%,transparent)">
   <div class="wrap">
-    <div class="k">In practice</div>
-    <h2>Revit and Claude, <em>one prompt.</em></h2>
-    <div class="demo">
-      <div class="phone"><video src="media/revit-claude.mp4" poster="media/revit-poster.jpg" controls playsinline preload="metadata"></video></div>
-      <div>
-        <p class="lead" style="margin-top:0">A complete construction schedule pulled from the Snowdon Towers sample model, with forward and backward passes run and the critical path mapped. Every predecessor, lag and duration is documented, so you can see the logic, validate it, and push back on it. A schedule that shows you which parts are assumptions is a tool; one that hides them is a liability.</p>
-        <div class="stat"><div><b>24</b><span>activities</span></div><div><b>12</b><span>on the critical path</span></div><div><b>182</b><span>workdays</span></div></div>
-      </div>
-    </div>
-
-    <div class="k" style="margin-top:4rem">Tools I have built</div>
+    <div class="k">Tools I have built</div>
     <h2>What I've <em>made so far</em></h2>
     <div class="tgrid">
       <div class="tc"><span class="tag">Haddonstone</span><span class="t">Dynamic tool palette</span><span class="d">Independently developed for my team: repetitive drafting turned into an automated workflow, making drawing changes possible within minutes instead of days. Also explored BIM and AI applications for estimation.</span></div>
@@ -146,7 +160,7 @@ footer a{color:var(--gold);text-decoration:none}
       <div class="tc"><span class="tag">Industry research</span><span class="t">Who is already doing this</span><span class="d">Studying companies using plugins, automation, AI and internal tools in construction, and speaking with the people who use them. Privacy concerns often limit adoption; I want to help bridge that gap.</span></div>
     </div>
     <div class="statement" style="margin-top:2.4rem">
-      <p>What interests me most is developing this work at a scale where small improvements can have a much larger effect. A workflow that saves time for one project engineer becomes far more valuable when it is refined and used across teams and projects. I want to grow as a construction manager while continuing to develop in BIM and VDC, because the value I bring sits between the site and the technology, and I am open to roles on either side of that line at any company doing this kind of work.</p>
+      <p>I want to grow as a construction manager while continuing to develop in BIM and VDC. The value I bring sits between the site and the technology, and I am open to roles on either side of that line.</p>
       <div class="sig">— Muskaan</div>
     </div>
   </div>
