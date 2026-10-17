@@ -94,12 +94,18 @@ section{padding:70px 0}
 .shelf .bookwrap{margin:0}
 .shelf h3{margin-bottom:.4rem}
 .shelf .sub{font-size:.82rem;color:#b7ae9f;margin-bottom:1rem}
-.lb{position:fixed;inset:0;z-index:300;background:rgba(8,6,4,.96);display:flex;flex-direction:column;align-items:center;justify-content:center;opacity:0;pointer-events:none;transition:.4s;padding:2rem}
+.book-stage{cursor:zoom-in}
+.lb{position:fixed;inset:0;z-index:300;background:rgba(8,6,4,.97);display:flex;flex-direction:column;align-items:center;justify-content:center;opacity:0;pointer-events:none;transition:opacity .35s;padding:3rem 0 3.4rem;overflow:auto;scrollbar-width:thin}
 .lb.open{opacity:1;pointer-events:auto}
-.lb img{max-width:94vw;max-height:84vh;object-fit:contain}
-.lb .cap{margin-top:1rem;font-family:'Cormorant Garamond',serif;font-style:italic;font-size:1.2rem;color:var(--ink)}
-.lb button{position:absolute;background:none;border:1px solid var(--line);color:var(--ink);width:44px;height:44px;border-radius:50%;font-size:18px;cursor:pointer}
-.lb .x{top:20px;right:20px}.lb .pv{left:20px;top:50%}.lb .nx{right:20px;top:50%}
+.lb img{max-width:96vw;max-height:84vh;object-fit:contain;box-shadow:0 40px 120px rgba(0,0,0,.8);transform:scale(.94);transition:transform .45s cubic-bezier(.22,.9,.3,1);cursor:zoom-in}
+.lb.open img{transform:scale(1)}
+.lb.zoomed{justify-content:flex-start;align-items:flex-start}
+.lb.zoomed img{max-width:none;max-height:none;width:190vw;cursor:zoom-out;transform:none;margin:auto}
+.lb .cap{position:fixed;left:0;right:0;bottom:14px;text-align:center;font-family:'Cormorant Garamond',serif;font-style:italic;font-size:1.15rem;color:var(--ink);pointer-events:none}
+.lb .hint{position:fixed;left:50%;top:18px;transform:translateX(-50%);font-size:.56rem;letter-spacing:.3em;text-transform:uppercase;color:var(--grey);pointer-events:none}
+.lb button{position:fixed;background:rgba(20,16,13,.75);border:1px solid var(--line);color:var(--ink);width:46px;height:46px;border-radius:50%;font-size:18px;cursor:pointer;backdrop-filter:blur(4px);z-index:2}
+.lb button:hover{background:var(--gold);border-color:var(--gold);color:#14100d}
+.lb .x{top:16px;right:16px}.lb .pv{left:16px;top:50%}.lb .nx{right:16px;top:50%}
 #dim{position:fixed;inset:0;z-index:64;pointer-events:none;background:radial-gradient(circle 340px at var(--mx,50%) var(--my,40%),transparent 0%,rgba(0,0,0,.02) 55%,rgba(0,0,0,.08) 100%)}
 #glow{position:fixed;inset:0;z-index:65;pointer-events:none;mix-blend-mode:screen;background:radial-gradient(circle 260px at var(--mx,50%) var(--my,40%),rgba(255,214,150,.13),rgba(232,181,106,.05) 45%,transparent 70%)}
 footer{border-top:1px solid var(--line);padding:38px 28px;text-align:center;font-size:.6rem;letter-spacing:.22em;text-transform:uppercase;opacity:.6}
@@ -199,7 +205,7 @@ footer a{color:var(--gold);text-decoration:none}
 
 <footer>Muskaan Hussain · <a href="index.html">A Walk Through My Journey</a> · <a href="interior.html">Interiors</a> · <a href="lecture.html">The Lecture</a> · <a href="art.html">The First Studio</a> · <a href="resume.pdf">Resume</a></footer>
 
-<div class="lb" id="lb"><button class="x" aria-label="Close">&times;</button><button class="pv" aria-label="Previous">&larr;</button><button class="nx" aria-label="Next">&rarr;</button><img id="lbi" alt=""><div class="cap" id="lbc"></div></div>
+<div class="lb" id="lb"><div class="hint">Click to zoom · &larr; &rarr; turn pages · Esc closes</div><button class="x" aria-label="Close">&times;</button><button class="pv" aria-label="Previous">&larr;</button><button class="nx" aria-label="Next">&rarr;</button><img id="lbi" alt=""><div class="cap" id="lbc"></div></div>
 
 <script>
 (function(){var r=document.documentElement;document.addEventListener('mousemove',function(e){r.style.setProperty('--mx',e.clientX+'px');r.style.setProperty('--my',e.clientY+'px');});})();
@@ -210,14 +216,22 @@ addEventListener('scroll',bdCheck,{passive:true});addEventListener('load',bdChec
 
 // one lightbox for everything
 var lb=document.getElementById('lb'),lbi=document.getElementById('lbi'),lbc=document.getElementById('lbc');
-var LB={list:[],i:0};
-function lbShow(list,i,capfn){LB.list=list;LB.cap=capfn;LB.i=(i+list.length)%list.length;lbi.src=list[LB.i];lbc.textContent=capfn(LB.i);lb.classList.add('open');}
-lb.querySelector('.x').onclick=function(){lb.classList.remove('open');};
-lb.onclick=function(e){if(e.target===lb)lb.classList.remove('open');};
+var LB={list:[],i:0,sync:null};
+// open the reader; `sync` keeps the inline book on the same page while you read
+function lbShow(list,i,capfn,sync){
+  LB.list=list;LB.cap=capfn;if(sync!==undefined)LB.sync=sync;
+  LB.i=(i+list.length)%list.length;lbi.src=list[LB.i];lbc.textContent=capfn(LB.i);
+  lb.classList.remove('zoomed');lb.scrollTo(0,0);lb.classList.add('open');document.body.style.overflow='hidden';
+  if(LB.sync)LB.sync(LB.i);
+}
+function lbClose(){lb.classList.remove('open','zoomed');document.body.style.overflow='';}
+lb.querySelector('.x').onclick=lbClose;
+lb.onclick=function(e){if(e.target===lb)lbClose();};
+lbi.onclick=function(e){e.stopPropagation();var z=lb.classList.toggle('zoomed');if(z){var r=lb.getBoundingClientRect(),x=(e.clientX-r.left)/r.width,y=(e.clientY-r.top)/r.height;requestAnimationFrame(function(){lb.scrollTo((lb.scrollWidth-lb.clientWidth)*x,(lb.scrollHeight-lb.clientHeight)*y);});}};
 lb.querySelector('.pv').onclick=function(e){e.stopPropagation();lbShow(LB.list,LB.i-1,LB.cap);};
 lb.querySelector('.nx').onclick=function(e){e.stopPropagation();lbShow(LB.list,LB.i+1,LB.cap);};
 var tiles=[].slice.call(document.querySelectorAll('.bd'));
-tiles.forEach(function(t,n){t.onclick=function(){lbShow(tiles.map(function(x){return x.querySelector('img').src;}),n,function(i){return tiles[i].dataset.cap;});};});
+tiles.forEach(function(t,n){t.onclick=function(){lbShow(tiles.map(function(x){return x.querySelector('img').src;}),n,function(i){return tiles[i].dataset.cap;},null);};});
 
 // flip books, built from the page lists below
 var BOOKS={
@@ -251,15 +265,19 @@ function makeBook(wrap){
     var done=function(){front.classList.remove('flipping');front.style.transform='none';front.style.zIndex=1;back.style.zIndex=2;topIsA=!topIsA;idx=n;busy=false;ui();};
     front.addEventListener('transitionend',done,{once:true});setTimeout(function(){if(busy)done();},900);
   }
-  prev.onclick=function(){go(-1);};next.onclick=function(){go(1);};
-  wrap.querySelector('.book-zone.left').onclick=function(){go(-1);};
-  wrap.querySelector('.book-zone.right').onclick=function(){go(1);};
-  wrap.querySelector('.book-expand').onclick=function(e){e.stopPropagation();lbShow(b.pages,idx,function(i){return capw+' '+(i+1)+' of '+b.pages.length+' · '+(b.names[i]||'');});};
+  // jump straight to a page (used when the reader turns pages)
+  function set(n){if(n===idx)return;idx=n;var top=topIsA?pgA:pgB;top.src=b.pages[n];ui();}
+  function read(){lbShow(b.pages,idx,function(i){return capw+' '+(i+1)+' of '+b.pages.length+' · '+(b.names[i]||'');},set);}
+  prev.onclick=function(e){e.stopPropagation();go(-1);};next.onclick=function(e){e.stopPropagation();go(1);};
+  wrap.querySelector('.book-zone.left').onclick=function(e){e.stopPropagation();go(-1);};
+  wrap.querySelector('.book-zone.right').onclick=function(e){e.stopPropagation();go(1);};
+  stage.onclick=read;
+  wrap.querySelector('.book-expand').onclick=function(e){e.stopPropagation();read();};
   books.push({stage:stage,go:go});ui();
 }
 document.querySelectorAll('.bookwrap').forEach(makeBook);
 document.addEventListener('keydown',function(e){
-  if(e.key==='Escape')lb.classList.remove('open');
+  if(e.key==='Escape')lbClose();
   if(lb.classList.contains('open')){if(e.key==='ArrowRight')lbShow(LB.list,LB.i+1,LB.cap);if(e.key==='ArrowLeft')lbShow(LB.list,LB.i-1,LB.cap);return;}
   // arrows turn whichever book is on screen
   var hit=books.find(function(bk){var r=bk.stage.getBoundingClientRect();return r.top<innerHeight*.7&&r.bottom>innerHeight*.3;});
