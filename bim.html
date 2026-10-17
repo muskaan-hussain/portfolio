@@ -7,7 +7,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300;1,400&family=Inter:wght@200;300;400&display=swap" rel="stylesheet">
 <style>
-:root{--bg:#1c1814;--ink:#f3eee4;--gold:#e8b56a;--cyan:#6ec6e0;--grey:#8a8375;--line:rgba(232,224,211,.14)}
+:root{--bg:#1c1814;--ink:#f3eee4;--gold:#e8b56a;--grey:#8a8375;--line:rgba(232,224,211,.14)}
 *{margin:0;padding:0;box-sizing:border-box}
 html{scroll-behavior:smooth}
 body{background:#0d0c0b;color:var(--ink);min-height:100vh;font-family:'Inter',sans-serif;font-weight:300;line-height:1.75}
@@ -24,8 +24,9 @@ header{position:sticky;top:0;z-index:50;background:rgba(13,12,11,.9);backdrop-fi
 .hero{padding:90px 0 40px}
 .k{font-size:.6rem;letter-spacing:.5em;text-transform:uppercase;color:var(--gold);margin-bottom:1.1rem}
 h1{font-family:'Cormorant Garamond',serif;font-size:clamp(2.6rem,6vw,5rem);font-weight:300;line-height:1.02}
-h1 em,h2 em{font-style:italic;color:var(--gold)}
+h1 em,h2 em,h3 em{font-style:italic;color:var(--gold)}
 h2{font-family:'Cormorant Garamond',serif;font-size:clamp(2rem,4vw,3.2rem);font-weight:300;line-height:1.08;margin-bottom:1rem}
+h3{font-family:'Cormorant Garamond',serif;font-size:clamp(1.5rem,2.6vw,2.1rem);font-weight:300;line-height:1.1}
 .lead{margin-top:1.2rem;max-width:620px;font-size:1rem;color:#c9c1b2}
 section{padding:70px 0}
 .rule{height:1px;background:var(--line)}
@@ -33,17 +34,22 @@ section{padding:70px 0}
 .statement p{margin-bottom:1.2rem;color:#d8d1c1;font-size:1rem}
 .pull{font-family:'Cormorant Garamond',serif;font-style:italic;font-size:clamp(1.5rem,2.8vw,2.1rem);line-height:1.3;color:var(--ink);border-left:2px solid var(--gold);padding-left:1.4rem;margin:2rem 0 2.2rem;max-width:760px}
 .sig{font-family:'Cormorant Garamond',serif;font-style:italic;color:var(--gold);font-size:1.3rem;margin-top:.5rem}
+/* amber tool cards */
 .tgrid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:12px;margin-top:2rem}
-.tc{padding:1.6rem 1.5rem;border:1px solid var(--line);background:#161310;display:flex;flex-direction:column;gap:.5rem;transition:border-color .4s}
-.tc:hover{border-color:rgba(232,181,106,.6)}
+.tc{padding:1.6rem 1.5rem;border:1px solid rgba(232,181,106,.42);background:linear-gradient(160deg,rgba(201,151,76,.26),rgba(201,151,76,.12));display:flex;flex-direction:column;gap:.5rem;transition:.4s}
+.tc:hover{background:linear-gradient(160deg,rgba(201,151,76,.36),rgba(201,151,76,.18));transform:translateY(-4px)}
 .tc .tag{font-size:.56rem;letter-spacing:.34em;text-transform:uppercase;color:var(--gold)}
-.tc .t{font-family:'Cormorant Garamond',serif;font-size:1.45rem;line-height:1.15}
-.tc .d{font-size:.84rem;line-height:1.65;color:#b7ae9f}
-.posts{display:grid;grid-template-columns:repeat(auto-fit,minmax(320px,1fr));gap:1.4rem;margin-top:2rem;align-items:start}
-.post iframe{width:100%;height:640px;border:1px solid rgba(216,172,98,.3);background:#fff;display:block;box-shadow:0 30px 60px rgba(0,0,0,.5)}
-.post-k{font-size:.6rem;letter-spacing:.3em;text-transform:uppercase;color:var(--gold);margin-bottom:.8rem}
+.tc .t{font-family:'Cormorant Garamond',serif;font-size:1.45rem;line-height:1.15;color:#fbf3e4}
+.tc .d{font-size:.84rem;line-height:1.65;color:#e2d8c6}
+/* the demo */
+.demo{display:grid;grid-template-columns:300px 1fr;gap:3rem;align-items:center;margin-top:2rem}
+.phone{border-radius:28px;border:1px solid rgba(232,181,106,.45);padding:8px;background:#0a0908;box-shadow:0 40px 90px rgba(0,0,0,.6),0 0 60px rgba(232,181,106,.08)}
+.phone video{display:block;width:100%;aspect-ratio:9/16;object-fit:cover;border-radius:20px;background:#000}
+.stat{display:grid;grid-template-columns:repeat(3,1fr);gap:1rem;margin-top:1.6rem}
+.stat b{display:block;font-family:'Cormorant Garamond',serif;font-weight:300;font-size:2.6rem;color:var(--gold);line-height:1}
+.stat span{font-size:.6rem;letter-spacing:.28em;text-transform:uppercase;color:var(--grey)}
 /* galleries */
-.bgrid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:12px;margin-top:1.8rem}
+.bgrid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:12px;margin-top:1.8rem}
 .bd{position:relative;border:1px solid var(--line);background:#111;overflow:hidden;opacity:0;transform:translateY(24px);transition:opacity .9s,transform .9s cubic-bezier(.22,.9,.3,1);cursor:zoom-in;aspect-ratio:3/2}
 .bd.wide{grid-column:1/-1;aspect-ratio:16/8}
 .bd.show{opacity:1;transform:none}
@@ -51,8 +57,12 @@ section{padding:70px 0}
 .bd.show img{filter:blur(0) brightness(1)}
 .bd:hover img{transform:scale(1.03)}
 .bd span{position:absolute;left:14px;bottom:12px;font-size:.56rem;letter-spacing:.3em;text-transform:uppercase;color:var(--ink);background:rgba(13,12,11,.7);padding:5px 10px;backdrop-filter:blur(4px)}
-.book{position:relative;max-width:1180px;margin:2rem auto 0;perspective:2600px;user-select:none}
-.book-stage{position:relative;width:100%;aspect-ratio:1.6;background:#0c0a08;box-shadow:0 40px 100px rgba(0,0,0,.65),0 0 0 1px var(--line);overflow:hidden}
+/* books */
+.bookwrap{margin-top:1.6rem}
+.book{position:relative;max-width:1180px;margin:0 auto;perspective:2600px;user-select:none}
+.book-stage{position:relative;width:100%;background:#0c0a08;box-shadow:0 40px 100px rgba(0,0,0,.65),0 0 0 1px var(--line);overflow:hidden}
+.book-stage::before{content:'';position:absolute;left:50%;top:0;bottom:0;width:2px;transform:translateX(-50%);background:linear-gradient(rgba(0,0,0,0),rgba(0,0,0,.18) 50%,rgba(0,0,0,0));z-index:5;pointer-events:none}
+.book.single .book-stage::before{display:none}
 .book-stage img.page{position:absolute;inset:0;width:100%;height:100%;object-fit:contain;background:#f4f1ea;backface-visibility:hidden}
 .book-stage img.page.flipping{transition:transform .68s cubic-bezier(.45,.05,.55,.95)}
 .book-zone{position:absolute;top:0;bottom:0;width:16%;z-index:10;cursor:pointer}
@@ -64,6 +74,11 @@ section{padding:70px 0}
 .book-arrow:hover,.book-expand:hover{background:var(--gold);border-color:var(--gold);color:#14100d}
 .book-arrow:disabled{opacity:.25;pointer-events:none}
 .book-count{position:absolute;bottom:14px;right:18px;z-index:20;font-size:.62rem;letter-spacing:.24em;text-transform:uppercase;background:rgba(20,16,13,.65);padding:6px 12px;border:1px solid var(--line);backdrop-filter:blur(4px)}
+.book-cap{margin-top:.9rem;font-size:.6rem;letter-spacing:.3em;text-transform:uppercase;color:var(--grey);text-align:center}
+.shelf{display:grid;grid-template-columns:1fr 1fr;gap:40px 28px;margin-top:2rem}
+.shelf .bookwrap{margin:0}
+.shelf h3{margin-bottom:.4rem}
+.shelf .sub{font-size:.82rem;color:#b7ae9f;margin-bottom:1rem}
 .lb{position:fixed;inset:0;z-index:300;background:rgba(8,6,4,.96);display:flex;flex-direction:column;align-items:center;justify-content:center;opacity:0;pointer-events:none;transition:.4s;padding:2rem}
 .lb.open{opacity:1;pointer-events:auto}
 .lb img{max-width:94vw;max-height:84vh;object-fit:contain}
@@ -74,7 +89,7 @@ section{padding:70px 0}
 #glow{position:fixed;inset:0;z-index:65;pointer-events:none;mix-blend-mode:screen;background:radial-gradient(circle 260px at var(--mx,50%) var(--my,40%),rgba(255,214,150,.13),rgba(232,181,106,.05) 45%,transparent 70%)}
 footer{border-top:1px solid var(--line);padding:38px 28px;text-align:center;font-size:.6rem;letter-spacing:.22em;text-transform:uppercase;opacity:.6}
 footer a{color:var(--gold);text-decoration:none}
-@media(max-width:700px){.hero{padding:60px 0 30px}section{padding:50px 0}.post iframe{height:560px}}
+@media(max-width:800px){.hero{padding:60px 0 30px}section{padding:50px 0}.demo{grid-template-columns:1fr}.phone{max-width:280px;margin:0 auto}.shelf{grid-template-columns:1fr}}
 </style>
 </head>
 <body>
@@ -82,7 +97,7 @@ footer a{color:var(--gold);text-decoration:none}
 <header><div class="hrow">
   <div class="brand">Muskaan Hussain — BIM / VDC</div>
   <nav class="hnav">
-    <a href="#statement">Statement</a><a href="#tools">Tools</a><a href="#posts">Posts</a><a href="#design">Design work</a>
+    <a href="#statement">Statement</a><a href="#tools">Tools</a><a href="#design">Design work</a><a href="#portfolio">Portfolio</a>
     <a class="back" href="index.html">&larr; Back to the Journey</a>
   </nav>
 </div></header>
@@ -103,39 +118,36 @@ footer a{color:var(--gold);text-decoration:none}
       <p>Technology in construction is the area I am most passionate about. My focus is on building tools and automations that make construction management and BIM workflows faster, more consistent, and less repetitive. I have already begun doing this through my professional work and research across projects in the US, UK, and India, and it is the direction I want to continue developing.</p>
       <p>Through my experience and conversations with construction teams, I have seen companies use powerful software without fully using the automation capabilities already available in Excel, Revit, BIM platforms, APIs, and scripting environments. Many repetitive tasks can be reduced through relatively small technical changes, and those changes add up when they are repeated across teams, projects, and months of work.</p>
       <div class="pull">Having worked both on site and on the technology side, I want to bridge the two, so what is built in the model and what happens in the field stay connected.</div>
-      <p>This is one reason I keep learning new software and programming tools. Coming from an artistic background, I enjoy creating and building new tools, and this has become another form of design for me.</p>
       <p>I use AI primarily to learn, test ideas, and accelerate development. The finished solution does not necessarily need AI to function. AI can help me understand logic, test an approach, or develop a VBA command, Python script, Dynamo workflow, or Revit API tool, while the final automation can run independently as code. This also helps maintain privacy because useful tools can operate without sending sensitive project or company information to external AI systems.</p>
     </div>
   </div>
 </section>
 
-<section id="tools" style="background:linear-gradient(180deg,transparent,rgba(201,151,76,.05) 50%,transparent)">
+<section id="tools" style="background:linear-gradient(180deg,transparent,rgba(201,151,76,.07) 40%,rgba(201,151,76,.07) 70%,transparent)">
   <div class="wrap">
-    <div class="k">Tools I have built</div>
+    <div class="k">In practice</div>
+    <h2>Revit and Claude, <em>one prompt.</em></h2>
+    <div class="demo">
+      <div class="phone"><video src="media/revit-claude.mp4" poster="media/revit-poster.jpg" controls playsinline preload="metadata"></video></div>
+      <div>
+        <p class="lead" style="margin-top:0">A complete construction schedule pulled from the Snowdon Towers sample model, with forward and backward passes run and the critical path mapped. Every predecessor, lag and duration is documented, so you can see the logic, validate it, and push back on it. A schedule that shows you which parts are assumptions is a tool; one that hides them is a liability.</p>
+        <div class="stat"><div><b>24</b><span>activities</span></div><div><b>12</b><span>on the critical path</span></div><div><b>182</b><span>workdays</span></div></div>
+      </div>
+    </div>
+
+    <div class="k" style="margin-top:4rem">Tools I have built</div>
     <h2>What I've <em>made so far</em></h2>
     <div class="tgrid">
       <div class="tc"><span class="tag">Haddonstone</span><span class="t">Dynamic tool palette</span><span class="d">Independently developed for my team: repetitive drafting turned into an automated workflow, making drawing changes possible within minutes instead of days. Also explored BIM and AI applications for estimation.</span></div>
       <div class="tc"><span class="tag">Engineta</span><span class="t">VBA commands &amp; dashboards</span><span class="d">Excel commands to streamline forms, daily reports, hour logging and project dashboards, while exploring Power BI.</span></div>
       <div class="tc"><span class="tag">Engineta</span><span class="t">Laser-scan workflow</span><span class="d">Researched and presented CloudCompare and reviewed the scanning workflow so scan and color data could be used more effectively, instead of spending so much time only on cleanup.</span></div>
-      <div class="tc"><span class="tag">Ongoing</span><span class="t">Construction software connected to AI</span><span class="d">Revit, scheduling and estimating software connected to AI through MCP, with the output kept transparent so a person can review, correct and approve it. Done this way it saves significant time while keeping project data private.</span></div>
+      <div class="tc"><span class="tag">Ongoing</span><span class="t">Construction software connected to AI</span><span class="d">Revit, scheduling and estimating software connected to AI through MCP, with the output kept transparent so a person can review, correct and approve it. It saves significant time while keeping project data private.</span></div>
       <div class="tc"><span class="tag">NYU research</span><span class="t">Unity 3D, C#, AR/VR, robotics</span><span class="d">Independent study exploring how emerging technology can be applied on site and in project delivery.</span></div>
-      <div class="tc"><span class="tag">Industry research</span><span class="t">Who is already doing this</span><span class="d">Studying companies using plugins, automation, AI and internal tools in construction, and speaking with the people who use them. Privacy concerns often limit how deeply companies adopt them; I want to help bridge that gap.</span></div>
+      <div class="tc"><span class="tag">Industry research</span><span class="t">Who is already doing this</span><span class="d">Studying companies using plugins, automation, AI and internal tools in construction, and speaking with the people who use them. Privacy concerns often limit adoption; I want to help bridge that gap.</span></div>
     </div>
     <div class="statement" style="margin-top:2.4rem">
       <p>What interests me most is developing this work at a scale where small improvements can have a much larger effect. A workflow that saves time for one project engineer becomes far more valuable when it is refined and used across teams and projects. I want to grow as a construction manager while continuing to develop in BIM and VDC, because the value I bring sits between the site and the technology, and I am open to roles on either side of that line at any company doing this kind of work.</p>
       <div class="sig">— Muskaan</div>
-    </div>
-  </div>
-</section>
-
-<section id="posts">
-  <div class="wrap">
-    <div class="k">In practice</div>
-    <h2>Revit and Claude, <em>one prompt.</em></h2>
-    <p class="lead">A complete critical path pulled from a Revit model — 24 activities, 182 workdays — with every predecessor, lag and duration documented so a person can check it.</p>
-    <div class="posts">
-      <div class="post"><div class="post-k">Transparent schedules with Revit and Claude</div><iframe src="https://www.linkedin.com/embed/feed/update/urn:li:ugcPost:7509383648115347456" title="LinkedIn post: Transparent Schedules with Revit and Claude" loading="lazy" allowfullscreen></iframe></div>
-      <div class="post"><div class="post-k">The artist first</div><iframe src="https://www.linkedin.com/embed/feed/update/urn:li:ugcPost:7505698621380562944" title="LinkedIn post: I painted after a year" loading="lazy" allowfullscreen></iframe></div>
     </div>
   </div>
 </section>
@@ -153,36 +165,21 @@ footer a{color:var(--gold);text-decoration:none}
       <div class="bd" data-cap="Pod, second view"><img src="work/trio-pod-b.jpg" alt="" loading="lazy"><span>Pod — second view</span></div>
       <div class="bd" data-cap="Glass terrace"><img src="work/trio-terrace.jpg" alt="" loading="lazy"><span>Glass terrace</span></div>
     </div>
-
-    <div class="k" style="margin-top:3.5rem">The competition boards</div>
-    <div class="book" id="ethosBook">
-      <div class="book-stage" id="bookStage">
-        <img class="page" id="bookPageA" alt="Competition board">
-        <img class="page" id="bookPageB" alt="Competition board">
-      </div>
-      <div class="book-zone left" id="bookPrevZone"></div>
-      <div class="book-zone right" id="bookNextZone"></div>
-      <button class="book-arrow left" id="bookPrev" aria-label="Previous board">&larr;</button>
-      <button class="book-arrow right" id="bookNext" aria-label="Next board">&rarr;</button>
-      <div class="book-count" id="bookCount">I / V</div>
-      <button class="book-expand" id="bookExpand" title="View full size">&#8599;</button>
-    </div>
+    <div class="k" style="margin-top:3.5rem">The competition boards · turn the pages</div>
+    <div class="bookwrap single" data-book="ethos" data-cap="Board"></div>
   </div>
 </section>
 
-<section style="padding-top:0">
+<section id="portfolio" style="padding-top:0">
   <div class="wrap">
-    <div class="k">Architecture portfolio · Academic</div>
-    <h2>Towers, housing, <em>and a mosque</em></h2>
-    <p class="lead">Studio work from five years of architecture school: a planted high-rise, a low-cost housing study, and my B.Arch thesis — Masjid Medley — on the mosque as a civic anchor, a gathering ground, and a piece of urban memory. Click any spread to enlarge.</p>
-    <div class="bgrid">
-      <div class="bd" data-cap="Tower 1 — concept"><img src="work/tower-02.jpg" alt="" loading="lazy"><span>Tower — concept</span></div>
-      <div class="bd" data-cap="Tower 1 — planted facade"><img src="work/tower-03.jpg" alt="" loading="lazy"><span>Tower — facade</span></div>
-      <div class="bd" data-cap="Tower 1 — plans"><img src="work/tower-04.jpg" alt="" loading="lazy"><span>Tower — plans</span></div>
-      <div class="bd" data-cap="Low-cost housing — analysis"><img src="work/housing-02.jpg" alt="" loading="lazy"><span>Housing — analysis</span></div>
-      <div class="bd" data-cap="Low-cost housing — building plans"><img src="work/housing-04.jpg" alt="" loading="lazy"><span>Housing — plans</span></div>
-      <div class="bd" data-cap="Low-cost housing — site plan"><img src="work/housing-05.jpg" alt="" loading="lazy"><span>Housing — site</span></div>
+    <div class="k">Architecture portfolio</div>
+    <h2>Towers, housing, <em>and the American sets</em></h2>
+    <p class="lead">The portfolio as it reads, spread by spread: a planted high-rise from studio, a low-cost housing study, and the residential sets I drew for Signature Solutions in New England. Arrow keys work; click the corner to enlarge.</p>
+    <div class="shelf">
+      <div><h3>Tower 1 — <em>a planted high-rise</em></h3><div class="sub">Concept, introduction and plans · B.Arch studio</div><div class="bookwrap" data-book="tower" data-cap="Spread"></div></div>
+      <div><h3>Low-cost housing — <em>Pratigya</em></h3><div class="sub">Analysis, site, building plans · 7th semester</div><div class="bookwrap" data-book="housing" data-cap="Spread"></div></div>
     </div>
+    <div style="margin-top:40px"><h3>US residential — <em>permit and construction sets</em></h3><div class="sub" style="font-size:.82rem;color:#b7ae9f;margin-bottom:1rem">Kumar Residence, Bonney Street, Rose Acushnet and the gambrel garage · Signature Solutions, 2023–24</div><div class="bookwrap" data-book="usa" data-cap="Spread"></div></div>
   </div>
 </section>
 
@@ -197,45 +194,63 @@ document.querySelectorAll('.bd').forEach(function(el){io.observe(el);});
 function bdCheck(){document.querySelectorAll('.bd:not(.show)').forEach(function(el){var r=el.getBoundingClientRect();if(r.top<innerHeight*.95&&r.bottom>0)el.classList.add('show');});}
 addEventListener('scroll',bdCheck,{passive:true});addEventListener('load',bdCheck);setInterval(bdCheck,800);
 
-// lightbox shared by the galleries and the board book
+// one lightbox for everything
 var lb=document.getElementById('lb'),lbi=document.getElementById('lbi'),lbc=document.getElementById('lbc');
-var tiles=[].slice.call(document.querySelectorAll('.bd')),cur=0,mode='tiles';
-function showTile(n){cur=(n+tiles.length)%tiles.length;mode='tiles';lbi.src=tiles[cur].querySelector('img').src;lbc.textContent=tiles[cur].dataset.cap;lb.classList.add('open');}
-tiles.forEach(function(t,n){t.onclick=function(){showTile(n);};});
+var LB={list:[],i:0};
+function lbShow(list,i,capfn){LB.list=list;LB.cap=capfn;LB.i=(i+list.length)%list.length;lbi.src=list[LB.i];lbc.textContent=capfn(LB.i);lb.classList.add('open');}
 lb.querySelector('.x').onclick=function(){lb.classList.remove('open');};
 lb.onclick=function(e){if(e.target===lb)lb.classList.remove('open');};
-lb.querySelector('.pv').onclick=function(e){e.stopPropagation();mode==='tiles'?showTile(cur-1):showBoard(idx-1);};
-lb.querySelector('.nx').onclick=function(e){e.stopPropagation();mode==='tiles'?showTile(cur+1):showBoard(idx+1);};
+lb.querySelector('.pv').onclick=function(e){e.stopPropagation();lbShow(LB.list,LB.i-1,LB.cap);};
+lb.querySelector('.nx').onclick=function(e){e.stopPropagation();lbShow(LB.list,LB.i+1,LB.cap);};
+var tiles=[].slice.call(document.querySelectorAll('.bd'));
+tiles.forEach(function(t,n){t.onclick=function(){lbShow(tiles.map(function(x){return x.querySelector('img').src;}),n,function(i){return tiles[i].dataset.cap;});};});
 
-// the board book
-var PAGES=['work/trio-concept.jpg','work/trio-board-site.jpg','work/trio-board-details.jpg','work/trio-board-plans.jpg','work/trio-board-areas.jpg'];
-var ROMAN=['I','II','III','IV','V'];
-var stage=document.getElementById('bookStage'),pgA=document.getElementById('bookPageA'),pgB=document.getElementById('bookPageB');
-var prevBtn=document.getElementById('bookPrev'),nextBtn=document.getElementById('bookNext'),countEl=document.getElementById('bookCount');
-var idx=0,animating=false,topIsA=true;
-pgA.src=PAGES[0];pgA.style.zIndex=2;pgB.src=PAGES[0];pgB.style.zIndex=1;
-function updateUI(){countEl.textContent=ROMAN[idx]+' / '+ROMAN[PAGES.length-1];prevBtn.disabled=idx===0;nextBtn.disabled=idx===PAGES.length-1;}
-function go(dir){
-  var n=idx+dir;if(animating||n<0||n>=PAGES.length)return;animating=true;
-  var front=topIsA?pgA:pgB,back=topIsA?pgB:pgA;
-  back.src=PAGES[n];back.classList.remove('flipping');back.style.transform='none';back.style.zIndex=1;
-  front.style.zIndex=3;front.style.transformOrigin=dir>0?'left center':'right center';void front.offsetWidth;
-  requestAnimationFrame(function(){front.classList.add('flipping');front.style.transform='rotateY('+(dir>0?-100:100)+'deg)';});
-  var done=function(){front.classList.remove('flipping');front.style.transform='none';front.style.zIndex=1;back.style.zIndex=2;topIsA=!topIsA;idx=n;animating=false;updateUI();};
-  front.addEventListener('transitionend',done,{once:true});setTimeout(function(){if(animating)done();},900);
+// flip books, built from the page lists below
+var BOOKS={
+  ethos:{pages:['work/ethos-01.jpg','work/ethos-02.jpg','work/ethos-03.jpg','work/ethos-04.jpg','work/ethos-05.jpg','work/ethos-06.jpg','work/ethos-07.jpg'],
+         names:['Concept','Site analysis','Areas','Material and energy','Plans','Construction details','Visualisation']},
+  tower:{pages:['work/books/tower-01.jpg','work/books/tower-02.jpg','work/books/tower-03.jpg'],names:['Concept','Introduction','Plans']},
+  housing:{pages:['work/books/housing-01.jpg','work/books/housing-02.jpg','work/books/housing-03.jpg','work/books/housing-04.jpg','work/books/housing-05.jpg','work/books/housing-06.jpg'],
+           names:['Analysis','Zoning','Site plan','Neighbourhood','Building plans','Site']},
+  usa:{pages:['work/books/usa-01.jpg','work/books/usa-02.jpg','work/books/usa-03.jpg','work/books/usa-04.jpg','work/books/usa-05.jpg','work/books/usa-06.jpg'],
+       names:['Kumar Residence','Bonney Street','Elevations','Kumar — sections','Rose Acushnet','The gambrel garage']}
+};
+var books=[];
+function makeBook(wrap){
+  var b=BOOKS[wrap.dataset.book],capw=wrap.dataset.cap||'Page';
+  wrap.innerHTML='<div class="book'+(wrap.classList.contains('single')?' single':'')+'"><div class="book-stage"><img class="page" alt=""><img class="page" alt=""></div>'+
+    '<div class="book-zone left"></div><div class="book-zone right"></div><button class="book-arrow left" aria-label="Previous">&larr;</button><button class="book-arrow right" aria-label="Next">&rarr;</button>'+
+    '<div class="book-count"></div><button class="book-expand" title="View full size">&#8599;</button></div><div class="book-cap"></div>';
+  var stage=wrap.querySelector('.book-stage'),pg=wrap.querySelectorAll('.page'),pgA=pg[0],pgB=pg[1];
+  var prev=wrap.querySelector('.book-arrow.left'),next=wrap.querySelector('.book-arrow.right'),count=wrap.querySelector('.book-count'),cap=wrap.querySelector('.book-cap');
+  var idx=0,busy=false,topIsA=true;
+  // the stage takes the shape of the first page
+  var probe=new Image();probe.onload=function(){stage.style.aspectRatio=(probe.naturalWidth/probe.naturalHeight).toFixed(3);};probe.src=b.pages[0];
+  pgA.src=b.pages[0];pgA.style.zIndex=2;pgB.src=b.pages[0];pgB.style.zIndex=1;
+  function ui(){count.textContent=(idx+1)+' / '+b.pages.length;cap.textContent=capw+' '+(idx+1)+' · '+(b.names[idx]||'');prev.disabled=idx===0;next.disabled=idx===b.pages.length-1;}
+  function go(dir){
+    var n=idx+dir;if(busy||n<0||n>=b.pages.length)return;busy=true;
+    var front=topIsA?pgA:pgB,back=topIsA?pgB:pgA;
+    back.src=b.pages[n];back.classList.remove('flipping');back.style.transform='none';back.style.zIndex=1;
+    front.style.zIndex=3;front.style.transformOrigin=dir>0?'left center':'right center';void front.offsetWidth;
+    requestAnimationFrame(function(){front.classList.add('flipping');front.style.transform='rotateY('+(dir>0?-100:100)+'deg)';});
+    var done=function(){front.classList.remove('flipping');front.style.transform='none';front.style.zIndex=1;back.style.zIndex=2;topIsA=!topIsA;idx=n;busy=false;ui();};
+    front.addEventListener('transitionend',done,{once:true});setTimeout(function(){if(busy)done();},900);
+  }
+  prev.onclick=function(){go(-1);};next.onclick=function(){go(1);};
+  wrap.querySelector('.book-zone.left').onclick=function(){go(-1);};
+  wrap.querySelector('.book-zone.right').onclick=function(){go(1);};
+  wrap.querySelector('.book-expand').onclick=function(e){e.stopPropagation();lbShow(b.pages,idx,function(i){return capw+' '+(i+1)+' of '+b.pages.length+' · '+(b.names[i]||'');});};
+  books.push({stage:stage,go:go});ui();
 }
-function showBoard(n){idx=Math.max(0,Math.min(PAGES.length-1,n));mode='book';lbi.src=PAGES[idx];lbc.textContent='Board '+ROMAN[idx]+' of '+ROMAN[PAGES.length-1];lb.classList.add('open');}
-prevBtn.onclick=function(){go(-1);};nextBtn.onclick=function(){go(1);};
-document.getElementById('bookPrevZone').onclick=function(){go(-1);};
-document.getElementById('bookNextZone').onclick=function(){go(1);};
-document.getElementById('bookExpand').onclick=function(e){e.stopPropagation();showBoard(idx);};
+document.querySelectorAll('.bookwrap').forEach(makeBook);
 document.addEventListener('keydown',function(e){
   if(e.key==='Escape')lb.classList.remove('open');
-  if(lb.classList.contains('open')){if(e.key==='ArrowRight')(mode==='tiles'?showTile(cur+1):showBoard(idx+1));if(e.key==='ArrowLeft')(mode==='tiles'?showTile(cur-1):showBoard(idx-1));return;}
-  var r=stage.getBoundingClientRect();if(r.top>innerHeight||r.bottom<0)return;
-  if(e.key==='ArrowRight')go(1);if(e.key==='ArrowLeft')go(-1);
+  if(lb.classList.contains('open')){if(e.key==='ArrowRight')lbShow(LB.list,LB.i+1,LB.cap);if(e.key==='ArrowLeft')lbShow(LB.list,LB.i-1,LB.cap);return;}
+  // arrows turn whichever book is on screen
+  var hit=books.find(function(bk){var r=bk.stage.getBoundingClientRect();return r.top<innerHeight*.7&&r.bottom>innerHeight*.3;});
+  if(!hit)return;if(e.key==='ArrowRight')hit.go(1);if(e.key==='ArrowLeft')hit.go(-1);
 });
-updateUI();
 </script>
 <script data-goatcounter="https://muskaan-hussain.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
 </body>

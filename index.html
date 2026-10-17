@@ -43,7 +43,7 @@ body{background:
   #0d0c0b;}
 
 /* ---------- JOURNEY ---------- */
-.jtrack{height:760vh;position:relative;}
+.jtrack{height:680vh;position:relative;}
 .jstage{position:sticky;top:0;height:100vh;overflow:hidden;
 background:
   repeating-linear-gradient(0deg, rgba(255,255,255,.016) 0 1px, transparent 1px 4px),
@@ -349,6 +349,59 @@ background-image:repeating-linear-gradient(0deg,rgba(255,250,240,.022) 0 1px,tra
 .post iframe{width:100%;height:640px;border:1px solid rgba(216,172,98,.3);background:#fff;display:block;box-shadow:0 30px 60px rgba(0,0,0,.5);}
 @media(max-width:700px){.xrow{grid-template-columns:1fr;gap:.3rem}.xp-foot{grid-template-columns:1fr}.xp,.tools{padding:5rem 1.4rem 4rem}.post iframe{height:560px}}
 
+/* chapter frame video */
+.vidart{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center 46%;}
+/* trajectory graph */
+.traj{position:relative;max-width:1100px;margin:0 auto;aspect-ratio:1000/420;text-align:left;}
+.traj svg{position:absolute;inset:0;width:100%;height:100%;overflow:visible;}
+.traj .tline{stroke-dasharray:1400;stroke-dashoffset:1400;transition:stroke-dashoffset 3.2s cubic-bezier(.22,.9,.3,1) .2s;}
+.traj .tfill{opacity:0;transition:opacity 1.6s 1.8s;}
+.traj.in .tline{stroke-dashoffset:0;}
+.traj.in .tfill{opacity:1;}
+.tp{position:absolute;transform:translate(-50%,-50%);opacity:0;transition:opacity .6s;}
+.traj.in .tp{opacity:1;}
+.traj.in .tp:nth-child(2){transition-delay:.5s}.traj.in .tp:nth-child(3){transition-delay:1s}.traj.in .tp:nth-child(4){transition-delay:1.5s}
+.traj.in .tp:nth-child(5){transition-delay:2s}.traj.in .tp:nth-child(6){transition-delay:2.5s}.traj.in .tp:nth-child(7){transition-delay:3s}
+.tp i{display:block;width:12px;height:12px;border-radius:50%;background:var(--glow);box-shadow:0 0 0 6px rgba(232,181,106,.18),0 0 24px rgba(232,181,106,.6);cursor:pointer;transition:transform .3s;}
+.tp:hover i{transform:scale(1.4);}
+.tp b{position:absolute;left:50%;top:16px;transform:translateX(-50%);font-family:'Cormorant Garamond',serif;font-style:italic;font-weight:400;font-size:1rem;color:var(--glow);white-space:nowrap;}
+.tp span{position:absolute;left:50%;bottom:22px;transform:translateX(-50%) translateY(6px);width:max-content;max-width:230px;font-size:.72rem;line-height:1.5;color:#f5f1e8;background:rgba(15,13,11,.92);border:1px solid rgba(232,181,106,.35);padding:.55rem .8rem;opacity:0;pointer-events:none;transition:.3s;text-align:center;}
+.tp:hover span{opacity:1;transform:translateX(-50%) translateY(0);}
+.tp:nth-child(7) span,.tp:nth-child(6) span{left:auto;right:-10px;transform:translateY(6px);}
+.tp:nth-child(7):hover span,.tp:nth-child(6):hover span{transform:none;}
+.tp:nth-child(2) span{left:-10px;transform:translateY(6px);}
+.tp:nth-child(2):hover span{transform:none;}
+.counters{display:grid;grid-template-columns:repeat(4,1fr);gap:1rem;max-width:1000px;margin:3rem auto 3.5rem;}
+.counters b{display:block;font-family:'Cormorant Garamond',serif;font-weight:300;font-size:clamp(2.6rem,5vw,4.2rem);color:var(--glow);line-height:1;}
+.counters span{font-size:.62rem;letter-spacing:.3em;text-transform:uppercase;color:var(--grey);}
+.xrow{grid-template-columns:110px 1fr;padding:1.15rem 0;}
+.xt{font-size:1.3rem;}
+.xd{font-size:.84rem;}
+/* tools: warm amber cards and the live demo */
+.tools{background:linear-gradient(180deg,transparent,rgba(201,151,76,.07) 40%,rgba(201,151,76,.07) 70%,transparent);}
+.tshow{display:grid;grid-template-columns:300px 1fr;gap:3rem;align-items:center;max-width:1000px;margin:0 auto 3.5rem;text-align:left;}
+.phone{border-radius:28px;border:1px solid rgba(232,181,106,.45);padding:8px;background:#0a0908;box-shadow:0 40px 90px rgba(0,0,0,.6),0 0 60px rgba(232,181,106,.08);}
+.phone video{display:block;width:100%;aspect-ratio:9/16;object-fit:cover;border-radius:20px;background:#000;}
+.tside h3{font-family:'Cormorant Garamond',serif;font-weight:300;font-size:clamp(1.7rem,3vw,2.5rem);line-height:1.1;margin:.3rem 0 1rem;color:#f5f1e8;}
+.tside p{font-size:.92rem;line-height:1.75;color:#cfc7b7;margin-bottom:1.6rem;}
+.bars{display:grid;gap:1.1rem;}
+.bl{display:block;font-size:.6rem;letter-spacing:.3em;text-transform:uppercase;color:var(--grey);margin-bottom:.45rem;}
+.bt{display:grid;gap:5px;}
+.bf{height:22px;width:0;transition:width 1.6s cubic-bezier(.22,.9,.3,1) .3s;position:relative;min-width:2px;}
+.bf.before{background:rgba(232,181,106,.22);}
+.bf.after{background:var(--glow);transition-delay:.9s;}
+.bf em{position:absolute;left:calc(100% + 10px);top:50%;transform:translateY(-50%);font-style:normal;font-size:.62rem;letter-spacing:.2em;text-transform:uppercase;color:#f5f1e8;white-space:nowrap;opacity:0;transition:opacity .6s 1.6s;}
+.rv.in .bf{width:var(--w);}
+.rv.in .bf em{opacity:1;}
+.tcardx{background:linear-gradient(160deg,rgba(201,151,76,.26),rgba(201,151,76,.12));border-color:rgba(232,181,106,.42);}
+.tcardx:hover{background:linear-gradient(160deg,rgba(201,151,76,.36),rgba(201,151,76,.18));}
+.tcardx .t{color:#fbf3e4;}
+.tcardx .d{color:#e2d8c6;}
+.tcardx.more{background:var(--glow);border-color:var(--glow);}
+.tcardx.more .tag,.tcardx.more .d{color:#3a2a14;}
+.tcardx.more .t a{color:#1a1208;}
+@media(max-width:800px){.counters{grid-template-columns:repeat(2,1fr)}.tshow{grid-template-columns:1fr}.phone{max-width:280px;margin:0 auto}.tp span{display:none}.traj{aspect-ratio:1000/520}}
+
 .nyu-sky{display:none;position:absolute;top:4%;left:50%;transform:translateX(-50%) rotate(-2deg);z-index:5;font-family:'Cormorant Garamond',Georgia,serif;font-style:italic;font-weight:600;font-size:clamp(3rem,7vw,6.5rem);letter-spacing:.12em;color:rgba(248,246,240,.92);text-shadow:0 0 26px rgba(232,181,106,.45);pointer-events:none;}
 </style>
 </head>
@@ -387,32 +440,14 @@ background-image:repeating-linear-gradient(0deg,rgba(255,250,240,.022) 0 1px,tra
   <!-- moving paintings — gold etchings that draw themselves -->
   <div class="jstrip" id="jstrip">
 
-    <div class="jscene" data-i="6" onclick="location.href='bim.html'" style="cursor:pointer" title="Step inside BIM">
-      <div class="art"><img class="sketchart2" src="thumbs/s6-ai.jpg" alt=""></div>
-      <div class="slabel">VII — AI in Construction</div>
+    <div class="jscene" data-i="5" onclick="location.href='#tools'" style="cursor:pointer" title="See the tools">
+      <div class="art"><video class="sketchart2 vidart" src="media/revit-claude.mp4" poster="media/revit-poster.jpg" muted loop playsinline autoplay preload="metadata"></video></div>
+      <div class="slabel">VI — AI in Construction</div>
     </div>
 
-    <div class="jscene" data-i="5" onclick="location.href='bim.html'" style="cursor:pointer" title="Step inside BIM">
-      <div class="art"><img class="sketchart2" src="thumbs/s5-bim.jpg" alt=""><svg class="vdcpath" viewBox="0 0 1000 620" preserveAspectRatio="xMidYMid slice" style="position:absolute;inset:0;width:100%;height:100%;pointer-events:none;z-index:4;">
-  <path id="walkpath6" d="M80,520 C260,560 340,430 480,470 C640,515 760,430 920,360" fill="none" stroke="rgba(232,181,106,.5)" stroke-width="2.2" stroke-linecap="round" stroke-dasharray="1 14"/>
-  <g class="selfiewalker">
-    <animateMotion dur="15s" repeatCount="indefinite" calcMode="linear">
-      <mpath href="#walkpath6"/>
-    </animateMotion>
-    <circle cx="0" cy="-30" r="5" fill="rgba(244,242,238,.92)"/>
-    <path d="M-5,-25 C-5,-27 5,-27 5,-25 L6,-2 L2,-2 L0,-14 L-2,-2 L-6,-2 Z" fill="rgba(244,242,238,.92)"/>
-    <line x1="3" y1="-24" x2="18" y2="-40" stroke="rgba(244,242,238,.92)" stroke-width="1.6"/>
-    <line x1="18" y1="-40" x2="34" y2="-58" stroke="rgba(244,242,238,.75)" stroke-width="1.3"/>
-    <circle cx="35" cy="-60" r="4.2" fill="none" stroke="rgba(232,181,106,.95)" stroke-width="1.6"/>
-    <circle cx="35" cy="-60" r="1.4" fill="rgba(232,181,106,.95)"/>
-  </g>
-</svg></div>
-      <div class="slabel">VI — Engineta LLC</div>
-    </div>
-
-    <div class="jscene" data-i="4">
-      <div class="art"><span class="nyu-sky">NYU</span><img class="sketchart2" src="thumbs/s4-newyork.jpg" alt=""></div>
-      <div class="slabel">V — Coming to America</div>
+    <div class="jscene" data-i="4" onclick="location.href='bim.html'" style="cursor:pointer" title="Step inside BIM / VDC">
+      <div class="art"><img class="sketchart2" src="thumbs/s4-vdc.jpg" alt="Presenting cast-stone facades at Stonehill Taylor, New York"></div>
+      <div class="slabel">V — BIM / VDC</div>
     </div>
 
     <div class="jscene" data-i="3" onclick="location.href='interior.html'" style="cursor:pointer" title="Step inside the Interiors">
@@ -431,8 +466,7 @@ background-image:repeating-linear-gradient(0deg,rgba(255,250,240,.022) 0 1px,tra
     </div>
 
     <div class="jscene" data-i="0">
-      <div class="art fullart" onclick="location.href='art.html'" style="cursor:pointer" title="Enter the first studio"><img class="sketchart" src="thumbs/s0-studio.jpg" alt="Line drawing — my father and I at his easel"></div>
-      
+      <div class="art fullart" onclick="location.href='art.html'" style="cursor:pointer" title="Enter the first studio"><img class="sketchart" src="thumbs/s0-studio.jpg" alt="My father at his easel, and my red horse"></div>
       <div class="slabel">I — The First Studio</div>
     </div>
 
@@ -467,23 +501,17 @@ background-image:repeating-linear-gradient(0deg,rgba(255,250,240,.022) 0 1px,tra
       <a class="enter-int" href="interior.html" data-hover>Step inside the Interiors &rarr;</a>
     </div>
     <div class="jt" data-i="4">
-      <div class="k">V — Coming to America</div>
-      <h3>Drawing sets, cast stone, then NYU</h3>
-      <p>Permit and construction sets for 10+ homes in Massachusetts and New York. Then 35+ cast-stone facade packages at Haddonstone, and a Revit documentation system the company adopted as its standard. Then NYU Tandon: MS Construction Management, GPA 3.9, with a Stern concentration in real estate — learning how buildings actually get built.</p>
-      <div class="chips"><span class="chip">Signature Solutions</span><span class="chip">Haddonstone</span><span class="chip">NYU Tandon</span></div>
+      <div class="k">V — BIM / VDC</div>
+      <h3>Where the model meets the site</h3>
+      <p>Cast-stone facades at Haddonstone, 35 packages and a Revit standard the company kept. Then New York: NYU Tandon for the MS, and Engineta on JFK Terminals 1 &amp; 6 and Barclays Center, coordinating trades in Revit against what was actually built.</p>
+      <a class="enter-int" href="bim.html" data-hover>Step inside BIM / VDC &rarr;</a>
+      <div class="chips"><span class="chip">Revit</span><span class="chip">Navisworks</span><span class="chip">Track3D</span><span class="chip">ACC</span><span class="chip">Procore</span></div>
     </div>
     <div class="jt" data-i="5">
-      <div class="k">VI — Engineta LLC</div>
-      <h3>VDC on the biggest sites in New York</h3>
-      <p>JFK Terminals 1 and 6, Barclays Center, Apollo Theater, Bank of New York. Weekly coordination with foremen and GC teams from Turner, AECOM Hunt and Tishman; 40+ scans a week into progress tracking; clashes resolved in Revit against as-built conditions; and a reporting macro that cut labor-variance prep by 70%. Click the frame: the work lives inside.</p>
-      <a class="enter-int" href="bim.html" data-hover>Step inside BIM &rarr;</a>
-      <div class="chips"><span class="chip">Revit</span><span class="chip">Navisworks</span><span class="chip">Track3D</span><span class="chip">ACC</span><span class="chip">Bluebeam</span></div>
-    </div>
-    <div class="jt" data-i="6">
-      <div class="k">VII — Where I am now</div>
+      <div class="k">VI — Where I am now</div>
       <h3>Teaching the tools to see</h3>
-      <p>Technology in construction is what I care about most. I build the automations that take the repetition out of CM and BIM work — tool palettes, VBA and Python, Dynamo, Revit API — and I connect Revit, scheduling and estimating software to AI with the output kept transparent, so a person can check it and project data stays private. One prompt pulled a full critical path out of a Revit model: 24 activities, 182 workdays.</p>
-      <a class="enter-int" href="#tools" data-hover>See the tools I've built &rarr;</a>
+      <p>One prompt, and a full critical path comes out of a Revit model, with every assumption visible. I build the automations that take the repetition out of construction work, and keep the output transparent and the project data private.</p>
+      <a class="enter-int" href="#tools" data-hover>Watch it work &rarr;</a>
     </div>
   </div>
 
@@ -595,11 +623,11 @@ background-image:repeating-linear-gradient(0deg,rgba(255,250,240,.022) 0 1px,tra
     <p class="p-sub">From the jobsites I coordinate now back to the rooms I designed and managed myself.</p>
   </div>
   <div class="pgrid2 rv">
-    <a class="pc" href="bim.html" data-hover><div class="pc-img"><img src="thumbs/s6-ai.jpg" alt="" loading="lazy"></div><div class="pc-body"><span class="tag">Aviation · Engineta · 2026</span><span class="t">JFK Terminals 1 &amp; 6</span><span class="d">Trade coordination in Revit against as-built conditions, daily 360° capture and laser scans, installed quantities validated in Track3D.</span></div></a>
-    <a class="pc" href="bim.html" data-hover><div class="pc-img"><img src="thumbs/s5-bim.jpg" alt="" loading="lazy"></div><div class="pc-body"><span class="tag">Venues · Engineta · 2026</span><span class="t">Barclays Center, Apollo Theater, Bank of New York</span><span class="d">Weekly coordination with foremen and GC teams, progress reports for project leadership.</span></div></a>
-    <a class="pc" href="bim.html" data-hover><div class="pc-img"><img src="img/stonehill-taylor.webp" alt="At Stonehill Taylor" loading="lazy" style="object-position:center 30%"></div><div class="pc-body"><span class="tag">Facades · Haddonstone · 2024–25</span><span class="t">Cast-stone facade system</span><span class="d">35+ facade, site and landscape packages across US, UK and India teams; a documentation standard adopted company-wide; presented to NYC firms including Stonehill Taylor.</span></div></a>
-    <a class="pc" href="bim.html#design" data-hover><div class="pc-img"><img src="work/trio-aerial.jpg" alt="The Celestial Trio" loading="lazy"></div><div class="pc-body"><span class="tag">Competition · with Heba Mirza</span><span class="t">The Celestial Trio</span><span class="d">Ethos International Design Competition. Three twisted towers wrapped in vertical gardens, crowned by a solar rooftop sanctuary.</span></div></a>
-    <a class="pc" href="interior.html#built" data-hover><div class="pc-img"><img src="thumbs/s3-interiors.jpg" alt="Dr. Mohan's residence" loading="lazy"></div><div class="pc-body"><span class="tag">Residence · Archpainted</span><span class="t">Dr. Mohan's Residence</span><span class="d">Full interior: concept, material palette, millwork and bathroom detailing, renders and working drawings through installation.</span></div></a>
+    <a class="pc noimg" href="bim.html" data-hover><div class="pc-body"><span class="tag">Aviation · Engineta · 2026</span><span class="t">JFK Terminals 1 &amp; 6</span><span class="d">Trade coordination in Revit against as-built conditions, daily 360° capture and laser scans, installed quantities validated in Track3D.</span></div></a>
+    <a class="pc noimg" href="bim.html" data-hover><div class="pc-body"><span class="tag">Venues · Engineta · 2026</span><span class="t">Barclays Center, Apollo Theater, Bank of New York</span><span class="d">Weekly coordination with foremen and GC teams, progress reports for project leadership.</span></div></a>
+    <a class="pc" href="bim.html" data-hover><div class="pc-img"><img src="img/stonehill-taylor.webp" alt="At Stonehill Taylor" loading="lazy" style="object-position:center 12%;transform:scale(1.35);transform-origin:50% 20%"></div><div class="pc-body"><span class="tag">Facades · Haddonstone · 2024–25</span><span class="t">Cast-stone facade system</span><span class="d">35+ facade, site and landscape packages across US, UK and India teams; a documentation standard adopted company-wide; presented to NYC firms including Stonehill Taylor.</span></div></a>
+    <a class="pc" href="bim.html#design" data-hover><div class="pc-img"><img src="work/trio-vis.jpg" alt="The Celestial Trio" loading="lazy"></div><div class="pc-body"><span class="tag">Competition · with Heba Mirza</span><span class="t">The Celestial Trio</span><span class="d">Ethos International Design Competition. Three twisted towers wrapped in vertical gardens, crowned by a solar rooftop sanctuary.</span></div></a>
+    <a class="pc" href="interior.html#built" data-hover><div class="pc-img"><img src="work/mohan-08.jpg" alt="Dr. Mohan's residence, living room" loading="lazy"></div><div class="pc-body"><span class="tag">Residence · Archpainted</span><span class="t">Dr. Mohan's Residence</span><span class="d">Full interior: concept, material palette, millwork and bathroom detailing, renders and working drawings through installation.</span></div></a>
     <a class="pc" href="interior.html#built" data-hover><div class="pc-img"><img src="work/pink-01.jpg" alt="Pink Cafe" loading="lazy"></div><div class="pc-body"><span class="tag">Café · Archpainted</span><span class="t">Pink Cafe</span><span class="d">A café fit-out from palette to built space, documented from first sketch to opening day.</span></div></a>
     <a class="pc" href="work/usa-07.jpg" target="_blank" data-hover><div class="pc-img"><img src="work/usa-07.jpg" alt="Gambrel garage and loft" loading="lazy"></div><div class="pc-body"><span class="tag">Residential · Signature Solutions · 2023–24</span><span class="t">New England homes</span><span class="d">Permit-ready and construction sets for 10+ residential, commercial and government projects; schedules and budgets owned from bidding to closeout.</span></div></a>
     <div class="pc noimg"><div class="pc-body"><span class="tag">Laboratory · Archpainted</span><span class="t">Nestlé laboratory &amp; data center</span><span class="d">Laboratory and server-room space planning and fit-out for LAB SOLUTIONS, from concept through construction completion.</span></div></div>
@@ -609,20 +637,40 @@ background-image:repeating-linear-gradient(0deg,rgba(255,250,240,.022) 0 1px,tra
 <!-- ================= EXPERIENCE ================= -->
 <section class="xp" id="experience">
   <div class="p-head rv">
-    <div class="k">Experience</div>
-    <h2>Where I've <em>worked.</em></h2>
+    <div class="k">The climb</div>
+    <h2>Four years, <em>six rooms.</em></h2>
+    <p class="p-sub">From a Mumbai site office to the JFK terminals. Hover a point.</p>
+  </div>
+  <div class="traj rv" id="traj">
+    <svg viewBox="0 0 1000 420" preserveAspectRatio="none" aria-hidden="true">
+      <defs><linearGradient id="tg" x1="0" x2="0" y1="0" y2="1"><stop offset="0" stop-color="rgba(232,181,106,.35)"/><stop offset="1" stop-color="rgba(232,181,106,0)"/></linearGradient></defs>
+      <path class="tfill" d="M40,360 C140,350 180,320 250,300 S380,250 440,230 S560,190 620,160 S760,110 820,80 S920,45 960,40 L960,400 L40,400 Z" fill="url(#tg)"/>
+      <path class="tline" d="M40,360 C140,350 180,320 250,300 S380,250 440,230 S560,190 620,160 S760,110 820,80 S920,45 960,40" fill="none" stroke="#e8b56a" stroke-width="2.5" stroke-linecap="round"/>
+    </svg>
+    <div class="tp" style="left:4%;top:85.7%"><i></i><b>2022</b><span>Assistant PM, Maple Renaissance<br>Microsoft facilities · Mumbai</span></div>
+    <div class="tp" style="left:25%;top:71%"><i></i><b>2022–25</b><span>Archpainted, my own practice<br>40+ designed · 10+ built</span></div>
+    <div class="tp" style="left:44%;top:54.5%"><i></i><b>2023</b><span>Junior Architect, Signature Solutions<br>10+ permit sets · MA &amp; NY</span></div>
+    <div class="tp" style="left:62%;top:38%"><i></i><b>2024</b><span>BIM Engineer, Haddonstone<br>35+ facade packages · company standard</span></div>
+    <div class="tp" style="left:82%;top:19%"><i></i><b>2025</b><span>NYU Tandon, MS CM · GPA 3.9<br>Project Assistant, Campus Planning</span></div>
+    <div class="tp" style="left:96%;top:9.5%"><i></i><b>2026</b><span>VDC, Engineta<br>JFK T1 &amp; T6 · Barclays Center</span></div>
+  </div>
+  <div class="counters rv">
+    <div><b data-count="4">0</b><span>years in the field</span></div>
+    <div><b data-count="40">0</b><span>projects designed</span></div>
+    <div><b data-count="35">0</b><span>facade packages modeled</span></div>
+    <div><b data-count="70" data-suffix="%">0</b><span>less time on reports</span></div>
   </div>
   <div class="xp-list rv">
-    <div class="xrow"><div class="xwhen">May – Aug 2026<br>New York</div><div><div class="xt">VDC Intern — Engineta, LLC (Curtis Partition)</div><div class="xd">JFK Terminals 1 &amp; 6, Barclays Center, Apollo Theater, Bank of New York, QIAA. Coordination meetings with Turner, AECOM Hunt, Tishman, Holt and Shawmut teams; quantity validation in Track3D; 40+ scans a week; reporting automation that cut prep by 70%.</div></div></div>
-    <div class="xrow"><div class="xwhen">Jan – May 2026<br>Brooklyn</div><div><div class="xt">Project Assistant — NYU Tandon, Campus Planning &amp; Technical Services</div><div class="xd">Plans, sections and documentation in Revit, AutoCAD and SketchUp for research-lab, data-center and campus renovations; space planning in Bluebeam.</div></div></div>
-    <div class="xrow"><div class="xwhen">Jun 2024 – Aug 2025<br>Colorado</div><div><div class="xt">BIM Engineer — Haddonstone</div><div class="xd">35+ cast-stone facade packages in Revit; custom Revit/AutoCAD documentation system adopted company-wide; quantity takeoffs and AI-assisted quotations.</div></div></div>
-    <div class="xrow"><div class="xwhen">Jul 2023 – May 2024<br>Massachusetts</div><div><div class="xt">Junior Architect — Signature Solutions</div><div class="xd">Permit and construction sets for 10+ projects in NY and MA; schedules and budgets from bidding through closeout; RFIs and submittals.</div></div></div>
-    <div class="xrow"><div class="xwhen">Jun 2022 – Jun 2025<br>India · remote</div><div><div class="xt">Architect, Construction Manager &amp; Project Manager — Archpainted</div><div class="xd">40+ projects designed ($1M–$10M), 10+ delivered through construction: Nestlé laboratory, Indian Army building (Delhi), a tunnel development (Saudi Arabia), homes and cafés. Documentation in Hebrew, Arabic and Portuguese.</div></div></div>
-    <div class="xrow"><div class="xwhen">Jan 2022 – Jun 2023<br>Mumbai</div><div><div class="xt">Assistant Project Manager — Maple Renaissance</div><div class="xd">Microsoft facilities and the Katara Building: logistics, scheduling, procurement, invoice and pay-app review for two concurrent commercial projects.</div></div></div>
+    <div class="xrow"><div class="xwhen">2026</div><div><div class="xt">VDC Intern — Engineta, LLC</div><div class="xd">JFK Terminals 1 &amp; 6, Barclays Center, Apollo Theater, Bank of New York. Coordination with Turner, AECOM Hunt, Tishman, Holt and Shawmut.</div></div></div>
+    <div class="xrow"><div class="xwhen">2026</div><div><div class="xt">Project Assistant — NYU Tandon Campus Planning</div><div class="xd">Lab, data-center and campus renovations across MetroTech.</div></div></div>
+    <div class="xrow"><div class="xwhen">2024–25</div><div><div class="xt">BIM Engineer — Haddonstone</div><div class="xd">Cast-stone facades for US, UK and India teams; the documentation standard the company kept.</div></div></div>
+    <div class="xrow"><div class="xwhen">2023–24</div><div><div class="xt">Junior Architect — Signature Solutions</div><div class="xd">Permit and construction sets, schedules and budgets from bid to closeout.</div></div></div>
+    <div class="xrow"><div class="xwhen">2022–25</div><div><div class="xt">Architect &amp; Construction Manager — Archpainted</div><div class="xd">Nestlé laboratory, an army building in Delhi, a tunnel development in Saudi Arabia, homes and cafés.</div></div></div>
+    <div class="xrow"><div class="xwhen">2022–23</div><div><div class="xt">Assistant Project Manager — Maple Renaissance</div><div class="xd">Microsoft facilities and the Katara Building, Mumbai.</div></div></div>
   </div>
   <div class="xp-foot rv">
-    <div><span class="k">Education</span>MS Construction Management, NYU Tandon, GPA 3.9 (2025–27) · B.Arch, JNAFAU Hyderabad, GPA 3.8</div>
-    <div><span class="k">Certified</span>OSHA 30 · Procore Certified · Registered Architect (CoA, India) · IGBC Green Associate</div>
+    <div><span class="k">Education</span>MS Construction Management, NYU Tandon · B.Arch, JNAFAU Hyderabad</div>
+    <div><span class="k">Certified</span>OSHA 30 · Procore · Registered Architect (CoA, India) · IGBC Green Associate</div>
     <div><span class="k">Languages</span>English · Spanish · Hindi · Urdu · Gujarati</div>
   </div>
 </section>
@@ -632,23 +680,27 @@ background-image:repeating-linear-gradient(0deg,rgba(255,250,240,.022) 0 1px,tra
   <div class="p-head rv">
     <div class="k">Tools I've built</div>
     <h2>Software that <em>saves the hours.</em></h2>
-    <p class="p-sub">Companies run powerful software without using the automation already inside it. Small technical changes, repeated across teams and months, add up. I use AI to learn and test; the finished tool runs on its own, and project data stays private.</p>
+    <p class="p-sub">Most teams run powerful software and never touch the automation inside it. I build the small tools that do, and keep project data where it belongs.</p>
+  </div>
+  <div class="tshow rv">
+    <div class="phone"><video src="media/revit-claude.mp4" poster="media/revit-poster.jpg" controls playsinline preload="metadata"></video></div>
+    <div class="tside">
+      <div class="k">Revit + Claude · one prompt</div>
+      <h3>A full critical path,<br>straight out of the model.</h3>
+      <p>24 activities. 12 critical. 182 workdays. Every predecessor, lag and duration documented, so you can walk through its thinking and push back on it. Connected through MCP; nothing leaves the project that shouldn't.</p>
+      <div class="bars">
+        <div class="bar"><span class="bl">Labor-variance report prep</span><div class="bt"><div class="bf before" style="--w:100%"><em>before</em></div><div class="bf after" style="--w:30%"><em>now · −70%</em></div></div></div>
+        <div class="bar"><span class="bl">Facade drawing changes</span><div class="bt"><div class="bf before" style="--w:100%"><em>days</em></div><div class="bf after" style="--w:4%"><em>minutes</em></div></div></div>
+      </div>
+    </div>
   </div>
   <div class="tgrid rv">
-    <div class="tcardx"><span class="tag">Haddonstone</span><span class="t">Dynamic tool palette</span><span class="d">Repetitive facade drafting turned into an automated workflow — drawing changes in minutes instead of days. Adopted as the production standard.</span></div>
-    <div class="tcardx"><span class="tag">Engineta</span><span class="t">VBA reporting &amp; dashboards</span><span class="d">Excel commands for forms, daily reports, hour logging and project dashboards; payroll and man-day data merged into labor-variance reports.</span></div>
-    <div class="tcardx"><span class="tag">Engineta</span><span class="t">Laser-scan workflow</span><span class="d">Researched and presented a CloudCompare workflow so scan and color data get used, instead of hours lost to cleanup.</span></div>
-    <div class="tcardx"><span class="tag">Ongoing</span><span class="t">Revit + AI, via MCP</span><span class="d">Revit, scheduling and estimating software connected to AI, with the reasoning kept visible so a person reviews, corrects and approves it.</span></div>
-    <div class="tcardx"><span class="tag">NYU research</span><span class="t">Unity 3D, C#, AR/VR, robotics</span><span class="d">Independent study on how emerging technology lands on site and in project delivery.</span></div>
-    <div class="tcardx"><span class="tag">Read more</span><span class="t"><a href="bim.html" data-hover>My full statement &rarr;</a></span><span class="d">Why I build this, and where I want to take it.</span></div>
-  </div>
-  <div class="p-head rv" style="margin-top:4rem">
-    <div class="k">In motion</div>
-    <h2>Two recent <em>posts.</em></h2>
-  </div>
-  <div class="posts rv">
-    <div class="post"><div class="post-k">Revit + Claude — a transparent schedule</div><iframe src="https://www.linkedin.com/embed/feed/update/urn:li:ugcPost:7509383648115347456" title="LinkedIn post: Transparent Schedules with Revit and Claude" loading="lazy" allowfullscreen></iframe></div>
-    <div class="post"><div class="post-k">The artist first — “I painted after a year.”</div><iframe src="https://www.linkedin.com/embed/feed/update/urn:li:ugcPost:7505698621380562944" title="LinkedIn post: I painted after a year" loading="lazy" allowfullscreen></iframe></div>
+    <div class="tcardx"><span class="tag">Haddonstone</span><span class="t">Dynamic tool palette</span><span class="d">Repetitive facade drafting turned into an automated Revit workflow. Adopted as the production standard.</span></div>
+    <div class="tcardx"><span class="tag">Engineta</span><span class="t">VBA reporting &amp; dashboards</span><span class="d">Forms, daily reports, hour logging and dashboards; payroll and man-day data merged into variance reports.</span></div>
+    <div class="tcardx"><span class="tag">Engineta</span><span class="t">Laser-scan workflow</span><span class="d">A CloudCompare pipeline so scan and color data get used, not lost to cleanup.</span></div>
+    <div class="tcardx"><span class="tag">Ongoing</span><span class="t">Revit + AI, via MCP</span><span class="d">Revit, scheduling and estimating software connected to AI, reasoning kept visible for review.</span></div>
+    <div class="tcardx"><span class="tag">NYU research</span><span class="t">Unity 3D, C#, AR/VR, robotics</span><span class="d">How emerging technology lands on site and in project delivery.</span></div>
+    <div class="tcardx more"><span class="tag">Read more</span><span class="t"><a href="bim.html" data-hover>My full statement &rarr;</a></span><span class="d">Why I build this, and where I want to take it.</span></div>
   </div>
 </section>
 
@@ -700,7 +752,7 @@ const tcard=document.getElementById('tcard');
 const shint=document.getElementById('shint');
 const jcount=document.getElementById('jcount');
 const figs={f0:document.querySelector('.fg0'),f1:document.querySelector('.fg1'),f2:document.querySelector('.fg2'),f3:document.querySelector('.fg3'),f4:document.querySelector('.fg4')};
-const ROMAN=['I','II','III','IV','V','VI','VII'];
+const ROMAN=['I','II','III','IV','V','VI'];
 let prog=0,lookx=0;
 
 function render(){
@@ -744,7 +796,7 @@ function applyWalk(){
   });
   const idx=on?+best.dataset.i:-1;
   texts.forEach(t=>t.classList.toggle('on',+t.dataset.i===idx));
-  jcount.textContent=idx>=0?`${ROMAN[idx]} / VII`:'';
+  jcount.textContent=idx>=0?`${ROMAN[idx]} / VI`:'';
   // companions walk in and out: father leaves → teacher enters → teacher leaves → alone
   const setF=(el,st)=>{el.classList.remove('in','out-left','wait-right');el.classList.add(st);};
   const order=['f0','f1','f2','f3','f4'];
@@ -752,8 +804,8 @@ function applyWalk(){
   if(!started||idx<=0)active=0;
   else if(idx===1||idx===2)active=1;   // teacher years, then teaching myself
   else if(idx===3)active=2;            // alone, self-taught
-  else if(idx===4)active=3;            // NYU — mentors join
-  else active=4;                       // VDC & AI — even more people
+  else if(idx===4)active=3;            // BIM/VDC — the site crews join
+  else active=4;                       // AI — even more people
   order.forEach((k,n)=>{
     if(n===active)setF(figs[k],'in');
     else if(n<active)setF(figs[k],'out-left');
@@ -777,6 +829,14 @@ document.querySelectorAll('.rv').forEach(el=>rvIO.observe(el));
 // fallback: reveal anything already on screen even if the observer is asleep
 function rvCheck(){document.querySelectorAll('.rv:not(.in)').forEach(el=>{const r=el.getBoundingClientRect();if(r.top<innerHeight*.92&&r.bottom>0)el.classList.add('in');});}
 addEventListener('scroll',rvCheck,{passive:true});addEventListener('load',rvCheck);setInterval(rvCheck,800);
+// counters tick up once their row is on screen
+const cIO=new IntersectionObserver(es=>es.forEach(e=>{if(!e.isIntersecting)return;cIO.unobserve(e.target);
+  const el=e.target,end=+el.dataset.count,suf=el.dataset.suffix||'',t0=performance.now();
+  (function tick(t){const p=Math.min(1,(t-t0)/1600),v=Math.round(end*(1-Math.pow(1-p,3)));el.textContent=v+(p<1?'':'+'.repeat(suf?0:1))+suf;if(p<1)requestAnimationFrame(tick);})(t0);
+}),{threshold:.6});
+document.querySelectorAll('[data-count]').forEach(el=>cIO.observe(el));
+// chapter video only plays while its frame is lit
+setInterval(()=>{document.querySelectorAll('.vidart').forEach(v=>{const lit=v.closest('.jscene').classList.contains('lit');if(lit&&v.paused)v.play().catch(()=>{});if(!lit&&!v.paused)v.pause();});},400);
 
 
 </script>

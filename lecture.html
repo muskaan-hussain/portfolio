@@ -126,6 +126,8 @@ background-image:repeating-linear-gradient(0deg,rgba(255,250,240,.022) 0 1px,tra
 d.addEventListener('mousemove',function(e){r.style.setProperty('--mx',e.clientX+'px');r.style.setProperty('--my',e.clientY+'px');if(c){c.style.left=e.clientX+'px';c.style.top=e.clientY+'px';}});})();
 const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('show');io.unobserve(e.target);}}),{threshold:.12});
 document.querySelectorAll('.ph,.tc').forEach(el=>io.observe(el));
+function revCheck(){document.querySelectorAll('.ph,.tc').forEach(el=>{if(el.classList.contains('show'))return;const r=el.getBoundingClientRect();if(r.top<innerHeight*.95&&r.bottom>0)el.classList.add('show');});}
+addEventListener('scroll',revCheck,{passive:true});setInterval(revCheck,800);
 </script>
 <script>document.addEventListener('mouseover',function(e){var c=document.getElementById('cur');if(!c)return;var t=e.target.closest('a,button,[onclick],.card,.pc,.proj,.ftile,.feature,.tab');c.classList.toggle('hot',!!t);});</script>
 <script data-goatcounter="https://muskaan-hussain.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
