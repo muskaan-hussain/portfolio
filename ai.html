@@ -52,6 +52,31 @@ section{padding:70px 0}
 .bf.after{background:var(--gold);transition-delay:.9s}
 .bf em{position:absolute;left:calc(100% + 10px);top:50%;transform:translateY(-50%);font-style:normal;font-size:.62rem;letter-spacing:.2em;text-transform:uppercase;color:#f5f1e8;white-space:nowrap;opacity:0;transition:opacity .6s 1.6s}
 .in .bf{width:var(--w)}.in .bf em{opacity:1}
+/* by the numbers */
+.nums{margin-top:2rem}
+.nrow{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:12px}
+.ncard{padding:1.4rem 1.4rem 1.2rem;border:1px solid var(--line);background:#161310}
+.ncard b{display:block;font-family:'Cormorant Garamond',serif;font-weight:300;font-size:clamp(2.4rem,4.6vw,3.6rem);color:var(--gold);line-height:1}
+.ncard span{display:block;font-size:.6rem;letter-spacing:.26em;text-transform:uppercase;color:var(--grey);margin-top:.5rem;line-height:1.6}
+.nline{height:2px;background:rgba(232,181,106,.15);margin-top:1rem;position:relative}
+.nline i{position:absolute;left:0;top:0;height:100%;width:0;background:var(--gold);transition:width 1.8s cubic-bezier(.22,.9,.3,1) .4s}
+.in .nline i{width:var(--w)}
+.split2{display:grid;grid-template-columns:1fr 1fr;gap:2.5rem;margin-top:2.5rem}
+.stack{display:flex;height:34px;gap:3px}
+.stack i{display:block;position:relative;width:0;transition:width 1.6s cubic-bezier(.22,.9,.3,1) .4s}
+.stack .c{background:var(--gold)}.stack .f{background:rgba(232,181,106,.25);transition-delay:1s}
+.stack em{position:absolute;left:12px;top:50%;transform:translateY(-50%);font-style:normal;font-size:.6rem;letter-spacing:.22em;text-transform:uppercase;white-space:nowrap;color:#14100d;opacity:0;transition:opacity .6s 1.5s}
+.stack .f em{color:#f5f1e8}
+.in .stack i{width:var(--w)}.in .stack em{opacity:1}
+.nnote{font-size:.86rem;line-height:1.65;color:#b7ae9f;margin-top:1rem}
+.ticks{display:grid;grid-template-columns:repeat(20,1fr);gap:5px;height:34px}
+.ticks i{display:block;background:rgba(232,181,106,.25);transform:scaleY(0);transform-origin:bottom;transition:transform .5s cubic-bezier(.22,.9,.3,1)}
+.ticks i.on{background:var(--gold)}
+.in .ticks i{transform:none}
+.bars2{display:grid;grid-template-columns:1fr 1fr;gap:1.6rem 3rem;margin-top:2.5rem}
+.bt{padding-right:170px}
+.bars2 .bf em{color:#f5f1e8}
+@media(max-width:800px){.split2,.bars2{grid-template-columns:1fr}}
 .tgrid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:12px;margin-top:2rem}
 .tc{padding:1.6rem 1.5rem;border:1px solid rgba(232,181,106,.42);background:linear-gradient(160deg,rgba(201,151,76,.26),rgba(201,151,76,.12));display:flex;flex-direction:column;gap:.5rem;transition:.4s}
 .tc:hover{background:linear-gradient(160deg,rgba(201,151,76,.36),rgba(201,151,76,.18));transform:translateY(-4px)}
@@ -70,7 +95,7 @@ footer a{color:var(--gold);text-decoration:none}
 <div id="dim"></div><div id="glow"></div>
 <header><div class="hrow">
   <div class="brand">Muskaan Hussain — AI in Construction</div>
-  <nav class="hnav"><a href="#why">Why</a><a href="#tools">Tools</a><a href="bim.html">Architecture &amp; BIM</a><a class="back" href="index.html">&larr; Back to the Journey</a></nav>
+  <nav class="hnav"><a href="#why">Why</a><a href="#numbers">Numbers</a><a href="#tools">Tools</a><a href="bim.html">Architecture &amp; BIM</a><a class="back" href="index.html">&larr; Back to the Journey</a></nav>
 </div></header>
 
 <section class="hero">
@@ -107,6 +132,39 @@ footer a{color:var(--gold);text-decoration:none}
   </div>
 </section>
 
+<section id="numbers">
+  <div class="wrap">
+    <div class="k">By the numbers</div>
+    <h2>What the tools <em>actually move</em></h2>
+    <div class="nums" id="nums">
+      <div class="nrow">
+        <div class="ncard"><b data-count="1148">0</b><span>walls read from the model</span><div class="nline"><i style="--w:100%"></i></div></div>
+        <div class="ncard"><b data-count="187">0</b><span>floors, phasing handled unasked</span><div class="nline"><i style="--w:62%"></i></div></div>
+        <div class="ncard"><b data-count="24">0</b><span>activities scheduled</span><div class="nline"><i style="--w:40%"></i></div></div>
+        <div class="ncard"><b data-count="182">0</b><span>workdays, one prompt</span><div class="nline"><i style="--w:80%"></i></div></div>
+      </div>
+      <div class="split2">
+        <div>
+          <span class="bl">The schedule, as built: critical vs float</span>
+          <div class="stack"><i class="c" style="--w:50%"><em>12 critical</em></i><i class="f" style="--w:50%"><em>12 with float</em></i></div>
+          <p class="nnote">Every predecessor, lag and duration documented. The schedule shows you which parts are assumptions; that is what makes it a tool and not a liability.</p>
+        </div>
+        <div>
+          <span class="bl">Site capture, every week</span>
+          <div class="ticks" id="ticks"></div>
+          <p class="nnote">40+ 360° captures and laser scans a week, folded into Track3D progress tracking, with a CloudCompare pass so the scan and colour data gets used instead of lost to cleanup.</p>
+        </div>
+      </div>
+      <div class="bars2">
+        <div class="bar"><span class="bl">Labor-variance report prep</span><div class="bt"><div class="bf before" style="--w:100%"><em>before</em></div><div class="bf after" style="--w:30%"><em>now · −70%</em></div></div></div>
+        <div class="bar"><span class="bl">Facade drawing changes</span><div class="bt"><div class="bf before" style="--w:100%"><em>days</em></div><div class="bf after" style="--w:4%"><em>minutes</em></div></div></div>
+        <div class="bar"><span class="bl">Quantity takeoffs for quotations</span><div class="bt"><div class="bf before" style="--w:100%"><em>by hand</em></div><div class="bf after" style="--w:22%"><em>BeamAI + custom tools</em></div></div></div>
+        <div class="bar"><span class="bl">Model to critical path</span><div class="bt"><div class="bf before" style="--w:100%"><em>built by hand</em></div><div class="bf after" style="--w:6%"><em>one prompt, reviewed</em></div></div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
 <section id="tools" style="background:linear-gradient(180deg,transparent,rgba(201,151,76,.07) 40%,rgba(201,151,76,.07) 70%,transparent)">
   <div class="wrap">
     <div class="k">Tools I have built</div>
@@ -120,7 +178,7 @@ footer a{color:var(--gold);text-decoration:none}
       <div class="tc"><span class="tag">Industry research</span><span class="t">Who is already doing this</span><span class="d">Studying companies using plugins, automation, AI and internal tools in construction, and speaking with the people who use them. Privacy concerns often limit adoption; I want to help bridge that gap.</span></div>
     </div>
     <p class="lead" style="margin-top:2.4rem">I want to grow as a construction manager while continuing to develop in BIM and VDC. The value I bring sits between the site and the technology, and I am open to roles on either side of that line.</p>
-    <div class="sig">— Muskaan</div>
+    <div class="sig">— Muskaan Hussain</div>
   </div>
 </section>
 
@@ -128,8 +186,10 @@ footer a{color:var(--gold);text-decoration:none}
 
 <script>
 (function(){var r=document.documentElement;document.addEventListener('mousemove',function(e){r.style.setProperty('--mx',e.clientX+'px');r.style.setProperty('--my',e.clientY+'px');});})();
-var bars=document.getElementById('bars');
-function chk(){var r=bars.getBoundingClientRect();if(r.top<innerHeight*.9&&r.bottom>0)bars.classList.add('in');}
+// reveal + counters for the numbers
+var ticks=document.getElementById('ticks');for(var i=0;i<40;i++){var t=document.createElement('i');t.style.transitionDelay=(i*45)+'ms';if(i%2)t.className='on';ticks.appendChild(t);}
+function tick(el){var end=+el.dataset.count,t0=performance.now();(function f(t){var p=Math.min(1,(t-t0)/1800),v=Math.round(end*(1-Math.pow(1-p,3)));el.textContent=v.toLocaleString();if(p<1)requestAnimationFrame(f);})(t0);}
+function chk(){['bars','nums'].forEach(function(id){var el=document.getElementById(id);if(!el||el.classList.contains('in'))return;var r=el.getBoundingClientRect();if(r.top<innerHeight*.85&&r.bottom>0){el.classList.add('in');el.querySelectorAll('[data-count]').forEach(tick);}});}
 addEventListener('scroll',chk,{passive:true});addEventListener('load',chk);setInterval(chk,800);
 </script>
 <script data-goatcounter="https://muskaan-hussain.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
