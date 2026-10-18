@@ -43,7 +43,7 @@ body{background:
   #0d0c0b;}
 
 /* ---------- JOURNEY ---------- */
-.jtrack{height:680vh;position:relative;}
+.jtrack{height:600vh;position:relative;}
 .jstage{position:sticky;top:0;height:100vh;overflow:hidden;
 background:
   repeating-linear-gradient(0deg, rgba(255,255,255,.016) 0 1px, transparent 1px 4px),
@@ -440,14 +440,9 @@ background-image:repeating-linear-gradient(0deg,rgba(255,250,240,.022) 0 1px,tra
   <!-- moving paintings — gold etchings that draw themselves -->
   <div class="jstrip" id="jstrip">
 
-    <div class="jscene" data-i="5" onclick="location.href='#tools'" style="cursor:pointer" title="See the tools">
-      <div class="art"><video class="sketchart2 vidart" src="media/revit-claude.mp4" poster="media/revit-poster.jpg" muted loop playsinline autoplay preload="metadata"></video></div>
-      <div class="slabel">VI — AI in Construction</div>
-    </div>
-
     <div class="jscene" data-i="4" onclick="location.href='bim.html'" style="cursor:pointer" title="Step inside BIM / VDC">
-      <div class="art"><img class="sketchart2" src="thumbs/s4-vdc.jpg" alt="Presenting cast-stone facades at Stonehill Taylor, New York"></div>
-      <div class="slabel">V — BIM / VDC</div>
+      <div class="art"><img class="sketchart2" src="thumbs/s4-vdc.jpg" alt="Tower 1, a planted high-rise"></div>
+      <div class="slabel">V — BIM, VDC &amp; AI</div>
     </div>
 
     <div class="jscene" data-i="3" onclick="location.href='interior.html'" style="cursor:pointer" title="Step inside the Interiors">
@@ -501,17 +496,11 @@ background-image:repeating-linear-gradient(0deg,rgba(255,250,240,.022) 0 1px,tra
       <a class="enter-int" href="interior.html" data-hover>Step inside the Interiors &rarr;</a>
     </div>
     <div class="jt" data-i="4">
-      <div class="k">V — BIM / VDC</div>
+      <div class="k">V — BIM, VDC &amp; AI</div>
       <h3>Where the model meets the site</h3>
-      <p>Cast-stone facades at Haddonstone, 35 packages and a Revit standard the company kept. Then New York: NYU Tandon for the MS, and Engineta on JFK Terminals 1 &amp; 6 and Barclays Center, coordinating trades in Revit against what was actually built.</p>
-      <a class="enter-int" href="bim.html" data-hover>Step inside BIM / VDC &rarr;</a>
-      <div class="chips"><span class="chip">Revit</span><span class="chip">Navisworks</span><span class="chip">Track3D</span><span class="chip">ACC</span><span class="chip">Procore</span></div>
-    </div>
-    <div class="jt" data-i="5">
-      <div class="k">VI — Where I am now</div>
-      <h3>Teaching the tools to see</h3>
-      <p>One prompt, and a full critical path comes out of a Revit model, with every assumption visible. I build the automations that take the repetition out of construction work, and keep the output transparent and the project data private.</p>
-      <a class="enter-int" href="#tools" data-hover>Watch it work &rarr;</a>
+      <p>Cast-stone facades at Haddonstone, then New York: NYU Tandon, and Engineta on JFK Terminals 1 &amp; 6 and Barclays Center, coordinating trades in Revit against what was actually built. Along the way I started building the tools — one prompt now pulls a full critical path out of a Revit model, every assumption visible.</p>
+      <a class="enter-int" href="bim.html" data-hover>Step inside BIM, VDC &amp; AI &rarr;</a>
+      <div class="chips"><span class="chip">Revit</span><span class="chip">Navisworks</span><span class="chip">Track3D</span><span class="chip">Python · VBA</span><span class="chip">Revit + Claude</span></div>
     </div>
   </div>
 
@@ -752,7 +741,7 @@ const tcard=document.getElementById('tcard');
 const shint=document.getElementById('shint');
 const jcount=document.getElementById('jcount');
 const figs={f0:document.querySelector('.fg0'),f1:document.querySelector('.fg1'),f2:document.querySelector('.fg2'),f3:document.querySelector('.fg3'),f4:document.querySelector('.fg4')};
-const ROMAN=['I','II','III','IV','V','VI'];
+const ROMAN=['I','II','III','IV','V'];
 let prog=0,lookx=0;
 
 function render(){
@@ -796,7 +785,7 @@ function applyWalk(){
   });
   const idx=on?+best.dataset.i:-1;
   texts.forEach(t=>t.classList.toggle('on',+t.dataset.i===idx));
-  jcount.textContent=idx>=0?`${ROMAN[idx]} / VI`:'';
+  jcount.textContent=idx>=0?`${ROMAN[idx]} / V`:'';
   // companions walk in and out: father leaves → teacher enters → teacher leaves → alone
   const setF=(el,st)=>{el.classList.remove('in','out-left','wait-right');el.classList.add(st);};
   const order=['f0','f1','f2','f3','f4'];
@@ -835,8 +824,7 @@ const cIO=new IntersectionObserver(es=>es.forEach(e=>{if(!e.isIntersecting)retur
   (function tick(t){const p=Math.min(1,(t-t0)/1600),v=Math.round(end*(1-Math.pow(1-p,3)));el.textContent=v+(p<1?'':'+'.repeat(suf?0:1))+suf;if(p<1)requestAnimationFrame(tick);})(t0);
 }),{threshold:.6});
 document.querySelectorAll('[data-count]').forEach(el=>cIO.observe(el));
-// chapter video only plays while its frame is lit
-setInterval(()=>{document.querySelectorAll('.vidart').forEach(v=>{const lit=v.closest('.jscene').classList.contains('lit');if(lit&&v.paused)v.play().catch(()=>{});if(!lit&&!v.paused)v.pause();});},400);
+
 
 
 </script>
