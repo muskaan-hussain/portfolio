@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-<title>BIM, VDC &amp; Construction Technology — Muskaan Hussain</title>
+<title>Architecture &amp; BIM — Muskaan Hussain</title>
 <meta name="description" content="Muskaan Hussain's statement of work in construction technology: tools built at Haddonstone and Engineta, Revit connected to AI through MCP, NYU research, and the design work behind it.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300;1,400&family=Inter:wght@200;300;400&display=swap" rel="stylesheet">
@@ -90,6 +90,26 @@ section{padding:70px 0}
 .book-arrow:disabled{opacity:.25;pointer-events:none}
 .book-count{position:absolute;bottom:14px;right:18px;z-index:20;font-size:.62rem;letter-spacing:.24em;text-transform:uppercase;background:rgba(20,16,13,.65);padding:6px 12px;border:1px solid var(--line);backdrop-filter:blur(4px)}
 .book-cap{margin-top:.9rem;font-size:.6rem;letter-spacing:.3em;text-transform:uppercase;color:var(--grey);text-align:center}
+
+/* the timeline: a sideways history scroll */
+.tl{position:relative;margin-top:1.5rem}
+.tl-rail{position:absolute;left:0;right:0;top:46px;height:1px;background:var(--line)}
+.tl-rail i{position:absolute;left:0;top:-1px;height:3px;width:0;background:var(--gold);transition:width .4s}
+.tl-track{display:flex;gap:18px;overflow-x:auto;scroll-snap-type:x mandatory;padding:0 max(28px,calc((100vw - 1180px)/2 + 28px)) 18px;scrollbar-width:none}
+.tl-track::-webkit-scrollbar{display:none}
+.tl-card{flex:0 0 min(360px,82vw);scroll-snap-align:start;padding:0 0 1.4rem;position:relative}
+.tl-card::before{content:'';position:absolute;left:0;top:40px;width:13px;height:13px;border-radius:50%;background:#0d0c0b;border:2px solid var(--gold);box-shadow:0 0 0 5px rgba(232,181,106,.14);z-index:2}
+.tl-card.on::before{background:var(--gold);box-shadow:0 0 0 7px rgba(232,181,106,.22),0 0 24px rgba(232,181,106,.6)}
+.tl-year{font-family:'Cormorant Garamond',serif;font-style:italic;font-size:1.9rem;color:var(--gold);line-height:1;margin-bottom:34px}
+.tl-where{font-size:.56rem;letter-spacing:.34em;text-transform:uppercase;color:var(--grey);margin-bottom:.4rem}
+.tl-card h3{font-family:'Cormorant Garamond',serif;font-weight:300;font-size:1.45rem;line-height:1.15;color:#fbf3e4;margin-bottom:.5rem}
+.tl-card p{font-size:.86rem;line-height:1.65;color:#b7ae9f}
+.tl-card a{display:inline-block;margin-top:.7rem;font-size:.6rem;letter-spacing:.26em;text-transform:uppercase;color:var(--gold);text-decoration:none;border-bottom:1px solid rgba(232,181,106,.4);padding-bottom:3px}
+.tl-card.now .tl-year{color:#fbf3e4}
+.tl-nav{display:flex;align-items:center;gap:1rem;padding:0 28px;max-width:1180px;margin:.4rem auto 0}
+.tl-nav button{width:40px;height:40px;border-radius:50%;border:1px solid var(--line);background:rgba(20,16,13,.72);color:var(--ink);cursor:pointer;transition:.3s}
+.tl-nav button:hover{background:var(--gold);border-color:var(--gold);color:#14100d}
+.tl-nav span{font-family:'Cormorant Garamond',serif;font-style:italic;font-size:1.2rem;color:var(--gold);min-width:70px;text-align:center}
 /* project cards */
 .pgrid{display:grid;grid-template-columns:repeat(auto-fit,minmax(270px,1fr));gap:14px;margin-top:1.8rem}
 .pc{display:flex;flex-direction:column;background:rgba(20,17,13,.8);border:1px solid rgba(216,172,98,.22);text-decoration:none;color:var(--ink);transition:border-color .4s,transform .5s cubic-bezier(.22,.9,.3,1),box-shadow .5s}
@@ -145,59 +165,41 @@ footer a{color:var(--gold);text-decoration:none}
 <body>
 <div id="dim"></div><div id="glow"></div>
 <header><div class="hrow">
-  <div class="brand">Muskaan Hussain — BIM / VDC</div>
+  <div class="brand">Muskaan Hussain — Architecture &amp; BIM</div>
   <nav class="hnav">
-    <a href="#statement">Statement</a><a href="#tools">Tools</a><a href="#projects">Projects</a><a href="#design">Design work</a><a href="#portfolio">Portfolio</a>
+    <a href="#timeline">Timeline</a><a href="#projects">Projects</a><a href="#design">Competition</a><a href="#portfolio">Portfolio</a><a href="ai.html">AI in construction</a>
     <a class="back" href="index.html">&larr; Back to the Journey</a>
   </nav>
 </div></header>
 
 <section class="hero">
   <div class="wrap">
-    <div class="k">BIM · VDC · Construction technology</div>
+    <div class="k">II · Architecture &amp; BIM</div>
     <h1>Where the model <em>meets the site</em>.</h1>
-    <p class="lead">What is built in the model and what happens in the field should stay connected. That gap is where I work — on the jobsite, and in the code that takes the repetition out of it.</p>
+    <p class="lead">The same eye, two scales: the buildings I drew as an architect, and the models and jobsites I coordinate now. One timeline, from a Mumbai site office to the JFK terminals.</p>
   </div>
 </section>
 <div class="wrap"><div class="rule"></div></div>
 
-<section id="statement">
+<section id="timeline">
   <div class="wrap">
-    <div class="k">Statement of work and passion</div>
-    <div class="split">
-      <div class="beats">
-        <div class="pull" style="margin-top:0">Having worked both on site and on the technology side, I want to bridge the two, so what is built in the model and what happens in the field stay connected.</div>
-        <div class="beat"><i>01</i><div><b>Build the small tools</b><p>Teams run powerful software and never touch the automation already inside Excel, Revit, APIs and scripts. Small fixes, repeated across teams and months, add up.</p></div></div>
-        <div class="beat"><i>02</i><div><b>Use AI to build, not to run</b><p>AI helps me test logic and write a VBA command, Python script, Dynamo workflow or Revit API tool. The finished tool runs on its own, as code.</p></div></div>
-        <div class="beat"><i>03</i><div><b>Keep project data private</b><p>Because the tools run independently, nothing sensitive has to leave the project to reach an external AI.</p></div></div>
-        <div class="beat"><i>04</i><div><b>Scale what works</b><p>A workflow that saves one project engineer an hour becomes valuable when it is refined and used across teams and projects.</p></div></div>
-      </div>
-      <div class="side">
-        <div class="phone"><video src="media/revit-claude.mp4" poster="media/revit-poster.jpg" controls playsinline preload="metadata"></video></div>
-        <div class="side-k">Revit + Claude · one prompt</div>
-        <div class="side-t">A full critical path, straight out of the model, with every assumption visible.</div>
-        <div class="stat"><div><b>24</b><span>activities</span></div><div><b>12</b><span>critical</span></div><div><b>182</b><span>workdays</span></div></div>
-      </div>
-    </div>
+    <div class="k">The timeline · scroll sideways</div>
+    <h2>2022 to now, <em>year by year</em></h2>
   </div>
-</section>
-
-<section id="tools" style="background:linear-gradient(180deg,transparent,rgba(201,151,76,.07) 40%,rgba(201,151,76,.07) 70%,transparent)">
-  <div class="wrap">
-    <div class="k">Tools I have built</div>
-    <h2>What I've <em>made so far</em></h2>
-    <div class="tgrid">
-      <div class="tc"><span class="tag">Haddonstone</span><span class="t">Dynamic tool palette</span><span class="d">Independently developed for my team: repetitive drafting turned into an automated workflow, making drawing changes possible within minutes instead of days. Also explored BIM and AI applications for estimation.</span></div>
-      <div class="tc"><span class="tag">Engineta</span><span class="t">VBA commands &amp; dashboards</span><span class="d">Excel commands to streamline forms, daily reports, hour logging and project dashboards, while exploring Power BI.</span></div>
-      <div class="tc"><span class="tag">Engineta</span><span class="t">Laser-scan workflow</span><span class="d">Researched and presented CloudCompare and reviewed the scanning workflow so scan and color data could be used more effectively, instead of spending so much time only on cleanup.</span></div>
-      <div class="tc"><span class="tag">Ongoing</span><span class="t">Construction software connected to AI</span><span class="d">Revit, scheduling and estimating software connected to AI through MCP, with the output kept transparent so a person can review, correct and approve it. It saves significant time while keeping project data private.</span></div>
-      <div class="tc"><span class="tag">NYU research</span><span class="t">Unity 3D, C#, AR/VR, robotics</span><span class="d">Independent study exploring how emerging technology can be applied on site and in project delivery.</span></div>
-      <div class="tc"><span class="tag">Industry research</span><span class="t">Who is already doing this</span><span class="d">Studying companies using plugins, automation, AI and internal tools in construction, and speaking with the people who use them. Privacy concerns often limit adoption; I want to help bridge that gap.</span></div>
+  <div class="tl" id="tl">
+    <div class="tl-rail"><i></i></div>
+    <div class="tl-track">
+      <article class="tl-card" data-y="2022"><div class="tl-year">2022</div><div class="tl-where">Mumbai</div><h3>Assistant Project Manager — Maple Renaissance</h3><p>Microsoft facilities and the Katara Building: logistics, scheduling, procurement, pay-app review for two concurrent commercial projects.</p></article>
+      <article class="tl-card" data-y="2022"><div class="tl-year">2022 – 25</div><div class="tl-where">India · remote</div><h3>Archpainted — my own practice</h3><p>40+ projects designed, 10+ delivered through construction as their manager: a Nestlé laboratory, an army building in Delhi, a tunnel development in Saudi Arabia, homes and cafés.</p><a href="interior.html">The interiors &rarr;</a></article>
+      <article class="tl-card" data-y="2023"><div class="tl-year">2023</div><div class="tl-where">Hyderabad</div><h3>B.Arch, registered architect</h3><p>Five years at JNAFAU: the planted tower, low-cost housing, and the thesis on the mosque as civic anchor. Then back to the school as a guest lecturer.</p><a href="#portfolio">The portfolio &rarr;</a></article>
+      <article class="tl-card" data-y="2023"><div class="tl-year">2023 – 24</div><div class="tl-where">Massachusetts</div><h3>Junior Architect — Signature Solutions</h3><p>Permit and construction sets for 10+ homes in New England and New York; schedules and budgets from bidding through closeout.</p><a href="#portfolio">The sets &rarr;</a></article>
+      <article class="tl-card" data-y="2024"><div class="tl-year">2024</div><div class="tl-where">Competition</div><h3>The Celestial Trio — Ethos</h3><p>With Heba Mirza: three twisted towers wrapped in vertical gardens, a solar rooftop sanctuary, an atrial light collector.</p><a href="#design">The boards &rarr;</a></article>
+      <article class="tl-card" data-y="2024"><div class="tl-year">2024 – 25</div><div class="tl-where">Colorado</div><h3>BIM Engineer — Haddonstone</h3><p>35+ cast-stone facade packages across US, UK and India teams, and a Revit documentation system the company adopted as its standard.</p><a href="#projects">The facades &rarr;</a></article>
+      <article class="tl-card" data-y="2025"><div class="tl-year">2025</div><div class="tl-where">Brooklyn</div><h3>NYU Tandon — MS Construction Management</h3><p>GPA 3.9, with a Stern concentration in real estate. Project Assistant on lab, data-center and campus renovations across MetroTech.</p></article>
+      <article class="tl-card" data-y="2026"><div class="tl-year">2026</div><div class="tl-where">New York</div><h3>VDC — Engineta on JFK T1 &amp; T6</h3><p>Barclays Center, Apollo Theater, Bank of New York. Weekly coordination with Turner, AECOM Hunt and Tishman teams; 40+ scans a week; clashes resolved in Revit against as-built conditions.</p><a href="#projects">The projects &rarr;</a></article>
+      <article class="tl-card now" data-y="now"><div class="tl-year">Now</div><div class="tl-where">Still growing</div><h3>Between the site and the technology</h3><p>Building the tools that keep the model and the field connected.</p><a href="ai.html">AI in construction &rarr;</a></article>
     </div>
-    <div class="statement" style="margin-top:2.4rem">
-      <p>I want to grow as a construction manager while continuing to develop in BIM and VDC. The value I bring sits between the site and the technology, and I am open to roles on either side of that line.</p>
-      <div class="sig">— Muskaan</div>
-    </div>
+    <div class="tl-nav"><button id="tlPrev" aria-label="Earlier">&larr;</button><span id="tlYear">2022</span><button id="tlNext" aria-label="Later">&rarr;</button></div>
   </div>
 </section>
 <div class="wrap"><div class="rule"></div></div>
@@ -207,8 +209,8 @@ footer a{color:var(--gold);text-decoration:none}
     <div class="k">Projects</div>
     <h2>Drawn, coordinated, <em>and built.</em></h2>
     <div class="pgrid">
-      <a class="pc noimg" href="#tools"><div class="pc-body"><span class="tag">Aviation · Engineta · 2026</span><span class="t">JFK Terminals 1 &amp; 6</span><span class="d">Trade coordination in Revit against as-built conditions, daily 360° capture and laser scans, installed quantities validated in Track3D.</span></div></a>
-      <a class="pc noimg" href="#tools"><div class="pc-body"><span class="tag">Venues · Engineta · 2026</span><span class="t">Barclays Center, Apollo Theater, Bank of New York</span><span class="d">Weekly coordination with foremen and GC teams, progress reports for project leadership.</span></div></a>
+      <a class="pc noimg" href="#timeline"><div class="pc-body"><span class="tag">Aviation · Engineta · 2026</span><span class="t">JFK Terminals 1 &amp; 6</span><span class="d">Trade coordination in Revit against as-built conditions, daily 360° capture and laser scans, installed quantities validated in Track3D.</span></div></a>
+      <a class="pc noimg" href="#timeline"><div class="pc-body"><span class="tag">Venues · Engineta · 2026</span><span class="t">Barclays Center, Apollo Theater, Bank of New York</span><span class="d">Weekly coordination with foremen and GC teams, progress reports for project leadership.</span></div></a>
       <a class="pc" href="img/stonehill-taylor.webp" target="_blank"><div class="pc-img"><img src="img/stonehill-taylor.webp" alt="Presenting at Stonehill Taylor" loading="lazy" style="object-position:center 12%"></div><div class="pc-body"><span class="tag">Facades · Haddonstone · 2024–25</span><span class="t">Cast-stone facade system</span><span class="d">35+ facade, site and landscape packages across US, UK and India teams; a documentation standard adopted company-wide; presented to NYC firms including Stonehill Taylor.</span></div></a>
       <a class="pc" href="#design"><div class="pc-img"><img src="work/trio-aerial.jpg" alt="The Celestial Trio" loading="lazy"></div><div class="pc-body"><span class="tag">Competition · with Heba Mirza</span><span class="t">The Celestial Trio</span><span class="d">Ethos International Design Competition. Three twisted towers wrapped in vertical gardens, crowned by a solar rooftop sanctuary.</span></div></a>
       <a class="pc" href="#portfolio"><div class="pc-img"><img src="work/usa-07.jpg" alt="Gambrel garage and loft" loading="lazy"></div><div class="pc-body"><span class="tag">Residential · Signature Solutions · 2023–24</span><span class="t">New England homes</span><span class="d">Permit-ready and construction sets for 10+ residential, commercial and government projects; schedules and budgets owned from bidding to closeout.</span></div></a>
@@ -256,7 +258,7 @@ footer a{color:var(--gold);text-decoration:none}
   </div>
 </section>
 
-<footer>Muskaan Hussain · <a href="index.html">A Walk Through My Journey</a> · <a href="interior.html">Interiors</a> · <a href="lecture.html">The Lecture</a> · <a href="art.html">The First Studio</a> · <a href="resume.pdf">Resume</a></footer>
+<footer>Muskaan Hussain · <a href="index.html">A Walk Through My Journey</a> · <a href="ai.html">AI in construction</a> · <a href="interior.html">Interiors</a> · <a href="lecture.html">The Lecture</a> · <a href="art.html">The First Studio</a> · <a href="resume.pdf">Resume</a></footer>
 
 <div class="lb" id="lb"><div class="hint">Click to zoom · &larr; &rarr; turn pages · Esc closes</div><button class="x" aria-label="Close">&times;</button><button class="pv" aria-label="Previous">&larr;</button><button class="nx" aria-label="Next">&rarr;</button><img id="lbi" alt=""><div class="cap" id="lbc"></div></div>
 
@@ -367,6 +369,22 @@ document.addEventListener('keydown',function(e){
   var hit=books.find(function(bk){var r=bk.stage.getBoundingClientRect();return r.top<innerHeight*.7&&r.bottom>innerHeight*.3;});
   if(!hit)return;if(e.key==='ArrowRight')hit.go(1);if(e.key==='ArrowLeft')hit.go(-1);
 });
+
+// the timeline rail follows the scroll; arrows step a card at a time
+(function(){
+  var track=document.querySelector('.tl-track'),cards=[].slice.call(track.querySelectorAll('.tl-card')),rail=document.querySelector('.tl-rail i'),yr=document.getElementById('tlYear');
+  function upd(){
+    var max=track.scrollWidth-track.clientWidth;rail.style.width=(max?track.scrollLeft/max*100:100)+'%';
+    var best=cards[0],bd=1e9,x=track.getBoundingClientRect().left+60;
+    cards.forEach(function(c){var d=Math.abs(c.getBoundingClientRect().left-x);if(d<bd){bd=d;best=c;}c.classList.remove('on');});
+    best.classList.add('on');yr.textContent=best.querySelector('.tl-year').textContent;
+  }
+  track.addEventListener('scroll',upd,{passive:true});addEventListener('resize',upd);setTimeout(upd,100);
+  var cur=0;
+  function step(d){cur=Math.max(0,Math.min(cards.length-1,cur+d));var pad=parseFloat(getComputedStyle(track).paddingLeft);track.scrollTo({left:cards[cur].offsetLeft-pad,behavior:'smooth'});}
+  track.addEventListener('scroll',function(){var on=cards.findIndex(function(c){return c.classList.contains('on');});if(on>=0)cur=on;},{passive:true});
+  document.getElementById('tlPrev').onclick=function(){step(-1);};document.getElementById('tlNext').onclick=function(){step(1);};
+})();
 </script>
 <script data-goatcounter="https://muskaan-hussain.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
 </body>

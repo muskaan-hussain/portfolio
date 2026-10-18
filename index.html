@@ -403,6 +403,17 @@ background-image:repeating-linear-gradient(0deg,rgba(255,250,240,.022) 0 1px,tra
 .tcardx.more .t a{color:#1a1208;}
 @media(max-width:800px){.counters{grid-template-columns:repeat(2,1fr)}.tshow{grid-template-columns:1fr}.phone{max-width:280px;margin:0 auto}.tp span{display:none}.traj{aspect-ratio:1000/520}}
 
+/* scrub marker that rides the curve under the mouse */
+.scrub{position:absolute;left:0;top:0;transform:translate(-50%,-50%);pointer-events:none;opacity:0;transition:opacity .3s;z-index:3}
+.traj.live .scrub{opacity:1}
+.scrub i{display:block;width:18px;height:18px;border-radius:50%;border:2px solid var(--glow);background:rgba(13,12,11,.85);box-shadow:0 0 30px rgba(232,181,106,.7)}
+.scrub b{position:absolute;left:50%;bottom:26px;transform:translateX(-50%);font-family:'Cormorant Garamond',serif;font-style:italic;font-weight:400;font-size:1.1rem;color:var(--glow);white-space:nowrap}
+.traj{cursor:crosshair}
+.traj.live .tp span{opacity:0}
+.traj.live .tp.near span{opacity:1;transform:translateX(-50%) translateY(0)}
+.traj.live .tp.near i{transform:scale(1.5)}
+.traj.live .tp:nth-child(7).near span,.traj.live .tp:nth-child(6).near span,.traj.live .tp:nth-child(2).near span{transform:none}
+
 .nyu-sky{display:none;position:absolute;top:4%;left:50%;transform:translateX(-50%) rotate(-2deg);z-index:5;font-family:'Cormorant Garamond',Georgia,serif;font-style:italic;font-weight:600;font-size:clamp(3rem,7vw,6.5rem);letter-spacing:.12em;color:rgba(248,246,240,.92);text-shadow:0 0 26px rgba(232,181,106,.45);pointer-events:none;}
 </style>
 </head>
@@ -415,8 +426,9 @@ background-image:repeating-linear-gradient(0deg,rgba(255,250,240,.022) 0 1px,tra
 
 <nav>
   <ul>
-    <li><a href="#experience" data-hover>Experience</a></li>
-    <li><a href="#tools" data-hover>Tools</a></li>
+    <li><a href="bim.html" data-hover>Architecture &amp; BIM</a></li>
+    <li><a href="ai.html" data-hover>AI</a></li>
+    <li><a href="#experience" data-hover>Still growing</a></li>
     <li><a href="https://www.linkedin.com/in/muskaanhussainn/" target="_blank" data-hover>LinkedIn</a></li>
     <li><a class="resume-btn" href="resume.pdf" target="_blank" download="Muskaan_Hussain_Resume.pdf" data-hover>Resume</a></li>
     <li><a class="resume-btn" href="portfolio.pdf" download="Muskaan_Hussain_Portfolio.pdf" data-hover>Portfolio</a></li>
@@ -432,7 +444,7 @@ background-image:repeating-linear-gradient(0deg,rgba(255,250,240,.022) 0 1px,tra
     <div class="tcard-bg"></div>
         <div class="over" style="font-size:1.05rem;letter-spacing:.35em;">Construction Manager · BIM / VDC · Architect · Artist</div>
     <h1>Muskaan Hussain<em>a walk through my journey</em></h1>
-    <div class="sub">Registered architect, now building what I used to draw. Four years across the US, UK and India — JFK Terminals 1 &amp; 6, Barclays Center, cast-stone facades — and the tools that keep the model and the jobsite connected. MS Construction Management, NYU Tandon. Open to CM and BIM/VDC roles in New York.</div>
+    <div class="sub">Registered architect, now building what I used to draw. Across the US, UK and India — JFK Terminals 1 &amp; 6, Barclays Center, cast-stone facades — and the tools that keep the model and the jobsite connected. MS Construction Management, NYU Tandon. Open to CM and BIM/VDC roles in New York.</div>
     <div class="skstrip" style="margin-top:1.4rem;font-family:Arial,sans-serif;font-size:.6rem;letter-spacing:.3em;text-transform:uppercase;color:rgba(232,181,106,.85)">Revit · Navisworks · ACC · Procore · Primavera P6 · Bluebeam · Python · Dynamo · AI</div>
   </div>
   <div class="scroll-hint" id="shint">Scroll to walk</div>
@@ -440,9 +452,9 @@ background-image:repeating-linear-gradient(0deg,rgba(255,250,240,.022) 0 1px,tra
   <!-- moving paintings — gold etchings that draw themselves -->
   <div class="jstrip" id="jstrip">
 
-    <div class="jscene" data-i="4" onclick="location.href='bim.html'" style="cursor:pointer" title="Step inside BIM / VDC">
-      <div class="art"><img class="sketchart2" src="thumbs/s4-vdc.jpg" alt="The Celestial Trio, competition render"></div>
-      <div class="slabel">V — BIM / VDC</div>
+    <div class="jscene" data-i="4" onclick="location.href='ai.html'" style="cursor:pointer" title="Step inside AI in construction">
+      <div class="art"><video class="sketchart2 vidart" src="media/revit-claude.mp4" poster="media/revit-poster.jpg" muted loop playsinline autoplay preload="metadata"></video></div>
+      <div class="slabel">V — AI in Construction</div>
     </div>
 
     <div class="jscene" data-i="3" onclick="location.href='interior.html'" style="cursor:pointer" title="Step inside the Interiors">
@@ -455,9 +467,9 @@ background-image:repeating-linear-gradient(0deg,rgba(255,250,240,.022) 0 1px,tra
       <div class="slabel">III — Giving Back</div>
     </div>
 
-    <div class="jscene" data-i="1" onclick="location.href='bim.html#design'" style="cursor:pointer" title="See the design work">
-      <div class="art"><img class="sketchart2" src="thumbs/s1-architecture.jpg" alt="Tower 1, a planted high-rise from studio"></div>
-      <div class="slabel">II — Architecture</div>
+    <div class="jscene" data-i="1" onclick="location.href='bim.html'" style="cursor:pointer" title="Step inside Architecture &amp; BIM">
+      <div class="art"><img class="sketchart2" src="thumbs/s4-vdc.jpg" alt="The Celestial Trio, competition render"></div>
+      <div class="slabel">II — Architecture &amp; BIM</div>
     </div>
 
     <div class="jscene" data-i="0">
@@ -476,10 +488,10 @@ background-image:repeating-linear-gradient(0deg,rgba(255,250,240,.022) 0 1px,tra
       <div class="quote">“You would make a fine artist, my daughter.”<span class="who">— my father, at his easel</span></div>
     </div>
     <div class="jt" data-i="1">
-      <div class="k">II — Architecture</div>
+      <div class="k">II — Architecture &amp; BIM</div>
       <h3>Then a teacher walked in</h3>
-      <p>She saw the drawings, and my passion for art moved into architecture. The artist in me didn't leave — it changed scale. Five years at Jawaharlal Nehru Architecture &amp; Fine Arts University, a registered architect at the end of it. Studio work like <em>Tower 1</em>, the planted high-rise in the frame beside you.</p>
-      <a class="enter-int" href="bim.html#design" data-hover>See the design work &rarr;</a>
+      <p>She saw the drawings, and my passion for art moved into architecture. The artist in me didn't leave — it changed scale: five years of school, a registered architect, the Celestial Trio in the frame beside you. Then the drawings became models, and the models met the site — cast-stone facades, JFK Terminals 1 &amp; 6, Barclays Center.</p>
+      <a class="enter-int" href="bim.html" data-hover>Step inside Architecture &amp; BIM &rarr;</a>
       <div class="quote">“You don't just see pictures — you see spaces. Be an architect.”<span class="who">— my teacher</span></div>
     </div>
     <div class="jt" data-i="2">
@@ -496,11 +508,10 @@ background-image:repeating-linear-gradient(0deg,rgba(255,250,240,.022) 0 1px,tra
       <a class="enter-int" href="interior.html" data-hover>Step inside the Interiors &rarr;</a>
     </div>
     <div class="jt" data-i="4">
-      <div class="k">V — BIM / VDC</div>
-      <h3>Where the model meets the site</h3>
-      <p>Cast-stone facades at Haddonstone, then New York: NYU Tandon, and Engineta on JFK Terminals 1 &amp; 6 and Barclays Center, coordinating trades in Revit against what was actually built. The competition work, the tools I build, and the projects all live inside.</p>
-      <a class="enter-int" href="bim.html" data-hover>Step inside BIM / VDC &rarr;</a>
-      <div class="chips"><span class="chip">Revit</span><span class="chip">Navisworks</span><span class="chip">Track3D</span><span class="chip">ACC</span><span class="chip">Procore</span></div>
+      <div class="k">V — AI in Construction</div>
+      <h3>Teaching the tools to see</h3>
+      <p>One prompt, and a full critical path comes out of a Revit model with every assumption visible. I build the automations that take the repetition out of construction work, and keep the output transparent and the project data private.</p>
+      <a class="enter-int" href="ai.html" data-hover>Step inside AI in construction &rarr;</a>
     </div>
   </div>
 
@@ -607,15 +618,15 @@ background-image:repeating-linear-gradient(0deg,rgba(255,250,240,.022) 0 1px,tra
 <!-- ================= EXPERIENCE ================= -->
 <section class="xp" id="experience">
   <div class="p-head rv">
-    <div class="k">The climb</div>
-    <h2>Four years, <em>six rooms.</em></h2>
-    <p class="p-sub">From a Mumbai site office to the JFK terminals. Hover a point.</p>
+    <div class="k">Still growing</div>
+    <h2>The line keeps <em>going up.</em></h2>
+    <p class="p-sub">Move along the curve — every point is a room I walked into.</p>
   </div>
-  <div class="traj rv" id="traj">
+  <div class="traj rv" id="traj"><div class="scrub" id="scrub"><i></i><b id="scrubY"></b></div>
     <svg viewBox="0 0 1000 420" preserveAspectRatio="none" aria-hidden="true">
       <defs><linearGradient id="tg" x1="0" x2="0" y1="0" y2="1"><stop offset="0" stop-color="rgba(232,181,106,.35)"/><stop offset="1" stop-color="rgba(232,181,106,0)"/></linearGradient></defs>
       <path class="tfill" d="M40,360 C140,350 180,320 250,300 S380,250 440,230 S560,190 620,160 S760,110 820,80 S920,45 960,40 L960,400 L40,400 Z" fill="url(#tg)"/>
-      <path class="tline" d="M40,360 C140,350 180,320 250,300 S380,250 440,230 S560,190 620,160 S760,110 820,80 S920,45 960,40" fill="none" stroke="#e8b56a" stroke-width="2.5" stroke-linecap="round"/>
+      <path class="tline" id="tline" d="M40,360 C140,350 180,320 250,300 S380,250 440,230 S560,190 620,160 S760,110 820,80 S920,45 960,40" fill="none" stroke="#e8b56a" stroke-width="2.5" stroke-linecap="round"/>
     </svg>
     <div class="tp" style="left:4%;top:85.7%"><i></i><b>2022</b><span>Assistant PM, Maple Renaissance<br>Microsoft facilities · Mumbai</span></div>
     <div class="tp" style="left:25%;top:71%"><i></i><b>2022–25</b><span>Archpainted, my own practice<br>40+ designed · 10+ built</span></div>
@@ -625,7 +636,7 @@ background-image:repeating-linear-gradient(0deg,rgba(255,250,240,.022) 0 1px,tra
     <div class="tp" style="left:96%;top:9.5%"><i></i><b>2026</b><span>VDC, Engineta<br>JFK T1 &amp; T6 · Barclays Center</span></div>
   </div>
   <div class="counters rv">
-    <div><b data-count="4">0</b><span>years in the field</span></div>
+    <div><b data-count="6" data-plain="1">0</b><span>rooms walked into</span></div>
     <div><b data-count="40">0</b><span>projects designed</span></div>
     <div><b data-count="35">0</b><span>facade packages modeled</span></div>
     <div><b data-count="70" data-suffix="%">0</b><span>less time on reports</span></div>
@@ -642,35 +653,6 @@ background-image:repeating-linear-gradient(0deg,rgba(255,250,240,.022) 0 1px,tra
     <div><span class="k">Education</span>MS Construction Management, NYU Tandon · B.Arch, JNAFAU Hyderabad</div>
     <div><span class="k">Certified</span>OSHA 30 · Procore · Registered Architect (CoA, India) · IGBC Green Associate</div>
     <div><span class="k">Languages</span>English · Spanish · Hindi · Urdu · Gujarati</div>
-  </div>
-</section>
-
-<!-- ================= TOOLS & AI ================= -->
-<section class="tools" id="tools">
-  <div class="p-head rv">
-    <div class="k">Tools I've built</div>
-    <h2>Software that <em>saves the hours.</em></h2>
-    <p class="p-sub">Most teams run powerful software and never touch the automation inside it. I build the small tools that do, and keep project data where it belongs.</p>
-  </div>
-  <div class="tshow rv">
-    <div class="phone"><video src="media/revit-claude.mp4" poster="media/revit-poster.jpg" controls playsinline preload="metadata"></video></div>
-    <div class="tside">
-      <div class="k">Revit + Claude · one prompt</div>
-      <h3>A full critical path,<br>straight out of the model.</h3>
-      <p>24 activities. 12 critical. 182 workdays. Every predecessor, lag and duration documented, so you can walk through its thinking and push back on it. Connected through MCP; nothing leaves the project that shouldn't.</p>
-      <div class="bars">
-        <div class="bar"><span class="bl">Labor-variance report prep</span><div class="bt"><div class="bf before" style="--w:100%"><em>before</em></div><div class="bf after" style="--w:30%"><em>now · −70%</em></div></div></div>
-        <div class="bar"><span class="bl">Facade drawing changes</span><div class="bt"><div class="bf before" style="--w:100%"><em>days</em></div><div class="bf after" style="--w:4%"><em>minutes</em></div></div></div>
-      </div>
-    </div>
-  </div>
-  <div class="tgrid rv">
-    <div class="tcardx"><span class="tag">Haddonstone</span><span class="t">Dynamic tool palette</span><span class="d">Repetitive facade drafting turned into an automated Revit workflow. Adopted as the production standard.</span></div>
-    <div class="tcardx"><span class="tag">Engineta</span><span class="t">VBA reporting &amp; dashboards</span><span class="d">Forms, daily reports, hour logging and dashboards; payroll and man-day data merged into variance reports.</span></div>
-    <div class="tcardx"><span class="tag">Engineta</span><span class="t">Laser-scan workflow</span><span class="d">A CloudCompare pipeline so scan and color data get used, not lost to cleanup.</span></div>
-    <div class="tcardx"><span class="tag">Ongoing</span><span class="t">Revit + AI, via MCP</span><span class="d">Revit, scheduling and estimating software connected to AI, reasoning kept visible for review.</span></div>
-    <div class="tcardx"><span class="tag">NYU research</span><span class="t">Unity 3D, C#, AR/VR, robotics</span><span class="d">How emerging technology lands on site and in project delivery.</span></div>
-    <div class="tcardx more"><span class="tag">Read more</span><span class="t"><a href="bim.html" data-hover>My full statement &rarr;</a></span><span class="d">Why I build this, and where I want to take it.</span></div>
   </div>
 </section>
 
@@ -802,7 +784,7 @@ addEventListener('scroll',rvCheck,{passive:true});addEventListener('load',rvChec
 // counters tick up once their row is on screen
 const cIO=new IntersectionObserver(es=>es.forEach(e=>{if(!e.isIntersecting)return;cIO.unobserve(e.target);
   const el=e.target,end=+el.dataset.count,suf=el.dataset.suffix||'',t0=performance.now();
-  (function tick(t){const p=Math.min(1,(t-t0)/1600),v=Math.round(end*(1-Math.pow(1-p,3)));el.textContent=v+(p<1?'':'+'.repeat(suf?0:1))+suf;if(p<1)requestAnimationFrame(tick);})(t0);
+  (function tick(t){const p=Math.min(1,(t-t0)/1600),v=Math.round(end*(1-Math.pow(1-p,3)));el.textContent=v+(p<1||suf||el.dataset.plain?'':'+')+suf;if(p<1)requestAnimationFrame(tick);})(t0);
 }),{threshold:.6});
 document.querySelectorAll('[data-count]').forEach(el=>cIO.observe(el));
 
@@ -813,7 +795,23 @@ document.querySelectorAll('[data-count]').forEach(el=>cIO.observe(el));
 (function(){var d=document,r=d.documentElement,c=d.getElementById('cur');
 d.addEventListener('mousemove',function(e){r.style.setProperty('--mx',e.clientX+'px');r.style.setProperty('--my',e.clientY+'px');if(c){c.style.left=e.clientX+'px';c.style.top=e.clientY+'px';}});})();
 </script>
-<script>document.addEventListener('mouseover',function(e){var c=document.getElementById('cur');if(!c)return;var t=e.target.closest('a,button,[onclick],.card,.pc,.proj,.ftile,.feature,.tab');c.classList.toggle('hot',!!t);});</script>
+<script>document.addEventListener('mouseover',function(e){var c=document.getElementById('cur');if(!c)return;var t=e.target.closest('a,button,[onclick],.card,.pc,.proj,.ftile,.feature,.tab');c.classList.toggle('hot',!!t);});
+// scrub the trajectory: the marker rides the curve under the mouse and lights the nearest room
+(function(){
+  var traj=document.getElementById('traj'),path=document.getElementById('tline'),sc=document.getElementById('scrub'),sy=document.getElementById('scrubY');
+  if(!traj||!path)return;var L=path.getTotalLength(),pts=[].slice.call(traj.querySelectorAll('.tp'));
+  function at(fx){var lo=0,hi=L;for(var k=0;k<18;k++){var m=(lo+hi)/2;if(path.getPointAtLength(m).x<fx)lo=m;else hi=m;}return path.getPointAtLength(lo);}
+  traj.addEventListener('mousemove',function(e){
+    var r=traj.getBoundingClientRect(),fx=(e.clientX-r.left)/r.width*1000;fx=Math.max(40,Math.min(960,fx));
+    var p=at(fx);sc.style.left=(p.x/1000*100)+'%';sc.style.top=(p.y/420*100)+'%';
+    var yr=2022+(fx-40)/(960-40)*4.6;sy.textContent=yr<2026.4?Math.floor(yr):'now';
+    traj.classList.add('live');var best=null,bd=1e9;pts.forEach(function(t){var d=Math.abs(parseFloat(t.style.left)-p.x/10);if(d<bd){bd=d;best=t;}t.classList.remove('near');});if(best)best.classList.add('near');
+  });
+  traj.addEventListener('mouseleave',function(){traj.classList.remove('live');pts.forEach(function(t){t.classList.remove('near');});});
+})();
+// chapter video only plays while its frame is lit
+setInterval(()=>{document.querySelectorAll('.vidart').forEach(v=>{const lit=v.closest('.jscene').classList.contains('lit');if(lit&&v.paused)v.play().catch(()=>{});if(!lit&&!v.paused)v.pause();});},400);
+</script>
 <script data-goatcounter="https://muskaan-hussain.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
 </body>
 </html>
