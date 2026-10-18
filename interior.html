@@ -34,6 +34,12 @@ nav{border-bottom:1px solid var(--line);background:rgba(28,22,19,.9)}
 .hero p{margin-top:16px;max-width:520px;font-size:15px;line-height:1.7;opacity:.75}
 .hero .rule{margin-top:34px;height:1px;background:var(--line)}
 .hgrid{display:grid;grid-template-columns:1fr 300px;gap:48px;align-items:center}
+.ipro{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:12px;margin-top:28px}
+.ip{display:flex;flex-direction:column;gap:6px;padding:20px 22px;border:1px solid var(--line);background:rgba(20,17,13,.6);text-decoration:none;color:var(--ink);transition:.35s}
+a.ip:hover{border-color:var(--terra);transform:translateY(-4px)}
+.ik{font-family:'Helvetica Neue',Arial,sans-serif;font-size:10px;letter-spacing:.3em;text-transform:uppercase;color:var(--terra)}
+.it{font-size:24px;line-height:1.15}
+.id{font-family:'Helvetica Neue',Arial,sans-serif;font-size:13px;line-height:1.65;opacity:.72}
 .hk{margin-top:34px;font-family:'Helvetica Neue',Arial,sans-serif;font-size:10.5px;letter-spacing:.3em;text-transform:uppercase;color:var(--terra)}
 .hero .hsub{margin-top:10px;font-size:14.5px}
 .phone{border-radius:28px;border:1px solid rgba(232,181,106,.4);padding:8px;background:#0a0908;box-shadow:0 40px 90px rgba(0,0,0,.6),0 0 60px rgba(232,181,106,.08);justify-self:end;width:300px;max-width:100%}
@@ -118,6 +124,11 @@ background-image:repeating-linear-gradient(0deg,rgba(255,250,240,.022) 0 1px,tra
     <div class="phone"><video src="media/interiors.mp4" poster="media/interiors-poster.jpg" controls muted loop playsinline autoplay preload="metadata"></video></div>
   </div>
   <div class="rule"></div>
+  <div class="ipro">
+    <a class="ip" href="#built" data-f="built"><span class="ik">Residence · Archpainted</span><span class="it">Dr. Mohan's Residence</span><span class="id">Full interior: concept, material palette, millwork and bathroom detailing, renders and working drawings through installation.</span></a>
+    <a class="ip" href="#built" data-f="built"><span class="ik">Café · Archpainted</span><span class="it">Pink Cafe</span><span class="id">A café fit-out from palette to built space, documented from first sketch to opening day.</span></a>
+    <div class="ip"><span class="ik">Laboratory · Archpainted</span><span class="it">Nestlé laboratory &amp; data center</span><span class="id">Laboratory and server-room space planning and fit-out for LAB SOLUTIONS, from concept through construction completion.</span></div>
+  </div>
 </section>
 
 <div class="wrap"><div class="grid" id="grid">

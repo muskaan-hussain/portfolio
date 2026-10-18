@@ -286,7 +286,7 @@ footer{padding:1.8rem 1.4rem;flex-direction:column;gap:.8rem}
 .enter-int{display:inline-block;margin-top:16px;font-size:11px;letter-spacing:.24em;text-transform:uppercase;color:#e8b56a;text-decoration:none;border:1px solid rgba(232,181,106,.5);padding:10px 18px;transition:.35s}
 .enter-int:hover{background:rgba(232,181,106,.14);border-color:#e8b56a;letter-spacing:.3em}
 .artlink{display:block;text-decoration:none;position:relative}
-.art-cta{position:absolute;left:50%;bottom:8%;transform:translateX(-50%);font-size:10px;letter-spacing:.26em;text-transform:uppercase;color:#e8b56a;opacity:0;transition:.4s;white-space:nowrap}
+.art-cta{display:none}
 .artlink:hover .art-cta{opacity:.9}
 .artlink:hover svg{filter:drop-shadow(0 0 14px rgba(232,181,106,.25))}
 
@@ -307,8 +307,9 @@ background-image:repeating-linear-gradient(0deg,rgba(255,250,240,.022) 0 1px,tra
 
 .art[onclick],.jscene[onclick] .art{transition:background .4s,border-color .4s;}
 .art[onclick]:hover,.jscene[onclick]:hover .art{filter:brightness(1.16);}
-.art[onclick]::after,.jscene[onclick] .art::after{content:"Click to enter →";position:absolute;right:14px;bottom:10px;font-family:Arial,sans-serif;font-size:.58rem;letter-spacing:.28em;text-transform:uppercase;color:#dfe3e9;opacity:0;transition:opacity .4s;}
-.art[onclick]:hover::after,.jscene[onclick]:hover .art::after{opacity:1;}
+.art[onclick]::after,.jscene[onclick] .art::after{content:"Click to enter →";position:absolute;right:12px;top:12px;z-index:6;font-family:Arial,sans-serif;font-size:.58rem;letter-spacing:.28em;text-transform:uppercase;color:#f5f1e8;background:rgba(13,12,11,.72);border:1px solid rgba(232,181,106,.55);padding:.45rem .8rem;opacity:0;transition:opacity .5s,background .3s;backdrop-filter:blur(4px);}
+.jscene.lit[onclick] .art::after,.art[onclick]:hover::after,.jscene[onclick]:hover .art::after{opacity:1;}
+.jscene[onclick]:hover .art::after{background:var(--amber);color:#14100d;}
 
 .sketchart{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;}
 .art.fullart{background:radial-gradient(ellipse 70% 60% at 50% 45%,#241d15,#12100c 80%);}
@@ -414,7 +415,6 @@ background-image:repeating-linear-gradient(0deg,rgba(255,250,240,.022) 0 1px,tra
 
 <nav>
   <ul>
-    <li><a href="#projects" data-hover>Projects</a></li>
     <li><a href="#experience" data-hover>Experience</a></li>
     <li><a href="#tools" data-hover>Tools</a></li>
     <li><a href="https://www.linkedin.com/in/muskaanhussainn/" target="_blank" data-hover>LinkedIn</a></li>
@@ -441,8 +441,8 @@ background-image:repeating-linear-gradient(0deg,rgba(255,250,240,.022) 0 1px,tra
   <div class="jstrip" id="jstrip">
 
     <div class="jscene" data-i="4" onclick="location.href='bim.html'" style="cursor:pointer" title="Step inside BIM / VDC">
-      <div class="art"><img class="sketchart2" src="thumbs/s4-vdc.jpg" alt="Tower 1, a planted high-rise"></div>
-      <div class="slabel">V — BIM, VDC &amp; AI</div>
+      <div class="art"><img class="sketchart2" src="thumbs/s4-vdc.jpg" alt="The Celestial Trio, competition render"></div>
+      <div class="slabel">V — BIM / VDC</div>
     </div>
 
     <div class="jscene" data-i="3" onclick="location.href='interior.html'" style="cursor:pointer" title="Step inside the Interiors">
@@ -456,7 +456,7 @@ background-image:repeating-linear-gradient(0deg,rgba(255,250,240,.022) 0 1px,tra
     </div>
 
     <div class="jscene" data-i="1" onclick="location.href='bim.html#design'" style="cursor:pointer" title="See the design work">
-      <div class="art"><img class="sketchart2" src="thumbs/s1-architecture.jpg" alt="The Celestial Trio, competition render"></div>
+      <div class="art"><img class="sketchart2" src="thumbs/s1-architecture.jpg" alt="Tower 1, a planted high-rise from studio"></div>
       <div class="slabel">II — Architecture</div>
     </div>
 
@@ -478,7 +478,7 @@ background-image:repeating-linear-gradient(0deg,rgba(255,250,240,.022) 0 1px,tra
     <div class="jt" data-i="1">
       <div class="k">II — Architecture</div>
       <h3>Then a teacher walked in</h3>
-      <p>She saw the drawings, and my passion for art moved into architecture. The artist in me didn't leave — it changed scale. Five years at Jawaharlal Nehru Architecture &amp; Fine Arts University, a registered architect at the end of it, and competition entries like <em>The Celestial Trio</em>: three twisted towers wrapped in gardens, in the frame beside you.</p>
+      <p>She saw the drawings, and my passion for art moved into architecture. The artist in me didn't leave — it changed scale. Five years at Jawaharlal Nehru Architecture &amp; Fine Arts University, a registered architect at the end of it. Studio work like <em>Tower 1</em>, the planted high-rise in the frame beside you.</p>
       <a class="enter-int" href="bim.html#design" data-hover>See the design work &rarr;</a>
       <div class="quote">“You don't just see pictures — you see spaces. Be an architect.”<span class="who">— my teacher</span></div>
     </div>
@@ -496,11 +496,11 @@ background-image:repeating-linear-gradient(0deg,rgba(255,250,240,.022) 0 1px,tra
       <a class="enter-int" href="interior.html" data-hover>Step inside the Interiors &rarr;</a>
     </div>
     <div class="jt" data-i="4">
-      <div class="k">V — BIM, VDC &amp; AI</div>
+      <div class="k">V — BIM / VDC</div>
       <h3>Where the model meets the site</h3>
-      <p>Cast-stone facades at Haddonstone, then New York: NYU Tandon, and Engineta on JFK Terminals 1 &amp; 6 and Barclays Center, coordinating trades in Revit against what was actually built. Along the way I started building the tools — one prompt now pulls a full critical path out of a Revit model, every assumption visible.</p>
-      <a class="enter-int" href="bim.html" data-hover>Step inside BIM, VDC &amp; AI &rarr;</a>
-      <div class="chips"><span class="chip">Revit</span><span class="chip">Navisworks</span><span class="chip">Track3D</span><span class="chip">Python · VBA</span><span class="chip">Revit + Claude</span></div>
+      <p>Cast-stone facades at Haddonstone, then New York: NYU Tandon, and Engineta on JFK Terminals 1 &amp; 6 and Barclays Center, coordinating trades in Revit against what was actually built. The competition work, the tools I build, and the projects all live inside.</p>
+      <a class="enter-int" href="bim.html" data-hover>Step inside BIM / VDC &rarr;</a>
+      <div class="chips"><span class="chip">Revit</span><span class="chip">Navisworks</span><span class="chip">Track3D</span><span class="chip">ACC</span><span class="chip">Procore</span></div>
     </div>
   </div>
 
@@ -603,25 +603,6 @@ background-image:repeating-linear-gradient(0deg,rgba(255,250,240,.022) 0 1px,tra
 <!-- ================= END ================= -->
 <!-- ================= THE PAINTINGS ================= -->
 
-
-<!-- ================= COMPLETED PROJECTS ================= -->
-<section class="projects" id="projects">
-  <div class="p-head rv">
-    <div class="k">Selected projects</div>
-    <h2>Drawn, coordinated, <em>and built.</em></h2>
-    <p class="p-sub">From the jobsites I coordinate now back to the rooms I designed and managed myself.</p>
-  </div>
-  <div class="pgrid2 rv">
-    <a class="pc noimg" href="bim.html" data-hover><div class="pc-body"><span class="tag">Aviation · Engineta · 2026</span><span class="t">JFK Terminals 1 &amp; 6</span><span class="d">Trade coordination in Revit against as-built conditions, daily 360° capture and laser scans, installed quantities validated in Track3D.</span></div></a>
-    <a class="pc noimg" href="bim.html" data-hover><div class="pc-body"><span class="tag">Venues · Engineta · 2026</span><span class="t">Barclays Center, Apollo Theater, Bank of New York</span><span class="d">Weekly coordination with foremen and GC teams, progress reports for project leadership.</span></div></a>
-    <a class="pc" href="bim.html" data-hover><div class="pc-img"><img src="img/stonehill-taylor.webp" alt="At Stonehill Taylor" loading="lazy" style="object-position:center 12%;transform:scale(1.35);transform-origin:50% 20%"></div><div class="pc-body"><span class="tag">Facades · Haddonstone · 2024–25</span><span class="t">Cast-stone facade system</span><span class="d">35+ facade, site and landscape packages across US, UK and India teams; a documentation standard adopted company-wide; presented to NYC firms including Stonehill Taylor.</span></div></a>
-    <a class="pc" href="bim.html#design" data-hover><div class="pc-img"><img src="work/trio-vis.jpg" alt="The Celestial Trio" loading="lazy"></div><div class="pc-body"><span class="tag">Competition · with Heba Mirza</span><span class="t">The Celestial Trio</span><span class="d">Ethos International Design Competition. Three twisted towers wrapped in vertical gardens, crowned by a solar rooftop sanctuary.</span></div></a>
-    <a class="pc" href="interior.html#built" data-hover><div class="pc-img"><img src="work/mohan-08.jpg" alt="Dr. Mohan's residence, living room" loading="lazy"></div><div class="pc-body"><span class="tag">Residence · Archpainted</span><span class="t">Dr. Mohan's Residence</span><span class="d">Full interior: concept, material palette, millwork and bathroom detailing, renders and working drawings through installation.</span></div></a>
-    <a class="pc" href="interior.html#built" data-hover><div class="pc-img"><img src="work/pink-01.jpg" alt="Pink Cafe" loading="lazy"></div><div class="pc-body"><span class="tag">Café · Archpainted</span><span class="t">Pink Cafe</span><span class="d">A café fit-out from palette to built space, documented from first sketch to opening day.</span></div></a>
-    <a class="pc" href="work/usa-07.jpg" target="_blank" data-hover><div class="pc-img"><img src="work/usa-07.jpg" alt="Gambrel garage and loft" loading="lazy"></div><div class="pc-body"><span class="tag">Residential · Signature Solutions · 2023–24</span><span class="t">New England homes</span><span class="d">Permit-ready and construction sets for 10+ residential, commercial and government projects; schedules and budgets owned from bidding to closeout.</span></div></a>
-    <div class="pc noimg"><div class="pc-body"><span class="tag">Laboratory · Archpainted</span><span class="t">Nestlé laboratory &amp; data center</span><span class="d">Laboratory and server-room space planning and fit-out for LAB SOLUTIONS, from concept through construction completion.</span></div></div>
-  </div>
-</section>
 
 <!-- ================= EXPERIENCE ================= -->
 <section class="xp" id="experience">

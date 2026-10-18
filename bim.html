@@ -90,6 +90,19 @@ section{padding:70px 0}
 .book-arrow:disabled{opacity:.25;pointer-events:none}
 .book-count{position:absolute;bottom:14px;right:18px;z-index:20;font-size:.62rem;letter-spacing:.24em;text-transform:uppercase;background:rgba(20,16,13,.65);padding:6px 12px;border:1px solid var(--line);backdrop-filter:blur(4px)}
 .book-cap{margin-top:.9rem;font-size:.6rem;letter-spacing:.3em;text-transform:uppercase;color:var(--grey);text-align:center}
+/* project cards */
+.pgrid{display:grid;grid-template-columns:repeat(auto-fit,minmax(270px,1fr));gap:14px;margin-top:1.8rem}
+.pc{display:flex;flex-direction:column;background:rgba(20,17,13,.8);border:1px solid rgba(216,172,98,.22);text-decoration:none;color:var(--ink);transition:border-color .4s,transform .5s cubic-bezier(.22,.9,.3,1),box-shadow .5s}
+.pc:hover{border-color:rgba(232,181,106,.65);transform:translateY(-5px);box-shadow:0 30px 60px rgba(0,0,0,.5)}
+.pc-img{aspect-ratio:16/10;overflow:hidden;background:#0a0908}
+.pc-img img{width:100%;height:100%;object-fit:cover;display:block;filter:sepia(.12) brightness(.92);transition:transform 1.1s cubic-bezier(.22,.9,.3,1),filter .5s}
+.pc:hover .pc-img img{transform:scale(1.05);filter:none}
+.pc-body{padding:1.3rem 1.4rem 1.5rem;display:flex;flex-direction:column;gap:.45rem}
+.pc .tag{font-size:.56rem;letter-spacing:.34em;text-transform:uppercase;color:var(--gold)}
+.pc .t{font-family:'Cormorant Garamond',serif;font-weight:400;font-size:1.5rem;line-height:1.15;color:#f5f1e8}
+.pc .d{font-size:.84rem;line-height:1.65;color:#b7ae9f}
+.pc.noimg{border-style:dashed;justify-content:center}
+.hintline{font-size:.6rem;letter-spacing:.26em;text-transform:uppercase;color:var(--gold);margin:0 0 12px;opacity:.9}
 /* one continuous horizontal slide for the portfolio */
 .slider{margin-top:2rem}
 .chips{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:14px}
@@ -134,7 +147,7 @@ footer a{color:var(--gold);text-decoration:none}
 <header><div class="hrow">
   <div class="brand">Muskaan Hussain — BIM / VDC</div>
   <nav class="hnav">
-    <a href="#statement">Statement</a><a href="#tools">Tools</a><a href="#design">Design work</a><a href="#portfolio">Portfolio</a>
+    <a href="#statement">Statement</a><a href="#tools">Tools</a><a href="#projects">Projects</a><a href="#design">Design work</a><a href="#portfolio">Portfolio</a>
     <a class="back" href="index.html">&larr; Back to the Journey</a>
   </nav>
 </div></header>
@@ -189,6 +202,22 @@ footer a{color:var(--gold);text-decoration:none}
 </section>
 <div class="wrap"><div class="rule"></div></div>
 
+<section id="projects">
+  <div class="wrap">
+    <div class="k">Projects</div>
+    <h2>Drawn, coordinated, <em>and built.</em></h2>
+    <div class="pgrid">
+      <a class="pc noimg" href="#tools"><div class="pc-body"><span class="tag">Aviation · Engineta · 2026</span><span class="t">JFK Terminals 1 &amp; 6</span><span class="d">Trade coordination in Revit against as-built conditions, daily 360° capture and laser scans, installed quantities validated in Track3D.</span></div></a>
+      <a class="pc noimg" href="#tools"><div class="pc-body"><span class="tag">Venues · Engineta · 2026</span><span class="t">Barclays Center, Apollo Theater, Bank of New York</span><span class="d">Weekly coordination with foremen and GC teams, progress reports for project leadership.</span></div></a>
+      <a class="pc" href="img/stonehill-taylor.webp" target="_blank"><div class="pc-img"><img src="img/stonehill-taylor.webp" alt="Presenting at Stonehill Taylor" loading="lazy" style="object-position:center 12%"></div><div class="pc-body"><span class="tag">Facades · Haddonstone · 2024–25</span><span class="t">Cast-stone facade system</span><span class="d">35+ facade, site and landscape packages across US, UK and India teams; a documentation standard adopted company-wide; presented to NYC firms including Stonehill Taylor.</span></div></a>
+      <a class="pc" href="#design"><div class="pc-img"><img src="work/trio-aerial.jpg" alt="The Celestial Trio" loading="lazy"></div><div class="pc-body"><span class="tag">Competition · with Heba Mirza</span><span class="t">The Celestial Trio</span><span class="d">Ethos International Design Competition. Three twisted towers wrapped in vertical gardens, crowned by a solar rooftop sanctuary.</span></div></a>
+      <a class="pc" href="#portfolio"><div class="pc-img"><img src="work/usa-07.jpg" alt="Gambrel garage and loft" loading="lazy"></div><div class="pc-body"><span class="tag">Residential · Signature Solutions · 2023–24</span><span class="t">New England homes</span><span class="d">Permit-ready and construction sets for 10+ residential, commercial and government projects; schedules and budgets owned from bidding to closeout.</span></div></a>
+      <a class="pc" href="#portfolio"><div class="pc-img"><img src="thumbs/s1-architecture.jpg" alt="Tower 1" loading="lazy"></div><div class="pc-body"><span class="tag">Studio · B.Arch</span><span class="t">Tower 1, a planted high-rise</span><span class="d">Concept, introduction and plans for a sky-village apartment tower; in the portfolio slide below.</span></div></a>
+    </div>
+  </div>
+</section>
+<div class="wrap"><div class="rule"></div></div>
+
 <section id="design">
   <div class="wrap">
     <div class="k">Design work · Ethos International Design Competition · with Heba Mirza</div>
@@ -202,6 +231,7 @@ footer a{color:var(--gold);text-decoration:none}
       <div class="bd" data-cap="Glass terrace"><img src="work/trio-terrace.jpg" alt="" loading="lazy"><span>Glass terrace</span></div>
     </div>
     <div class="k" style="margin-top:3.5rem">The competition boards · turn the pages</div>
+    <div class="hintline">&#8599; Click a board to read it full-screen · click again to zoom</div>
     <div class="bookwrap single" data-book="ethos" data-cap="Board"></div>
   </div>
 </section>
@@ -213,6 +243,7 @@ footer a{color:var(--gold);text-decoration:none}
     <p class="lead">The portfolio as it reads, spread by spread, in one continuous slide: a planted high-rise from studio, a low-cost housing study, then the residential sets I drew for Signature Solutions in New England. Arrow keys work; click a spread to read it full-screen.</p>
     <div class="slider" id="pslider">
       <div class="chips" id="pchips"></div>
+      <div class="hintline">&#8599; Click any spread to read it full-screen · click again to zoom</div>
       <div class="sview">
         <div class="strack" id="ptrack"></div>
         <button class="sarrow left" id="pprev" aria-label="Previous spread">&larr;</button>
@@ -304,7 +335,7 @@ document.querySelectorAll('.bookwrap').forEach(makeBook);
   var CH=[
     {name:'Tower 1 — a planted high-rise',short:'Tower 1',sub:'B.Arch studio',pages:['work/books/tower-01.jpg','work/books/tower-02.jpg','work/books/tower-03.jpg'],names:['Concept','Introduction','Plans']},
     {name:'Low-cost housing',short:'Housing',sub:'7th semester studio',pages:['work/books/housing-01.jpg','work/books/housing-02.jpg','work/books/housing-03.jpg','work/books/housing-04.jpg','work/books/housing-05.jpg','work/books/housing-06.jpg'],names:['Analysis','Zoning','Site plan','Neighbourhood','Building plans','Site']},
-    {name:'US residential — permit and construction sets',short:'US residential',sub:'Signature Solutions · 2023–24',pages:['work/books/usa-01.jpg','work/books/usa-02.jpg','work/books/usa-03.jpg','work/books/usa-04.jpg','work/books/usa-05.jpg','work/books/usa-06.jpg'],names:['Kumar Residence','Bonney Street','Elevations','Sections','Rose Acushnet','The gambrel garage']}
+    {name:'US residential — permit and construction sets',short:'US residential',sub:'Signature Solutions · 2023–24',pages:['work/books/usa-01.jpg','work/books/usa-02.jpg','work/books/usa-04.jpg','work/books/usa-05.jpg','work/books/usa-06.jpg'],names:['Kumar Residence','Bonney Street','Sections','Rose Acushnet','The gambrel garage']}
   ];
   var S=[];CH.forEach(function(c,ci){c.pages.forEach(function(p,pi){S.push({src:p,ch:ci,name:c.names[pi]||'',n:pi+1,of:c.pages.length});});});
   var track=document.getElementById('ptrack'),chips=document.getElementById('pchips'),cnt=document.getElementById('pcount'),cap=document.getElementById('pcap'),bar=document.getElementById('pbar');
