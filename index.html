@@ -414,6 +414,48 @@ background-image:repeating-linear-gradient(0deg,rgba(255,250,240,.022) 0 1px,tra
 .traj.live .tp.near i{transform:scale(1.5)}
 .traj.live .tp:nth-child(7).near span,.traj.live .tp:nth-child(6).near span,.traj.live .tp:nth-child(2).near span{transform:none}
 
+/* ---------- phone: vertical walk, built by JS from the same chapters ---------- */
+.mwalk{display:none;}
+@media(max-width:820px){
+  .jtrack,.jfigs,.cursor-ring,.cursor-dot,#dim,#glow,#cur{display:none!important;}
+  body.has-cursor{cursor:auto;}
+  .mwalk{display:block;}
+  nav{padding:.9rem 1.1rem;background:linear-gradient(180deg,rgba(10,9,8,.9),rgba(10,9,8,.6) 70%,transparent);}
+  nav ul{gap:.7rem;width:100%;justify-content:flex-end;}
+  nav ul li:not(:nth-last-child(-n+2)){display:none;}
+  nav ul a{font-size:.6rem;letter-spacing:.24em;}
+  .resume-btn{padding:.5rem .9rem;}
+  .mhero{position:relative;min-height:100svh;display:flex;flex-direction:column;justify-content:flex-end;padding:6rem 1.4rem 3rem;overflow:hidden;}
+  .mhero::before{content:'';position:absolute;inset:0;background:url('img/portrait.jpg') center 18%/cover no-repeat;filter:grayscale(1) brightness(.55);transform:scale(1.04);}
+  .mhero::after{content:'';position:absolute;inset:0;background:linear-gradient(180deg,rgba(13,12,11,.35),rgba(13,12,11,.15) 35%,rgba(13,12,11,.92) 75%,#0d0c0b);}
+  .mhero>*{position:relative;z-index:2;}
+  .mhero .over{font-size:.58rem;letter-spacing:.34em;text-transform:uppercase;color:var(--glow);margin-bottom:1rem;line-height:1.9;}
+  .mhero h1{font-family:'Inter',sans-serif;font-weight:200;text-transform:uppercase;font-size:1.55rem;letter-spacing:.3em;line-height:1.3;}
+  .mhero h1 em{display:block;font-family:'Cormorant Garamond',serif;font-style:italic;text-transform:none;letter-spacing:.04em;font-size:2.4rem;color:var(--glow);font-weight:300;margin-top:.3rem;}
+  .mhero .sub{margin-top:1.2rem;font-family:'Cormorant Garamond',serif;font-style:italic;color:#efe9dd;font-size:1.05rem;line-height:1.55;}
+  .mhero .skstrip{margin-top:1.1rem;font-size:.56rem;letter-spacing:.26em;text-transform:uppercase;color:rgba(232,181,106,.85);line-height:1.9;}
+  .mlinks{display:flex;flex-wrap:wrap;gap:.5rem;margin-top:1.4rem;}
+  .mlinks a{font-size:.58rem;letter-spacing:.24em;text-transform:uppercase;color:var(--bone);text-decoration:none;border:1px solid rgba(232,226,214,.4);padding:.55rem .9rem;}
+  .mlinks a.solid{background:var(--amber);border-color:var(--amber);color:#14100d;}
+  .mdown{text-align:center;font-size:.56rem;letter-spacing:.4em;text-transform:uppercase;color:#b8b0a2;padding:1.6rem 0 .4rem;}
+  .mdown::after{content:'';display:block;width:1px;height:38px;margin:10px auto 0;background:linear-gradient(180deg,var(--amber),transparent);animation:drop 2s ease-in-out infinite;}
+  .mch{padding:2.6rem 1.4rem 2.2rem;border-top:1px solid rgba(216,172,98,.16);}
+  .mnum{font-family:'Cormorant Garamond',serif;font-style:italic;color:var(--grey);letter-spacing:.25em;font-size:.9rem;margin-bottom:1rem;}
+  .mframe{position:relative;display:block;aspect-ratio:3/2;overflow:hidden;background:#100d0a;box-shadow:0 30px 60px rgba(0,0,0,.6);margin-bottom:1.5rem;}
+  .mframe img,.mframe video{width:100%;height:100%;object-fit:cover;display:block;}
+  .mframe .mcta{position:absolute;right:10px;top:10px;font-size:.56rem;letter-spacing:.26em;text-transform:uppercase;color:#f5f1e8;background:rgba(13,12,11,.72);border:1px solid rgba(232,181,106,.55);padding:.4rem .7rem;}
+  .mwalk .jt{position:static;opacity:1;width:auto;background:none;backdrop-filter:none;padding:0 0 0 1.1rem;border-left:1px solid rgba(216,172,98,.45);}
+  .mwalk .jt>*{opacity:1;transform:none;}
+  .mwalk .jt h3{font-size:1.7rem;}
+  .mwalk .jt p{font-size:.9rem;}
+  .projects,.xp{padding-left:1.2rem;padding-right:1.2rem;}
+  .traj{aspect-ratio:1000/560;}
+  .tp b{font-size:.8rem;}
+  .end{min-height:auto;padding:5rem 1.4rem;}
+  .end h2{font-size:2.2rem;}
+  footer{padding:1.6rem 1.4rem;}
+}
+
 .nyu-sky{display:none;position:absolute;top:4%;left:50%;transform:translateX(-50%) rotate(-2deg);z-index:5;font-family:'Cormorant Garamond',Georgia,serif;font-style:italic;font-weight:600;font-size:clamp(3rem,7vw,6.5rem);letter-spacing:.12em;color:rgba(248,246,240,.92);text-shadow:0 0 26px rgba(232,181,106,.45);pointer-events:none;}
 </style>
 </head>
@@ -611,6 +653,8 @@ background-image:repeating-linear-gradient(0deg,rgba(255,250,240,.022) 0 1px,tra
 </div>
 </div>
 
+<section class="mwalk" id="mwalk"></section>
+
 <!-- ================= END ================= -->
 <!-- ================= THE PAINTINGS ================= -->
 
@@ -800,6 +844,9 @@ d.addEventListener('mousemove',function(e){r.style.setProperty('--mx',e.clientX+
 (function(){
   var traj=document.getElementById('traj'),path=document.getElementById('tline'),sc=document.getElementById('scrub'),sy=document.getElementById('scrubY');
   if(!traj||!path)return;var L=path.getTotalLength(),pts=[].slice.call(traj.querySelectorAll('.tp'));
+  // snap every dot onto the curve at its own x, so nothing floats above or below the line
+  function snap(){pts.forEach(function(t){var fx=parseFloat(t.style.left)*10,lo=0,hi=L;for(var k=0;k<18;k++){var m=(lo+hi)/2;if(path.getPointAtLength(m).x<fx)lo=m;else hi=m;}t.style.top=(path.getPointAtLength(lo).y/420*100)+'%';});}
+  snap();
   function at(fx){var lo=0,hi=L;for(var k=0;k<18;k++){var m=(lo+hi)/2;if(path.getPointAtLength(m).x<fx)lo=m;else hi=m;}return path.getPointAtLength(lo);}
   traj.addEventListener('mousemove',function(e){
     var r=traj.getBoundingClientRect(),fx=(e.clientX-r.left)/r.width*1000;fx=Math.max(40,Math.min(960,fx));
@@ -811,6 +858,33 @@ d.addEventListener('mousemove',function(e){r.style.setProperty('--mx',e.clientX+
 })();
 // chapter video only plays while its frame is lit
 setInterval(()=>{document.querySelectorAll('.vidart').forEach(v=>{const lit=v.closest('.jscene').classList.contains('lit');if(lit&&v.paused)v.play().catch(()=>{});if(!lit&&!v.paused)v.pause();});},400);
+
+// phone layout: rebuild the walk as a vertical stack from the same scenes and narration
+(function(){
+  var m=document.getElementById('mwalk');if(!m)return;
+  var tc=document.getElementById('tcard');
+  var hero=document.createElement('div');hero.className='mhero';
+  hero.innerHTML='<div class="over">'+tc.querySelector('.over').innerHTML+'</div><h1>'+tc.querySelector('h1').innerHTML+'</h1><p class="sub">'+tc.querySelector('.sub').innerHTML+'</p><div class="skstrip">'+tc.querySelector('.skstrip').innerHTML+'</div>'+
+    '<div class="mlinks"><a class="solid" href="resume.pdf">Resume</a><a href="bim.html">Architecture &amp; BIM</a><a href="ai.html">AI</a><a href="interior.html">Interiors</a><a href="#experience">Still growing</a><a href="https://www.linkedin.com/in/muskaanhussainn/">LinkedIn</a></div>';
+  m.appendChild(hero);
+  var down=document.createElement('div');down.className='mdown';down.textContent='Scroll to walk';m.appendChild(down);
+  var ROM=['I','II','III','IV','V','VI','VII'];
+  var scenes=[].slice.call(document.querySelectorAll('.jscene')).sort(function(a,b){return +a.dataset.i-+b.dataset.i;});
+  scenes.forEach(function(sc){
+    var i=+sc.dataset.i,art=document.createElement('article');art.className='mch';
+    var href=(sc.getAttribute('onclick')||'').match(/'([^']+)'/);href=href?href[1]:(sc.querySelector('a.art')?sc.querySelector('a.art').getAttribute('href'):null);
+    var media=sc.querySelector('video,img');var frame=document.createElement(href?'a':'div');frame.className='mframe';if(href)frame.href=href;
+    if(media){var c=media.cloneNode(true);c.className='';c.removeAttribute('style');if(c.tagName==='VIDEO'){c.muted=true;c.autoplay=true;c.loop=true;c.setAttribute('playsinline','');}frame.appendChild(c);}
+    if(href){var cta=document.createElement('span');cta.className='mcta';cta.textContent='Click to enter →';frame.appendChild(cta);}
+    var txt=document.querySelector('.jt[data-i="'+i+'"]');
+    art.innerHTML='<div class="mnum">'+(ROM[i]||'')+' / '+ROM[scenes.length-1]+'</div>';
+    art.appendChild(frame);if(txt)art.appendChild(txt.cloneNode(true));
+    m.appendChild(art);
+  });
+  // touch scrubbing for the graph
+  var traj=document.getElementById('traj');
+  if(traj)traj.addEventListener('touchmove',function(e){var t=e.touches[0];traj.dispatchEvent(new MouseEvent('mousemove',{clientX:t.clientX,clientY:t.clientY,bubbles:true}));},{passive:true});
+})();
 </script>
 <script data-goatcounter="https://muskaan-hussain.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
 </body>
