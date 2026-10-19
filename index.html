@@ -3,889 +3,157 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="description" content="Muskaan Hussain — Architect, BIM/VDC Coordinator, AI in Construction. A walk through my journey: painting, architecture, interiors, education, and construction technology in New York."><meta property="og:title" content="Muskaan Hussain — A Walk Through My Journey"><meta property="og:description" content="Architect · BIM/VDC · AI in Construction. Painting, architecture, interiors, education."><title>Muskaan Hussain — A Walk Through My Journey</title>
+<title>Muskaan Hussain — Construction Manager, BIM / VDC</title>
+<meta name="description" content="Muskaan Hussain. Registered architect, now a construction manager and BIM/VDC coordinator in New York. JFK Terminals 1 & 6, Barclays Center, cast-stone facades, Revit + AI tools.">
+<meta property="og:title" content="Muskaan Hussain — Construction Manager, BIM / VDC">
+<meta property="og:description" content="Registered architect, now a construction manager and BIM/VDC coordinator in New York.">
+<meta property="og:image" content="https://muskaan-hussain.github.io/portfolio/work/trio-aerial.jpg">
+<meta property="og:type" content="website">
+<meta name="twitter:card" content="summary_large_image">
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300;1,400&family=Inter:wght@200;300;400&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300;1,400&family=Inter:wght@300;400&display=swap" rel="stylesheet">
 <style>
-*{margin:0;padding:0;box-sizing:border-box;}
-:root{
-  --bg:#131110; --bg2:#1b1815;
-  --amber:#c9974c; --glow:#e8b56a;
-  --bone:#f5f1e8; --grey:#8a8375;
-}
-html{scroll-behavior:smooth;}
-body{background:var(--bg);color:var(--bone);font-family:'Inter',sans-serif;overflow-x:hidden;}
-body.has-cursor{cursor:none;}
-body:not(.has-cursor) .cursor-dot,body:not(.has-cursor) .cursor-ring{opacity:0;}
-::selection{background:var(--amber);color:var(--bg);}
-
-/* cursor */
-.cursor-dot,.cursor-ring{position:fixed;top:0;left:0;pointer-events:none;z-index:9999;transform:translate(-50%,-50%);}
-.cursor-dot{display:none;}
-.cursor-ring{width:36px;height:36px;border-radius:50%;border:1px solid rgba(201,151,76,.5);transition:width .25s,height .25s,border-color .25s;}
-.cursor-ring.hovering{width:70px;height:70px;border-color:var(--glow);}
-@media(pointer:coarse){.cursor-dot,.cursor-ring{display:none}body{cursor:auto}}
-
-
-/* nav */
-nav{position:fixed;top:0;width:100%;z-index:1000;display:flex;justify-content:space-between;align-items:center;padding:1.6rem 3.5rem;
-background:linear-gradient(180deg,rgba(10,9,8,.75),transparent);}
-.nav-logo{height:44px;display:block;filter:invert(92%) sepia(8%) saturate(300%) hue-rotate(10deg);opacity:.9;}
-nav ul{display:flex;gap:2.4rem;list-style:none;align-items:center;}
-nav ul a{color:var(--bone);text-decoration:none;font-size:.66rem;letter-spacing:.32em;text-transform:uppercase;font-weight:300;transition:color .3s;}
-nav ul a:hover{color:var(--glow);}
-.resume-btn{border:1px solid rgba(232,226,214,.5);padding:.6rem 1.4rem;}
-
-/* almost-black with a still, fine linen weave */
-body{background:
-  repeating-linear-gradient(0deg, rgba(255,255,255,.016) 0 1px, transparent 1px 4px),
-  repeating-linear-gradient(90deg, rgba(255,255,255,.013) 0 1px, transparent 1px 4px),
-  #0d0c0b;}
-
-/* ---------- JOURNEY ---------- */
-.jtrack{height:600vh;position:relative;}
-.jstage{position:sticky;top:0;height:100vh;overflow:hidden;
-background:
-  repeating-linear-gradient(0deg, rgba(255,255,255,.016) 0 1px, transparent 1px 4px),
-  repeating-linear-gradient(90deg, rgba(255,255,255,.013) 0 1px, transparent 1px 4px),
-  radial-gradient(ellipse 60% 38% at 50% 114%,rgba(201,151,76,.05),transparent 60%),#0d0c0b;}
-/* floor line */
-.jstage::after{content:'';position:absolute;left:0;right:0;bottom:13vh;height:1px;background:linear-gradient(90deg,transparent,rgba(232,181,106,.28),transparent);}
-/* museum floor — dark polished marble with a soft sheen */
-.jstage::before{content:'';position:absolute;left:0;right:0;bottom:0;height:13vh;
-background:
-  radial-gradient(ellipse 55% 120% at 50% 0%,rgba(232,196,140,.07),transparent 70%),
-  repeating-linear-gradient(90deg, rgba(255,255,255,.015) 0 1px, transparent 1px 90px),
-  linear-gradient(180deg,#0c0b0a,#080706 55%,#050404);}
-
-/* title card (start of the walk) */
-.tcard{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;z-index:20;transition:opacity .8s ease;padding:0 2rem;}
-.tcard-bg{position:absolute;inset:0;z-index:-1;
-background:url('img/portrait.jpg') center 22%/cover no-repeat;
-filter:grayscale(1) brightness(.5) blur(2px);transform:scale(1.05);}
-.tcard-bg::after{content:'';position:absolute;inset:0;
-background:radial-gradient(ellipse 70% 65% at 50% 45%,transparent 30%,rgba(13,12,11,.88) 90%),linear-gradient(180deg,rgba(13,12,11,.5),rgba(13,12,11,.35) 50%,rgba(13,12,11,.85));}
-.tcard .over{font-size:.66rem;letter-spacing:.7em;text-transform:uppercase;color:var(--glow);margin-bottom:2rem;opacity:0;animation:tin 1.2s .3s forwards;}
-.tcard h1{font-weight:200;font-family:'Inter',sans-serif;text-transform:uppercase;font-size:clamp(1.8rem,5.4vw,4.6rem);letter-spacing:.42em;line-height:1.35;opacity:0;animation:tin 1.4s .55s forwards;}
-.tcard h1 em{display:block;font-family:'Cormorant Garamond',serif;font-style:italic;text-transform:none;letter-spacing:.06em;font-size:clamp(2.4rem,7vw,6rem);color:var(--glow);font-weight:300;}
-.tcard .sub{margin-top:2.2rem;font-family:'Cormorant Garamond',serif;font-style:italic;color:var(--grey);font-size:clamp(.95rem,1.6vw,1.2rem);opacity:0;animation:tin 1.4s 1s forwards;}
-@keyframes tin{to{opacity:1}}
-.scroll-hint{position:absolute;bottom:3rem;right:4vw;font-size:.6rem;letter-spacing:.42em;text-transform:uppercase;color:#b8b0a2;z-index:50;text-align:center;}
-.scroll-hint::after{content:'';display:block;width:1px;height:44px;margin:10px auto 0;background:linear-gradient(180deg,var(--amber),transparent);animation:drop 2s ease-in-out infinite;}
-@keyframes drop{0%{transform:scaleY(0);transform-origin:top}50%{transform:scaleY(1);transform-origin:top}51%{transform-origin:bottom}100%{transform:scaleY(0);transform-origin:bottom}}
-
-/* the moving strip of scenes */
-.jstrip{position:absolute;top:44%;right:0;display:flex;align-items:center;gap:26vw;padding:0 44vw;transform:translateY(-50%);will-change:transform;perspective:1500px;}
-.jscene{flex:0 0 auto;position:relative;}
-.jscene{--glowc:232,181,106;}
-.jscene[data-i="1"]{--glowc:126,178,214;}
-.jscene[data-i="2"]{--glowc:148,198,142;}
-.jscene[data-i="3"]{--glowc:216,122,134;}
-.jscene[data-i="4"]{--glowc:172,142,222;}
-.jscene[data-i="5"]{--glowc:224,116,92;}
-.jscene[data-i="6"]{--glowc:238,198,118;}
-.jscene[data-i="0"] .art{opacity:1;}
-.jscene::before{content:'';position:absolute;inset:-20% -24%;z-index:-1;
-background:radial-gradient(ellipse 58% 52% at 50% 42%,rgba(var(--glowc),.15),transparent 70%);
-opacity:0;transition:opacity 1.2s ease;}
-.jscene.lit::before{opacity:1;}
-/* hover: the whole scene simply brightens a little */
-.jscene::after{display:none;}
-.jscene:hover::before{opacity:1;background:radial-gradient(ellipse 58% 52% at 50% 42%,rgba(var(--glowc),.22),transparent 70%);}
-.jscene:hover .art{filter:brightness(1.16);}
-.jscene:hover .slabel{opacity:1;}
-.jscene .slabel{position:absolute;left:0;bottom:-3.6rem;font-size:.58rem;letter-spacing:.42em;text-transform:uppercase;color:var(--grey);opacity:0;transition:opacity 1s;}
-.jscene.lit .slabel{opacity:1;}
-/* each painting is a living gold etching */
-.art{width:min(58vw,660px);height:54vh;position:relative;overflow:hidden;
-background:#100d0a;
-border:0;
-box-shadow:0 45px 90px rgba(0,0,0,.7), inset 0 0 70px rgba(0,0,0,.35);
-opacity:.3;transition:opacity 1.2s ease,box-shadow 1.4s ease,filter .5s ease;}
-.jscene.lit .art{opacity:1;box-shadow:0 45px 90px rgba(0,0,0,.75), inset 0 0 70px rgba(0,0,0,.5), 0 0 95px rgba(232,181,106,.10);}
-.art svg{position:absolute;inset:7%;width:86%;height:86%;overflow:visible;}
-.art.fullart{overflow:hidden;}
-.photo-full{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;filter:sepia(.22) brightness(.85) blur(16px);opacity:0;transform:scale(1.05);transition:opacity 1s .3s ease,filter 2.6s 1.1s ease,transform 3s 1.1s cubic-bezier(.22,.9,.3,1);}
-.jscene.lit .photo-full{opacity:1;filter:sepia(.1) brightness(1) blur(0);transform:scale(1);}
-.art .ln{fill:none;stroke:#d8ac62;stroke-width:1.5;stroke-linecap:round;stroke-linejoin:round;vector-effect:non-scaling-stroke;}
-.art .soft{stroke:rgba(216,172,98,.45);}
-.art .d{stroke-dasharray:1;stroke-dashoffset:1;transition:stroke-dashoffset 2.4s ease;}
-.jscene.lit .d{stroke-dashoffset:0;}
-.jscene.lit .d1{transition-delay:.15s}.jscene.lit .d2{transition-delay:.55s}
-.jscene.lit .d3{transition-delay:.95s}.jscene.lit .d4{transition-delay:1.35s}
-.jscene.lit .d5{transition-delay:1.75s}
-/* AI painting keeps its living circuits */
-.art .flow{stroke:rgba(232,181,106,.9);stroke-width:1.6;stroke-dasharray:12 200;animation:flow 4.5s linear infinite;}
-.art .node{fill:var(--glow);stroke:none;animation:cpulse 2.2s ease-in-out infinite;}
-.art .ring{fill:none;stroke:rgba(232,181,106,.4);stroke-width:1;stroke-dasharray:4 8;transform-origin:300px 200px;animation:spin 24s linear infinite;}
-@keyframes spin{to{transform:rotate(360deg)}}
-@keyframes flow{to{stroke-dashoffset:-212}}
-@keyframes cpulse{0%,100%{opacity:.3}50%{opacity:1}}
-/* living details inside the paintings */
-.art .photo{opacity:0;transition:opacity 1s .4s ease;}
-.jscene.lit .photo{opacity:1;}
-.art .wipe{clip-path:inset(0 100% 0 0);transition:clip-path 3.2s 1s ease;}
-.jscene.lit .wipe{clip-path:inset(0 0 0 0);}
-.art .brush-g{transform-origin:480px 270px;}
-.jscene.lit .brush-g{animation:paintmove 3.4s 1s ease-in-out infinite alternate;}
-@keyframes paintmove{from{transform:translate(0,0) rotate(0)}to{transform:translate(-120px,55px) rotate(-9deg)}}
-.art .gearA{transform-origin:470px 110px;animation:spin 12s linear infinite;}
-.art .gearB{transform-origin:408px 168px;animation:spin 8s linear infinite reverse;}
-.art .lamp-g{transform-origin:300px 55px;}
-.jscene.lit .lamp-g{animation:swing 5.5s ease-in-out infinite;}
-@keyframes swing{0%,100%{transform:rotate(-4deg)}50%{transform:rotate(4deg)}}
-.art .tw{animation:cpulse 3.2s ease-in-out infinite;}
-.art .birds{animation:drift 10s ease-in-out infinite alternate;}
-@keyframes drift{from{transform:translateX(-26px)}to{transform:translateX(26px)}}
-.art .shimmer{stroke-dasharray:6 10;transform-origin:302px 72px;animation:spin 30s linear infinite;}
-
-/* scene narration — lower left, one at a time */
-.jtexts{position:absolute;left:4.5vw;bottom:17vh;z-index:40;width:min(430px,34vw);pointer-events:none;}
-.jt{position:absolute;left:0;bottom:0;width:100%;opacity:0;transition:opacity .7s ease;
-border-left:1px solid rgba(216,172,98,.45);padding-left:1.6rem;}
-.jt.on{opacity:1;}
-.jt>*{opacity:0;transform:translateY(16px);transition:opacity .8s ease,transform .8s ease;}
-.jt.on>*{opacity:1;transform:none;}
-.jt.on>*:nth-child(1){transition-delay:.1s}
-.jt.on>*:nth-child(2){transition-delay:.28s}
-.jt.on>*:nth-child(3){transition-delay:.46s}
-.jt.on>*:nth-child(4){transition-delay:.64s}
-.jt .k{font-size:.62rem;letter-spacing:.5em;text-transform:uppercase;color:var(--glow);margin-bottom:.9rem;}
-.jt h3{font-family:'Cormorant Garamond',serif;font-weight:300;font-size:clamp(1.8rem,2.9vw,2.6rem);margin-bottom:.9rem;color:#f0ebe0;}
-.jt p{font-size:.92rem;font-weight:300;line-height:1.85;color:#aaa295;}
-.jt .quote{margin-top:1.1rem;font-family:'Cormorant Garamond',serif;font-style:italic;font-size:1.05rem;color:var(--bone);line-height:1.6;}
-.jt .who{display:block;margin-top:.4rem;font-family:'Inter',sans-serif;font-style:normal;font-size:.6rem;letter-spacing:.35em;text-transform:uppercase;color:var(--glow);}
-.jt .chips{margin-top:1rem;display:flex;flex-wrap:wrap;gap:.5rem;}
-.jt .chip{border:1px solid rgba(232,181,106,.4);color:var(--glow);font-size:.6rem;letter-spacing:.2em;text-transform:uppercase;padding:.35rem .7rem;border-radius:99px;}
-.jt a{color:var(--glow);pointer-events:auto;}
-
-/* scene index counter */
-.jcount{position:absolute;top:7.5rem;right:3.5rem;z-index:40;font-family:'Cormorant Garamond',serif;font-style:italic;color:var(--grey);letter-spacing:.25em;font-size:.95rem;}
-
-/* figures — the companions who walk with you, then leave */
-.jfigs{position:absolute;left:50%;bottom:8.5vh;transform:translateX(-50%);z-index:35;width:340px;height:210px;pointer-events:none;}
-/* warm backlight so the silhouettes read against the dark */
-.jfigs::before{content:'';position:absolute;left:50%;bottom:-4vh;width:560px;height:300px;transform:translateX(-50%);
-background:radial-gradient(ellipse 50% 55% at 50% 78%,rgba(232,181,106,.16),transparent 68%);}
-.jfigs::after{content:'';position:absolute;left:50%;bottom:-1.5vh;width:420px;height:26px;transform:translateX(-50%);
-background:radial-gradient(ellipse 50% 100% at 50% 50%,rgba(232,181,106,.14),transparent 70%);}
-.fg{position:absolute;inset:0;opacity:0;transform:translateX(150px);transition:opacity 1.3s ease,transform 1.9s cubic-bezier(.3,.7,.3,1);}
-.fg.in{opacity:1;transform:none;}
-.fg.out-left{opacity:0;transform:translateX(-170px);}
-.fg.wait-right{opacity:0;transform:translateX(150px);}
-.fg svg{display:block;width:100%;height:100%;filter:drop-shadow(0 16px 12px rgba(0,0,0,.7));}
-.fg [fill="#040302"]{fill:#181310;}
-.fg g{stroke:rgba(232,181,106,.45);stroke-width:.8;}
-
-/* ---------- THE PAINTINGS ---------- */
-.paintings{padding:10rem 4vw 8rem;text-align:center;}
-.p-head .k{font-size:.62rem;letter-spacing:.55em;text-transform:uppercase;color:var(--glow);margin-bottom:1.4rem;}
-.p-head h2{font-family:'Cormorant Garamond',serif;font-weight:300;font-size:clamp(2.2rem,5.5vw,4.4rem);margin-bottom:3.5rem;}
-.p-head h2 em{font-style:italic;color:var(--glow);}
-.prow{display:flex;gap:3rem;justify-content:center;align-items:flex-start;flex-wrap:wrap;max-width:1300px;margin:0 auto;}
-.pframe{margin:0;}
-.pframe img{height:46vh;max-width:80vw;display:block;object-fit:cover;
-border:1px solid rgba(216,172,98,.45);
-box-shadow:0 0 0 9px #0d0c0b,0 0 0 10px rgba(216,172,98,.2),0 35px 80px rgba(0,0,0,.7);}
-.pframe figcaption{margin-top:1.3rem;font-size:.58rem;letter-spacing:.38em;text-transform:uppercase;color:var(--grey);}
-.rv{opacity:0;transform:translateY(45px);transition:opacity 1s ease,transform 1s cubic-bezier(.2,.7,.2,1);}
-.rv.in{opacity:1;transform:none;}
-
-
-/* five paintings — smooth crossfade gallery */
-.gwrap{max-width:1100px;margin:0 auto;}
-.gstage{position:relative;height:min(64vh,580px);margin:0 auto;max-width:760px;
-border:1px solid rgba(216,172,98,.45);
-box-shadow:0 0 0 9px #0d0c0b,0 0 0 10px rgba(216,172,98,.2),0 35px 80px rgba(0,0,0,.7);
-background:#0a0908;overflow:hidden;}
-.gbg{position:absolute;inset:-40px;background-size:cover;background-position:center;filter:blur(34px) brightness(.4) saturate(.85);opacity:0;transition:opacity 1.4s ease;}
-.gbg.on{opacity:.85;}
-.gstage img.gslide{position:absolute;inset:0;width:100%;height:100%;object-fit:contain;
-opacity:0;transform:scale(1.015);transition:opacity 1.4s ease,transform 2.6s ease;}
-.gstage img.gslide.on{opacity:1;transform:scale(1);}
-.gcap{margin-top:1.5rem;font-size:.6rem;letter-spacing:.42em;text-transform:uppercase;color:var(--grey);transition:opacity .5s;}
-.gthumbs{display:flex;gap:1.1rem;justify-content:center;margin-top:2rem;flex-wrap:wrap;}
-.gthumb{width:74px;height:56px;padding:0;border:1px solid rgba(216,172,98,.3);background:#0a0908;cursor:pointer;
-box-shadow:0 0 0 4px #0d0c0b,0 0 0 5px rgba(216,172,98,.12);opacity:.45;transition:opacity .4s,box-shadow .4s;}
-.gthumb img{width:100%;height:100%;object-fit:cover;display:block;filter:saturate(.85);}
-.gthumb.on,.gthumb:hover{opacity:1;box-shadow:0 0 0 4px #0d0c0b,0 0 0 5px rgba(232,181,106,.55);}
-@media(max-width:700px){.gstage{height:52vh;}}
-
-/* ---------- COMPLETED PROJECTS — placeholder until the project data lands ---------- */
-.projects{padding:9rem 4vw 7rem;text-align:center;position:relative;}
-.projects .p-sub{max-width:560px;margin:-1.8rem auto 3.6rem;font-family:'Cormorant Garamond',serif;font-style:italic;font-size:1.1rem;color:var(--grey);line-height:1.6;}
-.pgrid{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:1.6rem;max-width:1100px;margin:0 auto;}
-.pcard{position:relative;aspect-ratio:4/3;border:1px dashed rgba(216,172,98,.32);background:rgba(15,13,11,.55);
-display:flex;flex-direction:column;align-items:center;justify-content:center;gap:1rem;transition:border-color .4s,background .4s;}
-.pcard:hover{border-color:rgba(232,181,106,.6);background:rgba(20,17,13,.8);}
-.pcard .tag{display:flex;align-items:center;gap:.6rem;font-size:.56rem;letter-spacing:.42em;text-transform:uppercase;color:var(--glow);}
-.pcard .tag::before{content:'';width:6px;height:6px;border-radius:50%;background:var(--glow);animation:cpulse 1.8s ease-in-out infinite;}
-.pcard .t{font-family:'Cormorant Garamond',serif;font-weight:300;font-size:1.45rem;color:var(--bone);}
-.pcard .d{font-size:.58rem;letter-spacing:.3em;text-transform:uppercase;color:var(--grey);}
-@media(max-width:700px){.projects{padding:6rem 1.4rem 4rem}.pgrid{gap:1rem}}
-
-/* ---------- END / CONTACT — her horse, deep in the dark ---------- */
-.end{min-height:92vh;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:7rem 2rem;position:relative;overflow:hidden;
-background:
-  repeating-linear-gradient(0deg, rgba(255,255,255,.016) 0 1px, transparent 1px 4px),
-  repeating-linear-gradient(90deg, rgba(255,255,255,.013) 0 1px, transparent 1px 4px),
-  linear-gradient(180deg, rgba(13,12,11,.9) 0%, rgba(13,12,11,.62) 50%, rgba(13,12,11,.92) 100%),
-  url('paintings/the-gallop.jpg') center 30%/cover no-repeat #0d0c0b;}
-.end::before{content:'';position:absolute;left:50%;bottom:-32%;width:76vw;height:76vw;transform:translateX(-50%);border-radius:50%;background:radial-gradient(circle,rgba(201,151,76,.12),transparent 60%);}
-.end .k{font-size:.62rem;letter-spacing:.55em;text-transform:uppercase;color:var(--glow);margin-bottom:1.6rem;}
-.end h2{font-family:'Cormorant Garamond',serif;font-weight:300;font-size:clamp(2.4rem,6.5vw,5.4rem);line-height:1.08;}
-.end h2 em{font-style:italic;color:var(--glow);}
-.end .mail{margin-top:2.6rem;display:inline-block;color:var(--bone);text-decoration:none;font-size:.95rem;letter-spacing:.2em;border-bottom:1px solid var(--amber);padding-bottom:.45rem;transition:color .3s;}
-.end .mail:hover{color:var(--glow);}
-.end .row{margin-top:2.8rem;display:flex;gap:2.6rem;flex-wrap:wrap;justify-content:center;}
-.end .row a{color:var(--grey);text-decoration:none;font-size:.64rem;letter-spacing:.35em;text-transform:uppercase;transition:color .3s;}
-.end .row a:hover{color:var(--glow);}
-.big-resume{margin-top:3rem;display:inline-block;border:1px solid var(--amber);color:var(--glow);text-decoration:none;padding:1rem 2.8rem;font-size:.68rem;letter-spacing:.4em;text-transform:uppercase;transition:background .3s,color .3s;}
-.big-resume:hover{background:var(--amber);color:var(--bg);}
-footer{padding:2.2rem 3.5rem;display:flex;justify-content:space-between;border-top:1px solid rgba(232,226,214,.1);font-size:.6rem;letter-spacing:.25em;text-transform:uppercase;color:var(--grey);}
-
-@media(max-width:900px){
-nav{padding:1.2rem 1.4rem}
-nav ul{gap:1.1rem}
-.jtexts{left:1.4rem;right:1.4rem;max-width:none;bottom:12vh}
-.jcount{right:1.4rem;top:6rem}
-.jfigs{display:none}
-footer{padding:1.8rem 1.4rem;flex-direction:column;gap:.8rem}
-}
-
-/* subtle studio wall — my paintings, hung in the first studio */
-  box-shadow:0 12px 30px rgba(0,0,0,.65);opacity:0;transform:translateY(26px) rotate(var(--tilt,0deg));
-  transition:opacity 1.1s ease,transform 1.1s cubic-bezier(.22,.9,.3,1),filter .5s;}
-.sw0{--tilt:-2.2deg}.sw1{--tilt:1.6deg}.sw2{--tilt:-1.2deg}.sw3{--tilt:2.4deg}.sw4{--tilt:-1.8deg}
-.jscene.lit .sw0{transition-delay:1.6s}.jscene.lit .sw1{transition-delay:1.85s}.jscene.lit .sw2{transition-delay:2.1s}
-.jscene.lit .sw3{transition-delay:2.35s}.jscene.lit .sw4{transition-delay:2.6s}
-
-/* walking crews: staggered walk-in + stride bob */
-.fg .pp{opacity:0;transform:translateX(74px);transition:opacity 1s ease,transform 1.6s cubic-bezier(.3,.7,.3,1);}
-.fg.in .pp{opacity:1;transform:translateX(0);}
-.fg.in .pp1{transition-delay:.05s}.fg.in .pp2{transition-delay:.28s}.fg.in .pp3{transition-delay:.5s}
-.fg.in .pp4{transition-delay:.72s}.fg.in .pp5{transition-delay:.94s}.fg.in .pp6{transition-delay:1.16s}.fg.in .pp7{transition-delay:1.38s}
-@keyframes stride{0%,100%{transform:translateY(0)}50%{transform:translateY(-3px)}}
-.fg.in .bob{animation:stride .55s ease-in-out 4;}
-.fg.in .pp2 .bob{animation-delay:.28s}.fg.in .pp3 .bob{animation-delay:.5s}.fg.in .pp4 .bob{animation-delay:.72s}
-.fg.in .pp5 .bob{animation-delay:.94s}.fg.in .pp6 .bob{animation-delay:1.16s}.fg.in .pp7 .bob{animation-delay:1.38s}
-/* steel beam frame builds itself */
-.fg .beam{stroke-dasharray:1;stroke-dashoffset:1;}
-.fg.in .beam{stroke-dashoffset:0;transition:stroke-dashoffset 1.8s ease 1.5s;}
-.fg.in .beam.b2{transition-delay:2.2s;}
-/* clash detection pulse */
-@keyframes clashpulse{0%,100%{opacity:.3}50%{opacity:1}}
-.clash{animation:clashpulse 1.7s ease-in-out infinite;}
-.clash.c2{animation-delay:.85s;}
-.fg .clashcube{opacity:0;transition:opacity 1s ease 2.6s;}
-.fg.in .clashcube{opacity:1;}
-/* teacher's board fades in after she arrives */
-.fg .tboard{opacity:0;transition:opacity 1.2s ease 1.6s;}
-.fg.in .tboard{opacity:1;}
-
-.enter-int{display:inline-block;margin-top:16px;font-size:11px;letter-spacing:.24em;text-transform:uppercase;color:#e8b56a;text-decoration:none;border:1px solid rgba(232,181,106,.5);padding:10px 18px;transition:.35s}
-.enter-int:hover{background:rgba(232,181,106,.14);border-color:#e8b56a;letter-spacing:.3em}
-.artlink{display:block;text-decoration:none;position:relative}
-.art-cta{display:none}
-.artlink:hover .art-cta{opacity:.9}
-.artlink:hover svg{filter:drop-shadow(0 0 14px rgba(232,181,106,.25))}
-
-
-
-/* dark room + cursor light v2 */
-#dim{position:fixed;inset:0;z-index:64;pointer-events:none;background:radial-gradient(circle 340px at var(--mx,50%) var(--my,40%),transparent 0%,rgba(0,0,0,.01) 55%,rgba(0,0,0,.04) 100%)}
-#glow{position:fixed;inset:0;z-index:65;pointer-events:none;mix-blend-mode:screen;background:radial-gradient(circle 260px at var(--mx,50%) var(--my,40%),rgba(255,214,150,.13),rgba(232,181,106,.05) 45%,transparent 70%)}
-#cur{display:none;}
-.jscene .art:hover{transform:scale(1.02);transition:transform 1s cubic-bezier(.22,.9,.3,1)}
-.jt p{color:#fbf8f1;} .jt h3{color:#ffffff;} .tcard .sub{color:#efe9dd;}
-
-body::after{content:"";position:fixed;inset:0;z-index:1;pointer-events:none;opacity:.5;
-background-image:repeating-linear-gradient(0deg,rgba(255,250,240,.022) 0 1px,transparent 1px 3px),repeating-linear-gradient(90deg,rgba(255,250,240,.018) 0 1px,transparent 1px 3px),repeating-linear-gradient(45deg,rgba(255,250,240,.008) 0 2px,transparent 2px 6px);}
-#cur.hot{background:#e6eaf0;box-shadow:0 0 16px 5px rgba(230,234,240,.85),0 0 44px 16px rgba(200,206,215,.35);}
-.jt{background:rgba(15,13,11,.66);backdrop-filter:blur(5px);padding:1.6rem 1.8rem;border-radius:2px;}
-.end>*{position:relative;z-index:3;}
-
-.art[onclick],.jscene[onclick] .art{transition:background .4s,border-color .4s;}
-.art[onclick]:hover,.jscene[onclick]:hover .art{filter:brightness(1.16);}
-.art[onclick]::after,.jscene[onclick] .art::after{content:"Click to enter →";position:absolute;right:12px;top:12px;z-index:6;font-family:Arial,sans-serif;font-size:.58rem;letter-spacing:.28em;text-transform:uppercase;color:#f5f1e8;background:rgba(13,12,11,.72);border:1px solid rgba(232,181,106,.55);padding:.45rem .8rem;opacity:0;transition:opacity .5s,background .3s;backdrop-filter:blur(4px);}
-.jscene.lit[onclick] .art::after,.art[onclick]:hover::after,.jscene[onclick]:hover .art::after{opacity:1;}
-.jscene[onclick]:hover .art::after{background:var(--amber);color:#14100d;}
-
-.sketchart{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;}
-.art.fullart{background:radial-gradient(ellipse 70% 60% at 50% 45%,#241d15,#12100c 80%);}
-
-.sketchart2{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center;}
-.jscene .art{background:radial-gradient(ellipse 70% 60% at 50% 45%,#241d15,#12100c 80%);}
-
-/* ---------- real projects, experience, tools ---------- */
-.pgrid2{display:grid;grid-template-columns:repeat(auto-fit,minmax(270px,1fr));gap:1.4rem;max-width:1200px;margin:0 auto;text-align:left;}
-.pc{display:flex;flex-direction:column;background:rgba(20,17,13,.8);border:1px solid rgba(216,172,98,.22);text-decoration:none;color:var(--bone);transition:border-color .4s,transform .5s cubic-bezier(.22,.9,.3,1),box-shadow .5s;}
-.pc:hover{border-color:rgba(232,181,106,.65);transform:translateY(-5px);box-shadow:0 30px 60px rgba(0,0,0,.5);}
-.pc-img{aspect-ratio:16/10;overflow:hidden;background:#0a0908;}
-.pc-img img{width:100%;height:100%;object-fit:cover;display:block;filter:sepia(.12) brightness(.92);transition:transform 1.1s cubic-bezier(.22,.9,.3,1),filter .5s;}
-.pc:hover .pc-img img{transform:scale(1.05);filter:none;}
-.pc-body{padding:1.3rem 1.4rem 1.5rem;display:flex;flex-direction:column;gap:.45rem;}
-.pc .tag{font-size:.56rem;letter-spacing:.34em;text-transform:uppercase;color:var(--glow);}
-.pc .t{font-family:'Cormorant Garamond',serif;font-weight:400;font-size:1.5rem;line-height:1.15;color:#f5f1e8;}
-.pc .d{font-size:.84rem;line-height:1.65;color:#b7ae9f;font-weight:300;}
-.pc.noimg{border-style:dashed;justify-content:center;}
-.xp,.tools{padding:8rem 4vw 7rem;text-align:center;position:relative;}
-.xp{background:linear-gradient(180deg,transparent,rgba(201,151,76,.04) 50%,transparent);}
-.xp-list{max-width:980px;margin:0 auto;text-align:left;border-top:1px solid rgba(216,172,98,.22);}
-.xrow{display:grid;grid-template-columns:170px 1fr;gap:2rem;padding:1.6rem 0;border-bottom:1px solid rgba(216,172,98,.18);}
-.xwhen{font-size:.66rem;letter-spacing:.22em;text-transform:uppercase;color:var(--grey);line-height:1.8;padding-top:.35rem;}
-.xt{font-family:'Cormorant Garamond',serif;font-size:1.45rem;color:#f5f1e8;margin-bottom:.35rem;}
-.xd{font-size:.88rem;line-height:1.75;color:#b7ae9f;font-weight:300;}
-.xp-foot{max-width:980px;margin:2.6rem auto 0;display:grid;grid-template-columns:repeat(3,1fr);gap:2rem;text-align:left;font-size:.84rem;line-height:1.7;color:#b7ae9f;}
-.xp-foot .k{display:block;margin-bottom:.5rem;}
-.tgrid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:1.2rem;max-width:1200px;margin:0 auto;text-align:left;}
-.tcardx{padding:1.6rem 1.5rem;border:1px solid rgba(216,172,98,.22);background:rgba(20,17,13,.6);display:flex;flex-direction:column;gap:.5rem;transition:border-color .4s;}
-.tcardx:hover{border-color:rgba(232,181,106,.6);}
-.tcardx .tag{font-size:.56rem;letter-spacing:.34em;text-transform:uppercase;color:var(--glow);}
-.tcardx .t{font-family:'Cormorant Garamond',serif;font-size:1.45rem;color:#f5f1e8;line-height:1.15;}
-.tcardx .t a{color:var(--glow);text-decoration:none;}
-.tcardx .d{font-size:.84rem;line-height:1.65;color:#b7ae9f;font-weight:300;}
-.posts{display:grid;grid-template-columns:repeat(auto-fit,minmax(320px,1fr));gap:1.6rem;max-width:1100px;margin:0 auto;align-items:start;}
-.post-k{font-size:.6rem;letter-spacing:.3em;text-transform:uppercase;color:var(--glow);text-align:left;margin-bottom:.8rem;}
-.post iframe{width:100%;height:640px;border:1px solid rgba(216,172,98,.3);background:#fff;display:block;box-shadow:0 30px 60px rgba(0,0,0,.5);}
-@media(max-width:700px){.xrow{grid-template-columns:1fr;gap:.3rem}.xp-foot{grid-template-columns:1fr}.xp,.tools{padding:5rem 1.4rem 4rem}.post iframe{height:560px}}
-
-/* chapter frame video */
-.vidart{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center 46%;}
-/* trajectory graph */
-.traj{position:relative;max-width:1100px;margin:0 auto;aspect-ratio:1000/420;text-align:left;}
-.traj svg{position:absolute;inset:0;width:100%;height:100%;overflow:visible;}
-.traj .tline{stroke-dasharray:1400;stroke-dashoffset:1400;transition:stroke-dashoffset 3.2s cubic-bezier(.22,.9,.3,1) .2s;}
-.traj .tfill{opacity:0;transition:opacity 1.6s 1.8s;}
-.traj.in .tline{stroke-dashoffset:0;}
-.traj.in .tfill{opacity:1;}
-.tp{position:absolute;transform:translate(-50%,-50%);opacity:0;transition:opacity .6s;}
-.traj.in .tp{opacity:1;}
-.traj.in .tp:nth-child(2){transition-delay:.5s}.traj.in .tp:nth-child(3){transition-delay:1s}.traj.in .tp:nth-child(4){transition-delay:1.5s}
-.traj.in .tp:nth-child(5){transition-delay:2s}.traj.in .tp:nth-child(6){transition-delay:2.5s}.traj.in .tp:nth-child(7){transition-delay:3s}
-.tp i{display:block;width:12px;height:12px;border-radius:50%;background:var(--glow);box-shadow:0 0 0 6px rgba(232,181,106,.18),0 0 24px rgba(232,181,106,.6);cursor:pointer;transition:transform .3s;}
-.tp:hover i{transform:scale(1.4);}
-.tp b{position:absolute;left:50%;top:16px;transform:translateX(-50%);font-family:'Cormorant Garamond',serif;font-style:italic;font-weight:400;font-size:1rem;color:var(--glow);white-space:nowrap;}
-.tp span{position:absolute;left:50%;bottom:22px;transform:translateX(-50%) translateY(6px);width:max-content;max-width:230px;font-size:.72rem;line-height:1.5;color:#f5f1e8;background:rgba(15,13,11,.92);border:1px solid rgba(232,181,106,.35);padding:.55rem .8rem;opacity:0;pointer-events:none;transition:.3s;text-align:center;}
-.tp:hover span{opacity:1;transform:translateX(-50%) translateY(0);}
-.tp:nth-child(7) span,.tp:nth-child(6) span{left:auto;right:-10px;transform:translateY(6px);}
-.tp:nth-child(7):hover span,.tp:nth-child(6):hover span{transform:none;}
-.tp:nth-child(2) span{left:-10px;transform:translateY(6px);}
-.tp:nth-child(2):hover span{transform:none;}
-.counters{display:grid;grid-template-columns:repeat(4,1fr);gap:1rem;max-width:1000px;margin:3rem auto 3.5rem;}
-.counters b{display:block;font-family:'Cormorant Garamond',serif;font-weight:300;font-size:clamp(2.6rem,5vw,4.2rem);color:var(--glow);line-height:1;}
-.counters span{font-size:.62rem;letter-spacing:.3em;text-transform:uppercase;color:var(--grey);}
-.xrow{grid-template-columns:110px 1fr;padding:1.15rem 0;}
-.xt{font-size:1.3rem;}
-.xd{font-size:.84rem;}
-/* tools: warm amber cards and the live demo */
-.tools{background:linear-gradient(180deg,transparent,rgba(201,151,76,.07) 40%,rgba(201,151,76,.07) 70%,transparent);}
-.tshow{display:grid;grid-template-columns:300px 1fr;gap:3rem;align-items:center;max-width:1000px;margin:0 auto 3.5rem;text-align:left;}
-.phone{border-radius:28px;border:1px solid rgba(232,181,106,.45);padding:8px;background:#0a0908;box-shadow:0 40px 90px rgba(0,0,0,.6),0 0 60px rgba(232,181,106,.08);}
-.phone video{display:block;width:100%;aspect-ratio:9/16;object-fit:cover;border-radius:20px;background:#000;}
-.tside h3{font-family:'Cormorant Garamond',serif;font-weight:300;font-size:clamp(1.7rem,3vw,2.5rem);line-height:1.1;margin:.3rem 0 1rem;color:#f5f1e8;}
-.tside p{font-size:.92rem;line-height:1.75;color:#cfc7b7;margin-bottom:1.6rem;}
-.bars{display:grid;gap:1.1rem;}
-.bl{display:block;font-size:.6rem;letter-spacing:.3em;text-transform:uppercase;color:var(--grey);margin-bottom:.45rem;}
-.bt{display:grid;gap:5px;}
-.bf{height:22px;width:0;transition:width 1.6s cubic-bezier(.22,.9,.3,1) .3s;position:relative;min-width:2px;}
-.bf.before{background:rgba(232,181,106,.22);}
-.bf.after{background:var(--glow);transition-delay:.9s;}
-.bf em{position:absolute;left:calc(100% + 10px);top:50%;transform:translateY(-50%);font-style:normal;font-size:.62rem;letter-spacing:.2em;text-transform:uppercase;color:#f5f1e8;white-space:nowrap;opacity:0;transition:opacity .6s 1.6s;}
-.rv.in .bf{width:var(--w);}
-.rv.in .bf em{opacity:1;}
-.tcardx{background:linear-gradient(160deg,rgba(201,151,76,.26),rgba(201,151,76,.12));border-color:rgba(232,181,106,.42);}
-.tcardx:hover{background:linear-gradient(160deg,rgba(201,151,76,.36),rgba(201,151,76,.18));}
-.tcardx .t{color:#fbf3e4;}
-.tcardx .d{color:#e2d8c6;}
-.tcardx.more{background:var(--glow);border-color:var(--glow);}
-.tcardx.more .tag,.tcardx.more .d{color:#3a2a14;}
-.tcardx.more .t a{color:#1a1208;}
-@media(max-width:800px){.counters{grid-template-columns:repeat(2,1fr)}.tshow{grid-template-columns:1fr}.phone{max-width:280px;margin:0 auto}.tp span{display:none}.traj{aspect-ratio:1000/520}}
-
-/* scrub marker that rides the curve under the mouse */
-.scrub{position:absolute;left:0;top:0;transform:translate(-50%,-50%);pointer-events:none;opacity:0;transition:opacity .3s;z-index:3}
-.traj.live .scrub{opacity:1}
-.scrub i{display:block;width:18px;height:18px;border-radius:50%;border:2px solid var(--glow);background:rgba(13,12,11,.85);box-shadow:0 0 30px rgba(232,181,106,.7)}
-.scrub b{position:absolute;left:50%;bottom:26px;transform:translateX(-50%);font-family:'Cormorant Garamond',serif;font-style:italic;font-weight:400;font-size:1.1rem;color:var(--glow);white-space:nowrap}
-.traj{cursor:crosshair}
-.traj.live .tp span{opacity:0}
-.traj.live .tp.near span{opacity:1;transform:translateX(-50%) translateY(0)}
-.traj.live .tp.near i{transform:scale(1.5)}
-.traj.live .tp:nth-child(7).near span,.traj.live .tp:nth-child(6).near span,.traj.live .tp:nth-child(2).near span{transform:none}
-
-/* ---------- phone: vertical walk, built by JS from the same chapters ---------- */
-.mwalk{display:none;}
+:root{--bg:#0d0c0b;--ink:#f3eee4;--gold:#e8b56a;--grey:#8a8375;--line:rgba(232,224,211,.14)}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{background:var(--bg);color:var(--ink);font-family:'Inter',sans-serif;font-weight:300;line-height:1.7;-webkit-font-smoothing:antialiased}
+body::after{content:"";position:fixed;inset:0;z-index:1;pointer-events:none;opacity:.5;background-image:repeating-linear-gradient(0deg,rgba(255,250,240,.022) 0 1px,transparent 1px 3px),repeating-linear-gradient(90deg,rgba(255,250,240,.018) 0 1px,transparent 1px 3px)}
+a{color:inherit}
+.wrap{max-width:1040px;margin:0 auto;padding:0 28px}
+header{position:sticky;top:0;z-index:50;background:rgba(13,12,11,.88);backdrop-filter:blur(8px);border-bottom:1px solid var(--line)}
+.hrow{max-width:1040px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;padding:16px 28px;gap:1rem}
+.brand{font-family:'Cormorant Garamond',serif;font-size:1.1rem;letter-spacing:.18em;text-transform:uppercase;text-decoration:none}
+nav{display:flex;gap:1.5rem;align-items:center}
+nav a{font-size:.62rem;letter-spacing:.26em;text-transform:uppercase;color:var(--grey);text-decoration:none;transition:.3s}
+nav a:hover{color:var(--gold)}
+nav a.btn{color:var(--ink);border:1px solid var(--line);padding:8px 14px}
+nav a.btn:hover{background:var(--gold);border-color:var(--gold);color:#14100d}
+/* first screen */
+.hero{min-height:calc(100svh - 70px);display:flex;align-items:center}
+.hero .wrap{display:grid;grid-template-columns:1.3fr .8fr;gap:4rem;align-items:center}
+.k{font-size:.6rem;letter-spacing:.5em;text-transform:uppercase;color:var(--gold);margin-bottom:1.2rem}
+h1{font-family:'Cormorant Garamond',serif;font-weight:300;font-size:clamp(2.8rem,6.4vw,5.4rem);line-height:1;letter-spacing:-.01em}
+h1 em{font-style:italic;color:var(--gold)}
+.one{font-size:clamp(1.05rem,1.6vw,1.25rem);color:#d8d1c1;max-width:30em;margin-top:1.4rem}
+.links{display:flex;gap:.6rem;flex-wrap:wrap;margin-top:2rem}
+.links a{font-size:.62rem;letter-spacing:.26em;text-transform:uppercase;text-decoration:none;border:1px solid var(--line);padding:12px 18px;transition:.3s;color:var(--ink)}
+.links a:hover{border-color:var(--gold);color:var(--gold)}
+.links a.solid{background:var(--gold);border-color:var(--gold);color:#14100d}
+.links a.solid:hover{background:#f0c37e;color:#14100d}
+.open{margin-top:2rem;font-size:.62rem;letter-spacing:.26em;text-transform:uppercase;color:var(--grey);display:flex;align-items:center;gap:.6rem}
+.open::before{content:'';width:7px;height:7px;border-radius:50%;background:#4f8a3c}
+.portrait{aspect-ratio:4/5;overflow:hidden;background:#161310}
+.portrait img{width:100%;height:100%;object-fit:cover;object-position:center 15%;filter:grayscale(1) brightness(.9);display:block}
+/* work list */
+section{padding:5rem 0}
+h2{font-family:'Cormorant Garamond',serif;font-weight:300;font-size:clamp(1.8rem,3vw,2.4rem);line-height:1.1;margin-bottom:1.6rem}
+h2 em{font-style:italic;color:var(--gold)}
+.list{border-top:1px solid var(--line)}
+.row{display:grid;grid-template-columns:150px 1fr 64px;gap:1.6rem;align-items:center;padding:1.3rem 0;border-bottom:1px solid var(--line);text-decoration:none;transition:.3s}
+.row:hover{background:linear-gradient(90deg,rgba(232,181,106,.06),transparent)}
+.row .th{aspect-ratio:16/10;overflow:hidden;background:#161310;border:1px solid var(--line)}
+.row .th img{width:100%;height:100%;object-fit:cover;display:block;filter:brightness(.92);transition:transform .8s cubic-bezier(.22,.9,.3,1)}
+.row:hover .th img{transform:scale(1.05)}
+.row .th.blank{display:flex;align-items:center;justify-content:center;font-family:'Cormorant Garamond',serif;font-style:italic;color:var(--gold);font-size:1.1rem}
+.row .t{font-family:'Cormorant Garamond',serif;font-size:1.5rem;line-height:1.15;color:var(--ink)}
+.row .t small{font-family:'Inter',sans-serif;font-size:.6rem;letter-spacing:.26em;text-transform:uppercase;color:var(--gold);margin-left:.8rem;vertical-align:middle}
+.row .d{font-size:.9rem;color:#b7ae9f;margin-top:.25rem}
+.row .y{font-family:'Cormorant Garamond',serif;font-style:italic;color:var(--grey);text-align:right;font-size:1.05rem}
+/* about */
+.about .wrap{display:grid;grid-template-columns:1fr 1fr;gap:4rem;align-items:start}
+.about p{color:#d8d1c1;font-size:1rem;max-width:34em}
+.facts{list-style:none;border-top:1px solid var(--line)}
+.facts li{display:grid;grid-template-columns:120px 1fr;gap:1rem;padding:.7rem 0;border-bottom:1px solid var(--line);font-size:.9rem;color:#d8d1c1}
+.facts li b{font-weight:400;font-size:.6rem;letter-spacing:.26em;text-transform:uppercase;color:var(--gold);padding-top:.3rem}
+/* contact */
+.contact{border-top:1px solid var(--line)}
+.contact .wrap{display:flex;justify-content:space-between;align-items:flex-end;gap:2rem;flex-wrap:wrap}
+.mail{font-family:'Cormorant Garamond',serif;font-size:clamp(1.4rem,3vw,2.2rem);text-decoration:none;border-bottom:1px solid var(--gold);padding-bottom:.2rem}
+footer{padding:1.6rem 0 2.4rem;font-size:.6rem;letter-spacing:.22em;text-transform:uppercase;color:var(--grey)}
+footer .wrap{display:flex;justify-content:space-between;flex-wrap:wrap;gap:.6rem}
 @media(max-width:820px){
-  .jtrack,.jfigs,.cursor-ring,.cursor-dot,#dim,#glow,#cur{display:none!important;}
-  body.has-cursor{cursor:auto;}
-  .mwalk{display:block;}
-  nav{padding:.9rem 1.1rem;background:linear-gradient(180deg,rgba(10,9,8,.9),rgba(10,9,8,.6) 70%,transparent);}
-  nav ul{gap:.7rem;width:100%;justify-content:flex-end;}
-  nav ul li:not(:nth-last-child(-n+2)){display:none;}
-  nav ul a{font-size:.6rem;letter-spacing:.24em;}
-  .resume-btn{padding:.5rem .9rem;}
-  .mhero{position:relative;min-height:100svh;display:flex;flex-direction:column;justify-content:flex-end;padding:6rem 1.4rem 3rem;overflow:hidden;}
-  .mhero::before{content:'';position:absolute;inset:0;background:url('img/portrait.jpg') center 18%/cover no-repeat;filter:grayscale(1) brightness(.55);transform:scale(1.04);}
-  .mhero::after{content:'';position:absolute;inset:0;background:linear-gradient(180deg,rgba(13,12,11,.35),rgba(13,12,11,.15) 35%,rgba(13,12,11,.92) 75%,#0d0c0b);}
-  .mhero>*{position:relative;z-index:2;}
-  .mhero .over{font-size:.58rem;letter-spacing:.34em;text-transform:uppercase;color:var(--glow);margin-bottom:1rem;line-height:1.9;}
-  .mhero h1{font-family:'Inter',sans-serif;font-weight:200;text-transform:uppercase;font-size:1.55rem;letter-spacing:.3em;line-height:1.3;}
-  .mhero h1 em{display:block;font-family:'Cormorant Garamond',serif;font-style:italic;text-transform:none;letter-spacing:.04em;font-size:2.4rem;color:var(--glow);font-weight:300;margin-top:.3rem;}
-  .mhero .sub{margin-top:1.2rem;font-family:'Cormorant Garamond',serif;font-style:italic;color:#efe9dd;font-size:1.05rem;line-height:1.55;}
-  .mhero .skstrip{margin-top:1.1rem;font-size:.56rem;letter-spacing:.26em;text-transform:uppercase;color:rgba(232,181,106,.85);line-height:1.9;}
-  .mlinks{display:flex;flex-wrap:wrap;gap:.5rem;margin-top:1.4rem;}
-  .mlinks a{font-size:.58rem;letter-spacing:.24em;text-transform:uppercase;color:var(--bone);text-decoration:none;border:1px solid rgba(232,226,214,.4);padding:.55rem .9rem;}
-  .mlinks a.solid{background:var(--amber);border-color:var(--amber);color:#14100d;}
-  .mdown{text-align:center;font-size:.56rem;letter-spacing:.4em;text-transform:uppercase;color:#b8b0a2;padding:1.6rem 0 .4rem;}
-  .mdown::after{content:'';display:block;width:1px;height:38px;margin:10px auto 0;background:linear-gradient(180deg,var(--amber),transparent);animation:drop 2s ease-in-out infinite;}
-  .mch{padding:2.6rem 1.4rem 2.2rem;border-top:1px solid rgba(216,172,98,.16);}
-  .mnum{font-family:'Cormorant Garamond',serif;font-style:italic;color:var(--grey);letter-spacing:.25em;font-size:.9rem;margin-bottom:1rem;}
-  .mframe{position:relative;display:block;aspect-ratio:3/2;overflow:hidden;background:#100d0a;box-shadow:0 30px 60px rgba(0,0,0,.6);margin-bottom:1.5rem;}
-  .mframe img,.mframe video{width:100%;height:100%;object-fit:cover;display:block;}
-  .mframe .mcta{position:absolute;right:10px;top:10px;font-size:.56rem;letter-spacing:.26em;text-transform:uppercase;color:#f5f1e8;background:rgba(13,12,11,.72);border:1px solid rgba(232,181,106,.55);padding:.4rem .7rem;}
-  .mwalk .jt{position:static;opacity:1;width:auto;background:none;backdrop-filter:none;padding:0 0 0 1.1rem;border-left:1px solid rgba(216,172,98,.45);}
-  .mwalk .jt>*{opacity:1;transform:none;}
-  .mwalk .jt h3{font-size:1.7rem;}
-  .mwalk .jt p{font-size:.9rem;}
-  .projects,.xp{padding-left:1.2rem;padding-right:1.2rem;}
-  .traj{aspect-ratio:1000/560;}
-  .tp b{font-size:.8rem;}
-  .end{min-height:auto;padding:5rem 1.4rem;}
-  .end h2{font-size:2.2rem;}
-  footer{padding:1.6rem 1.4rem;}
+  .hrow{padding:14px 18px}.brand{font-size:.85rem;letter-spacing:.14em;white-space:nowrap}nav{gap:1rem}nav a:not(.btn):not(.keep){display:none}
+  .wrap{padding:0 18px}
+  .hero{min-height:auto;padding:3rem 0 1rem}
+  .hero .wrap{grid-template-columns:1fr;gap:2rem}
+  .portrait{order:-1;max-width:220px;aspect-ratio:1;border-radius:50%}
+  section{padding:3.4rem 0}
+  .row{grid-template-columns:96px 1fr;gap:1rem}
+  .row .y{display:none}
+  .row .t{font-size:1.25rem}.row .t small{display:block;margin:.2rem 0 0}
+  .about .wrap{grid-template-columns:1fr;gap:2rem}
 }
-
-.nyu-sky{display:none;position:absolute;top:4%;left:50%;transform:translateX(-50%) rotate(-2deg);z-index:5;font-family:'Cormorant Garamond',Georgia,serif;font-style:italic;font-weight:600;font-size:clamp(3rem,7vw,6.5rem);letter-spacing:.12em;color:rgba(248,246,240,.92);text-shadow:0 0 26px rgba(232,181,106,.45);pointer-events:none;}
 </style>
 </head>
 <body>
-<div id="dim"></div><div id="glow"></div><div id="cur"></div>
 
+<header><div class="hrow">
+  <a class="brand" href="index.html">Muskaan Hussain</a>
+  <nav>
+    <a href="#work">Work</a><a href="bim.html">Architecture &amp; BIM</a><a href="ai.html">AI</a><a href="interior.html">Interiors</a><a href="story.html" class="keep">Story</a>
+    <a class="btn" href="resume.pdf">Resume</a>
+  </nav>
+</div></header>
 
-<div class="cursor-ring"></div>
-<div class="cursor-dot"></div>
-
-<nav>
-  <ul>
-    <li><a href="bim.html" data-hover>Architecture &amp; BIM</a></li>
-    <li><a href="ai.html" data-hover>AI</a></li>
-    <li><a href="#experience" data-hover>Still growing</a></li>
-    <li><a href="https://www.linkedin.com/in/muskaanhussainn/" target="_blank" data-hover>LinkedIn</a></li>
-    <li><a class="resume-btn" href="resume.pdf" target="_blank" download="Muskaan_Hussain_Resume.pdf" data-hover>Resume</a></li>
-    <li><a class="resume-btn" href="portfolio.pdf" download="Muskaan_Hussain_Portfolio.pdf" data-hover>Portfolio</a></li>
-  </ul>
-</nav>
-
-<!-- ================= THE JOURNEY ================= -->
-<div class="jtrack" id="jtrack">
-<div class="jstage" id="top">
-
-  <!-- title card -->
-  <div class="tcard" id="tcard">
-    <div class="tcard-bg"></div>
-        <div class="over" style="font-size:1.05rem;letter-spacing:.35em;">Construction Manager · BIM / VDC · Architect · Artist</div>
-    <h1>Muskaan Hussain<em>a walk through my journey</em></h1>
-    <div class="sub">Registered architect, now building what I used to draw. Across the US, UK and India — JFK Terminals 1 &amp; 6, Barclays Center, cast-stone facades — and the tools that keep the model and the jobsite connected. MS Construction Management, NYU Tandon. Open to CM and BIM/VDC roles in New York.</div>
-    <div class="skstrip" style="margin-top:1.4rem;font-family:Arial,sans-serif;font-size:.6rem;letter-spacing:.3em;text-transform:uppercase;color:rgba(232,181,106,.85)">Revit · Navisworks · ACC · Procore · Primavera P6 · Bluebeam · Python · Dynamo · AI</div>
-  </div>
-  <div class="scroll-hint" id="shint">Scroll to walk</div>
-
-  <!-- moving paintings — gold etchings that draw themselves -->
-  <div class="jstrip" id="jstrip">
-
-    <div class="jscene" data-i="4" onclick="location.href='ai.html'" style="cursor:pointer" title="Step inside AI in construction">
-      <div class="art"><video class="sketchart2 vidart" src="media/revit-claude.mp4" poster="media/revit-poster.jpg" muted loop playsinline autoplay preload="metadata"></video></div>
-      <div class="slabel">V — AI in Construction</div>
+<section class="hero">
+  <div class="wrap">
+    <div>
+      <div class="k">New York</div>
+      <h1>Muskaan <em>Hussain</em></h1>
+      <p class="one">Registered architect, now a construction manager and BIM / VDC coordinator. I coordinate the model and the jobsite, and build the tools that keep them connected.</p>
+      <div class="links">
+        <a class="solid" href="#work">Work</a><a href="ai.html">AI in construction</a><a href="story.html">The story</a><a href="resume.pdf">Resume</a>
+      </div>
+      <div class="open">Open to CM and BIM/VDC roles · MS Construction Management, NYU Tandon</div>
     </div>
-
-    <div class="jscene" data-i="3" onclick="location.href='interior.html'" style="cursor:pointer" title="Step inside the Interiors">
-      <a class="art artlink" href="interior.html" data-hover title="Enter the Interiors"><img class="sketchart2" src="thumbs/s3-interiors.jpg" alt=""><span class="art-cta">Click to enter &rarr;</span></a>
-      <div class="slabel">IV — Interiors, self-taught</div>
-    </div>
-
-    <div class="jscene" data-i="2" onclick="location.href='lecture.html'" style="cursor:pointer" title="Step inside the lecture">
-      <div class="art"><img class="sketchart2" src="thumbs/s2-lecture.jpg" alt=""></div>
-      <div class="slabel">III — Giving Back</div>
-    </div>
-
-    <div class="jscene" data-i="1" onclick="location.href='bim.html'" style="cursor:pointer" title="Step inside Architecture &amp; BIM">
-      <div class="art"><img class="sketchart2" src="thumbs/s4-vdc.jpg" alt="The Celestial Trio, competition render"></div>
-      <div class="slabel">II — Architecture &amp; BIM</div>
-    </div>
-
-    <div class="jscene" data-i="0">
-      <div class="art fullart" onclick="location.href='art.html'" style="cursor:pointer" title="Enter the first studio"><img class="sketchart" src="thumbs/s0-studio.jpg" alt="My father at his easel, and me"></div>
-      <div class="slabel">I — The First Studio</div>
-    </div>
-
-  </div>
-
-  <!-- narration -->
-  <div class="jtexts">
-    <div class="jt" data-i="0">
-      <div class="k">I — The First Studio</div>
-      <h3>I grew up inside art</h3>
-      <p>A house of paintings, handmade furniture, and objects with history. My father worked at his canvas; I watched, and learned to see.</p>
-      <div class="quote">“You would make a fine artist, my daughter.”<span class="who">— my father, at his easel</span></div>
-    </div>
-    <div class="jt" data-i="1">
-      <div class="k">II — Architecture &amp; BIM</div>
-      <h3>Then a teacher walked in</h3>
-      <p>She saw the drawings, and my passion for art moved into architecture. The artist in me didn't leave — it changed scale: five years of school, a registered architect, the Celestial Trio in the frame beside you. Then the drawings became models, and the models met the site — cast-stone facades, JFK Terminals 1 &amp; 6, Barclays Center.</p>
-      <a class="enter-int" href="bim.html" data-hover>Step inside Architecture &amp; BIM &rarr;</a>
-      <div class="quote">“You don't just see pictures — you see spaces. Be an architect.”<span class="who">— my teacher</span></div>
-    </div>
-    <div class="jt" data-i="2">
-      <div class="k">III — Giving Back</div>
-      <h3>Then I walked in as the lecturer</h3>
-      <p>After my bachelor's, I returned to Vaishnavi School of Architecture, Hyderabad — this time at the front of the room. With the final-year students I talked about their "Design DNA" in portfolios and CVs, real talk about architecture salaries, building a "Digital Sandbox" online, "AI is Coming for Your Job (Maybe)", and the architecture grind itself. The Principal's letter of appreciation hangs with my father's paintings.</p>
-      <a class="enter-int" href="lecture.html" data-hover>Step inside the lecture &rarr;</a>
-      <div class="quote">"You have not just shared your knowledge — you have truly given back."<span class="who">— a mentor, on LinkedIn</span></div>
-    </div>
-    <div class="jt" data-i="3">
-      <div class="k">IV — Interiors</div>
-      <h3>This part, I taught myself</h3>
-      <p>Rooms with identity — culture, memory, and routine at human scale. My mentors walked their own ways; I kept walking, alone now, and built <a href="https://payhip.com/Archpainted" target="_blank" data-hover>Archpainted</a>: 40+ projects designed, 10+ carried through construction as their manager — a Nestlé laboratory, an army building in Delhi, homes and cafés. That is where I learned that drawings and reality part ways on the jobsite.</p>
-      <a class="enter-int" href="interior.html" data-hover>Step inside the Interiors &rarr;</a>
-    </div>
-    <div class="jt" data-i="4">
-      <div class="k">V — AI in Construction</div>
-      <h3>Teaching the tools to see</h3>
-      <p>One prompt, and a full critical path comes out of a Revit model with every assumption visible. I build the automations that take the repetition out of construction work, and keep the output transparent and the project data private.</p>
-      <a class="enter-int" href="ai.html" data-hover>Step inside AI in construction &rarr;</a>
-    </div>
-  </div>
-
-  <div class="jcount" id="jcount"></div>
-
-  <!-- companions -->
-  <div class="jfigs">
-    <!-- state 0 : father at easel + child -->
-    <div class="fg fg0 in">
-      <svg viewBox="0 0 300 190">
-        <g fill="#040302">
-          <!-- easel + canvas -->
-          <rect x="196" y="52" width="58" height="74" rx="2" fill="#0e0b07" stroke="rgba(232,181,106,.35)" stroke-width="1.5"/>
-          <path d="M192 130 L206 126 L220 188 L212 188 Z"/><path d="M258 130 L246 126 L234 188 L242 188 Z"/><rect x="222" y="126" width="6" height="60"/>
-          <!-- father painting -->
-          <circle cx="160" cy="52" r="13"/>
-          <path d="M146 70 C146 66 174 66 174 70 L178 128 L170 128 L166 96 L162 188 L154 188 L152 120 L148 188 L140 188 L142 110 Z"/>
-          <path d="M172 76 C180 74 190 72 198 70 L199 76 C191 78 181 80 174 82 Z"/>
-          <!-- child -->
-          <circle cx="110" cy="112" r="8.5"/>
-          <path d="M101 124 C101 121 119 121 119 124 L121 158 L116 158 L114 140 L112 188 L107 188 L106 150 L104 188 L99 188 L100 156 L98 158 Z"/>
-        <path d="M-14 -6 q 8 -12 16 0 q 6 9 14 -3" fill="none" stroke="rgba(244,239,230,.8)" stroke-width="1.8" transform="translate(818,610)"/></g>
-      </svg>
-    </div>
-    <!-- state 1 : father has left — the teacher walks in beside her -->
-    <div class="fg fg1 wait-right">
-      <svg viewBox="0 0 300 190">
-        <g fill="#040302">
-          <!-- her, taller now -->
-          <circle cx="140" cy="76" r="10.5"/>
-          <path d="M128 91 C128 88 152 88 152 91 L155 140 L148 140 L145 116 L143 188 L135 188 L134 130 L131 188 L123 188 L125 122 Z"/>
-          <!-- teacher, guiding hand extended toward her -->
-          <circle cx="216" cy="54" r="12"/>
-          <path d="M203 71 C203 67 229 67 229 71 L233 130 L225 130 L221 100 L219 188 L209 188 L208 122 L205 188 L196 188 L199 110 Z"/>
-          <path d="M204 78 C192 84 180 90 170 96 L174 102 C184 96 196 90 206 84 Z"/>
-        </g><g class="tboard"><rect x="246" y="60" width="40" height="52" rx="2" fill="#0e0b07" stroke="rgba(232,181,106,.6)" stroke-width="1.4"/>
-<path d="M252 96 L262 78 L270 90 L278 72" fill="none" stroke="rgba(232,181,106,.7)" stroke-width="1.4"/>
-<line x1="252" y1="102" x2="280" y2="102" stroke="rgba(232,181,106,.4)" stroke-width="1"/>
-<path d="M256 112 L252 130 M276 112 L280 130" stroke="rgba(232,181,106,.5)" stroke-width="1.5"/></g>
-      </svg>
-    </div>
-    <!-- state 2 : her, alone, walking on -->
-    <div class="fg fg2 wait-right">
-      <svg viewBox="0 0 300 190">
-        <g fill="#040302">
-          <circle cx="150" cy="44" r="13"/>
-          <path d="M136 62 C136 58 164 58 164 62 L168 124 L160 124 L156 94 L158 150 L166 186 L158 188 L148 152 L144 188 L135 187 L141 144 L142 108 L138 124 L130 124 Z"/>
-        </g>
-      </svg>
-    </div>
-    <!-- state 3 : NYU — four mentors walk in with her -->
-    <div class="fg fg3 wait-right">
-      <svg viewBox="0 0 300 190">
-<g fill="#040302">
-<g class="pp pp1"><g class="bob"><circle cx="150" cy="52" r="12"/><path d="M137 72 Q150 64 163 72 L166 188 L134 188 Z"/></g></g>
-<g class="pp pp2"><g class="bob"><circle cx="92" cy="66" r="10"/><path d="M80 84 Q92 76 104 84 L107 188 L77 188 Z"/>
-<rect x="66" y="96" width="30" height="7" rx="3" fill="#0e0b07" stroke="rgba(232,181,106,.8)" stroke-width="1.2"/><line x1="70" y1="99.5" x2="92" y2="99.5" stroke="rgba(232,181,106,.5)" stroke-width=".8"/></g></g>
-<g class="pp pp3"><g class="bob"><circle cx="120" cy="74" r="9"/><path d="M109 91 Q120 83 131 91 L134 188 L106 188 Z"/>
-<rect x="107" y="104" width="15" height="11" rx="1" fill="#12100c" stroke="rgba(232,181,106,.7)" stroke-width="1"/><line x1="114.5" y1="104" x2="114.5" y2="115" stroke="rgba(232,181,106,.45)" stroke-width=".8"/></g></g>
-<g class="pp pp4"><g class="bob"><circle cx="196" cy="62" r="10"/><path d="M184 80 Q196 72 208 80 L211 188 L181 188 Z"/>
-<path d="M186 100 L172 96 L172 108 L186 104 Z" fill="#0c1418" stroke="#7fd4e6" stroke-width="1" opacity=".9"/><rect x="171" y="95" width="2" height="14" fill="#7fd4e6" opacity=".55"/></g></g>
-<g class="pp pp5"><g class="bob"><circle cx="232" cy="72" r="9"/><path d="M221 89 Q232 81 243 89 L246 188 L218 188 Z"/>
-<path d="M240 92 C248 88 256 84 262 80" stroke="rgba(232,181,106,.75)" stroke-width="2" fill="none" stroke-linecap="round"/></g></g>
-</g></svg>
-    </div>
-    <!-- state 4 : VDC & AI — more people, more teachers -->
-    <div class="fg fg4 wait-right">
-      <svg viewBox="0 0 300 190">
-<g class="beamgrp" fill="none" stroke="rgba(232,181,106,.85)" stroke-width="2">
-<path class="beam" pathLength="1" d="M56 30 H262"/><path class="beam" pathLength="1" d="M56 34 H262"/>
-<path class="beam b2" pathLength="1" d="M64 30 V70 M254 30 V70"/>
-<path class="beam b2" pathLength="1" d="M64 52 L84 30 M254 52 L234 30" stroke-width="1.2"/>
-</g>
-<g class="clashcube">
-<rect x="272" y="44" width="16" height="13" fill="none" stroke="#ff6b5e" stroke-width="1.4" class="clash"/>
-<rect x="279" y="51" width="16" height="13" fill="none" stroke="#6ee7a0" stroke-width="1.4" class="clash c2"/>
-</g>
-<g fill="#040302">
-<g class="pp pp1"><g class="bob"><circle cx="150" cy="50" r="12"/><path d="M137 70 Q150 62 163 70 L166 188 L134 188 Z"/><path d="M139 45 A11 11 0 0 1 161 45 L163 47 L137 47 Z" fill="#d8d8d2" opacity=".92"/><rect x="147.5" y="33" width="5" height="5" rx="1.5" fill="#d8d8d2" opacity=".92"/>
-<rect x="138" y="96" width="24" height="16" rx="1.5" fill="#0c1014" stroke="#7fd4e6" stroke-width="1.2"/>
-<rect x="141" y="99" width="8" height="6" fill="none" stroke="#ff6b5e" stroke-width="1" class="clash"/>
-<rect x="146" y="102" width="8" height="6" fill="none" stroke="#6ee7a0" stroke-width="1" class="clash c2"/></g></g>
-<g class="pp pp2"><g class="bob"><circle cx="84" cy="68" r="9"/><path d="M73 85 Q84 77 95 85 L98 188 L70 188 Z"/><path d="M73 63 A11 11 0 0 1 95 63 L97 65 L71 65 Z" fill="#e8c93a" opacity=".92"/><rect x="81.5" y="51" width="5" height="5" rx="1.5" fill="#e8c93a" opacity=".92"/><path d="M73 88 Q84 80 95 88 L94 114 L74 114 Z" fill="#e07b39" opacity=".55"/><line x1="75" y1="100" x2="93" y2="100" stroke="#f5e27a" stroke-width="2" opacity=".8"/></g></g>
-<g class="pp pp3"><g class="bob"><circle cx="110" cy="60" r="10"/><path d="M98 78 Q110 70 122 78 L125 188 L95 188 Z"/><path d="M99 55 A11 11 0 0 1 121 55 L123 57 L97 57 Z" fill="#e07b39" opacity=".92"/><rect x="107.5" y="43" width="5" height="5" rx="1.5" fill="#e07b39" opacity=".92"/>
-<path d="M96 100 L82 96 L82 110 L96 106 Z" fill="#0c1418" stroke="#7fd4e6" stroke-width="1" opacity=".9"/></g></g>
-<g class="pp pp4"><g class="bob"><circle cx="130" cy="76" r="8"/><path d="M120 92 Q130 84 140 92 L143 188 L117 188 Z"/><path d="M119 71 A11 11 0 0 1 141 71 L143 73 L117 73 Z" fill="#e8c93a" opacity=".92"/><rect x="127.5" y="59" width="5" height="5" rx="1.5" fill="#e8c93a" opacity=".92"/><path d="M121 94 Q130 86 139 94 L138 120 L122 120 Z" fill="#e07b39" opacity=".55"/><line x1="123" y1="106" x2="137" y2="106" stroke="#f5e27a" stroke-width="2" opacity=".8"/></g></g>
-<g class="pp pp5"><g class="bob"><circle cx="188" cy="58" r="10"/><path d="M176 76 Q188 68 200 76 L203 188 L173 188 Z"/><path d="M177 53 A11 11 0 0 1 199 53 L201 55 L175 55 Z" fill="#d8d8d2" opacity=".92"/><rect x="185.5" y="41" width="5" height="5" rx="1.5" fill="#d8d8d2" opacity=".92"/>
-<path d="M196 78 C206 68 216 58 226 50" stroke="rgba(232,181,106,.8)" stroke-width="2" fill="none" stroke-linecap="round"/></g></g>
-<g class="pp pp6"><g class="bob"><circle cx="216" cy="70" r="9"/><path d="M205 87 Q216 79 227 87 L230 188 L202 188 Z"/><path d="M205 65 A11 11 0 0 1 227 65 L229 67 L203 67 Z" fill="#e07b39" opacity=".92"/><rect x="213.5" y="53" width="5" height="5" rx="1.5" fill="#e07b39" opacity=".92"/><path d="M206 90 Q216 82 226 90 L225 116 L207 116 Z" fill="#e07b39" opacity=".55"/><line x1="208" y1="102" x2="224" y2="102" stroke="#f5e27a" stroke-width="2" opacity=".8"/>
-<rect x="228" y="96" width="11" height="15" rx="1" fill="#0e0b07" stroke="rgba(232,181,106,.7)" stroke-width="1"/><line x1="230" y1="100" x2="237" y2="100" stroke="rgba(232,181,106,.5)" stroke-width=".8"/><line x1="230" y1="104" x2="237" y2="104" stroke="rgba(232,181,106,.5)" stroke-width=".8"/></g></g>
-<g class="pp pp7"><g class="bob"><circle cx="244" cy="76" r="8"/><path d="M234 92 Q244 84 254 92 L257 188 L231 188 Z"/><path d="M233 71 A11 11 0 0 1 255 71 L257 73 L231 73 Z" fill="#e8c93a" opacity=".92"/><rect x="241.5" y="59" width="5" height="5" rx="1.5" fill="#e8c93a" opacity=".92"/></g></g>
-</g></svg>
-    </div>
-
-  </div>
-
-</div>
-</div>
-
-<section class="mwalk" id="mwalk"></section>
-
-<!-- ================= END ================= -->
-<!-- ================= THE PAINTINGS ================= -->
-
-
-<!-- ================= EXPERIENCE ================= -->
-<section class="xp" id="experience">
-  <div class="p-head rv">
-    <div class="k">Still growing</div>
-    <h2>The line keeps <em>going up.</em></h2>
-    <p class="p-sub">Move along the curve — every point is a room I walked into.</p>
-  </div>
-  <div class="traj rv" id="traj"><div class="scrub" id="scrub"><i></i><b id="scrubY"></b></div>
-    <svg viewBox="0 0 1000 420" preserveAspectRatio="none" aria-hidden="true">
-      <defs><linearGradient id="tg" x1="0" x2="0" y1="0" y2="1"><stop offset="0" stop-color="rgba(232,181,106,.35)"/><stop offset="1" stop-color="rgba(232,181,106,0)"/></linearGradient></defs>
-      <path class="tfill" d="M40,360 C140,350 180,320 250,300 S380,250 440,230 S560,190 620,160 S760,110 820,80 S920,45 960,40 L960,400 L40,400 Z" fill="url(#tg)"/>
-      <path class="tline" id="tline" d="M40,360 C140,350 180,320 250,300 S380,250 440,230 S560,190 620,160 S760,110 820,80 S920,45 960,40" fill="none" stroke="#e8b56a" stroke-width="2.5" stroke-linecap="round"/>
-    </svg>
-    <div class="tp" style="left:4%;top:85.7%"><i></i><b>2022</b><span>Assistant PM, Maple Renaissance<br>Microsoft facilities · Mumbai</span></div>
-    <div class="tp" style="left:25%;top:71%"><i></i><b>2022–25</b><span>Archpainted, my own practice<br>40+ designed · 10+ built</span></div>
-    <div class="tp" style="left:44%;top:54.5%"><i></i><b>2023</b><span>Junior Architect, Signature Solutions<br>10+ permit sets · MA &amp; NY</span></div>
-    <div class="tp" style="left:62%;top:38%"><i></i><b>2024</b><span>BIM Engineer, Haddonstone<br>35+ facade packages · company standard</span></div>
-    <div class="tp" style="left:82%;top:19%"><i></i><b>2025</b><span>NYU Tandon, MS CM · GPA 3.9<br>Project Assistant, Campus Planning</span></div>
-    <div class="tp" style="left:96%;top:9.5%"><i></i><b>2026</b><span>VDC, Engineta<br>JFK T1 &amp; T6 · Barclays Center</span></div>
-  </div>
-  <div class="counters rv">
-    <div><b data-count="6" data-plain="1">0</b><span>rooms walked into</span></div>
-    <div><b data-count="40">0</b><span>projects designed</span></div>
-    <div><b data-count="35">0</b><span>facade packages modeled</span></div>
-    <div><b data-count="70" data-suffix="%">0</b><span>less time on reports</span></div>
-  </div>
-  <div class="xp-list rv">
-    <div class="xrow"><div class="xwhen">2026</div><div><div class="xt">VDC Intern — Engineta, LLC</div><div class="xd">JFK Terminals 1 &amp; 6, Barclays Center, Apollo Theater, Bank of New York. Coordination with Turner, AECOM Hunt, Tishman, Holt and Shawmut.</div></div></div>
-    <div class="xrow"><div class="xwhen">2026</div><div><div class="xt">Project Assistant — NYU Tandon Campus Planning</div><div class="xd">Lab, data-center and campus renovations across MetroTech.</div></div></div>
-    <div class="xrow"><div class="xwhen">2024–25</div><div><div class="xt">BIM Engineer — Haddonstone</div><div class="xd">Cast-stone facades for US, UK and India teams; the documentation standard the company kept.</div></div></div>
-    <div class="xrow"><div class="xwhen">2023–24</div><div><div class="xt">Junior Architect — Signature Solutions</div><div class="xd">Permit and construction sets, schedules and budgets from bid to closeout.</div></div></div>
-    <div class="xrow"><div class="xwhen">2022–25</div><div><div class="xt">Architect &amp; Construction Manager — Archpainted</div><div class="xd">Nestlé laboratory, an army building in Delhi, a tunnel development in Saudi Arabia, homes and cafés.</div></div></div>
-    <div class="xrow"><div class="xwhen">2022–23</div><div><div class="xt">Assistant Project Manager — Maple Renaissance</div><div class="xd">Microsoft facilities and the Katara Building, Mumbai.</div></div></div>
-  </div>
-  <div class="xp-foot rv">
-    <div><span class="k">Education</span>MS Construction Management, NYU Tandon · B.Arch, JNAFAU Hyderabad</div>
-    <div><span class="k">Certified</span>OSHA 30 · Procore · Registered Architect (CoA, India) · IGBC Green Associate</div>
-    <div><span class="k">Languages</span>English · Spanish · Hindi · Urdu · Gujarati</div>
+    <div class="portrait"><img src="img/portrait.jpg" alt="Muskaan Hussain"></div>
   </div>
 </section>
 
-<section class="end" id="contact">
-  <div class="k">The walk continues</div>
-  <h2>The next chapter<br><em>could be with you.</em></h2>
-  <a class="mail" href="mailto:muskaannhussainn@gmail.com" data-hover>muskaannhussainn@gmail.com</a>
-  <div class="row">
-    <a href="https://www.linkedin.com/in/muskaanhussainn/" target="_blank" data-hover>LinkedIn</a>
-    <a href="https://payhip.com/Archpainted" target="_blank" data-hover>Archpainted</a>
-    <a href="bim.html" data-hover>BIM &amp; technology</a>
-    <a href="#top" data-hover>Walk again</a>
+<section id="work">
+  <div class="wrap">
+    <h2>Selected <em>work</em></h2>
+    <div class="list">
+      <a class="row" href="bim.html#projects"><div class="th blank">JFK</div><div><div class="t">JFK Terminals 1 &amp; 6<small>Engineta · VDC</small></div><div class="d">Trade coordination in Revit against as-built conditions; 40+ site scans a week into progress tracking.</div></div><div class="y">2026</div></a>
+      <a class="row" href="bim.html#projects"><div class="th blank">BC</div><div><div class="t">Barclays Center, Apollo Theater, Bank of New York<small>Engineta · VDC</small></div><div class="d">Weekly coordination with Turner, AECOM Hunt and Tishman teams; progress reports for project leadership.</div></div><div class="y">2026</div></a>
+      <a class="row" href="ai.html"><div class="th"><img src="media/revit-poster.jpg" alt="" loading="lazy" style="object-position:center 40%"></div><div><div class="t">Revit + Claude, one prompt<small>AI · tool</small></div><div class="d">A full critical path out of a Revit model: 24 activities, 182 workdays, every assumption visible.</div></div><div class="y">2026</div></a>
+      <a class="row" href="bim.html#projects"><div class="th"><img src="img/stonehill-taylor.webp" alt="" loading="lazy" style="object-position:center 20%"></div><div><div class="t">Cast-stone facade system<small>Haddonstone · BIM</small></div><div class="d">35+ facade packages in Revit and a documentation standard the company adopted.</div></div><div class="y">2024–25</div></a>
+      <a class="row" href="bim.html#design"><div class="th"><img src="work/trio-aerial.jpg" alt="" loading="lazy"></div><div><div class="t">The Celestial Trio<small>Competition · with Heba Mirza</small></div><div class="d">Three twisted towers wrapped in vertical gardens, crowned by a solar rooftop sanctuary.</div></div><div class="y">2024</div></a>
+      <a class="row" href="bim.html#portfolio"><div class="th"><img src="work/usa-07.jpg" alt="" loading="lazy"></div><div><div class="t">New England homes<small>Signature Solutions · Architecture</small></div><div class="d">Permit and construction sets for 10+ homes, schedules and budgets from bid to closeout.</div></div><div class="y">2023–24</div></a>
+      <a class="row" href="interior.html#built"><div class="th"><img src="work/mohan-08.jpg" alt="" loading="lazy"></div><div><div class="t">Dr. Mohan's Residence<small>Archpainted · Interiors</small></div><div class="d">Full interior from palette to installation, designed and built as the project's manager.</div></div><div class="y">2023</div></a>
+      <a class="row" href="interior.html#built"><div class="th"><img src="work/pink-01.jpg" alt="" loading="lazy"></div><div><div class="t">Pink Cafe<small>Archpainted · Interiors</small></div><div class="d">A café fit-out from first sketch to opening day.</div></div><div class="y">2023</div></a>
+      <a class="row" href="bim.html#portfolio"><div class="th"><img src="thumbs/s1-architecture.jpg" alt="" loading="lazy"></div><div><div class="t">Tower 1, a planted high-rise<small>B.Arch · Studio</small></div><div class="d">A sky-village apartment tower; concept, introduction and plans.</div></div><div class="y">2022</div></a>
+      <a class="row" href="art.html"><div class="th"><img src="paintings/the-gallop.jpg" alt="" loading="lazy" style="object-position:center 30%"></div><div><div class="t">The Gallop<small>Painting</small></div><div class="d">The horse came first; it is the one subject I keep returning to.</div></div><div class="y">—</div></a>
+    </div>
   </div>
-  <a class="big-resume" href="resume.pdf" target="_blank" download="Muskaan_Hussain_Resume.pdf" data-hover>Download Resume</a>
 </section>
 
-<footer>
-  <span>© 2026 Muskaan Hussain</span>
-  <span>Open to CM · BIM/VDC roles — NYC</span>
-</footer>
+<section class="about" id="about">
+  <div class="wrap">
+    <div>
+      <h2>About</h2>
+      <p>I grew up beside my father's easel, trained as an architect in Hyderabad, ran my own interiors practice, and moved into construction management because the jobsite is where drawings meet reality. Now I work between the site and the technology. <a href="story.html">The longer story &rarr;</a></p>
+    </div>
+    <ul class="facts">
+      <li><b>Now</b><span>MS Construction Management, NYU Tandon · GPA 3.9</span></li>
+      <li><b>Before</b><span>Engineta (VDC) · NYU Campus Planning · Haddonstone · Signature Solutions · Archpainted · Maple Renaissance</span></li>
+      <li><b>Trained</b><span>B.Arch, JNAFAU Hyderabad · Registered architect (CoA, India)</span></li>
+      <li><b>Certified</b><span>OSHA 30 · Procore · IGBC Green Associate</span></li>
+      <li><b>Tools</b><span>Revit · Navisworks · ACC · Procore · Primavera P6 · Bluebeam · Track3D · Python · Dynamo</span></li>
+      <li><b>Languages</b><span>English · Spanish · Hindi · Urdu · Gujarati</span></li>
+    </ul>
+  </div>
+</section>
 
-<script>
-document.addEventListener('mousemove',e=>{document.documentElement.style.setProperty('--mx',e.clientX+'px');document.documentElement.style.setProperty('--my',e.clientY+'px');});
-// cursor
-const dot=document.querySelector('.cursor-dot'),ring=document.querySelector('.cursor-ring');
-let mx=innerWidth/2,my=innerHeight/2,rx=mx,ry=my;
-addEventListener('mousemove',e=>{mx=e.clientX;my=e.clientY;dot.style.left=mx+'px';dot.style.top=my+'px';document.body.classList.add('has-cursor');});
-(function loop(){rx+=(mx-rx)*.13;ry+=(my-ry)*.13;ring.style.left=rx+'px';ring.style.top=ry+'px';requestAnimationFrame(loop);})();
-document.querySelectorAll('[data-hover]').forEach(el=>{
-  el.addEventListener('mouseenter',()=>ring.classList.add('hovering'));
-  el.addEventListener('mouseleave',()=>ring.classList.remove('hovering'));
-});
+<section class="contact" id="contact">
+  <div class="wrap">
+    <div><div class="k">Say hello</div><a class="mail" href="mailto:muskaannhussainn@gmail.com">muskaannhussainn@gmail.com</a></div>
+    <div class="links" style="margin:0"><a href="https://www.linkedin.com/in/muskaanhussainn/">LinkedIn</a><a href="resume.pdf">Resume</a><a href="https://payhip.com/Archpainted">Archpainted</a></div>
+  </div>
+</section>
 
-// fragments parallax
-addEventListener('mousemove',e=>{
-  const cx=(e.clientX/innerWidth-.5),cy=(e.clientY/innerHeight-.5);
-  document.querySelectorAll('.frag').forEach(f=>{
-    const d=+f.dataset.px;
-    f.style.marginLeft=(-cx*d)+'px'; f.style.marginTop=(-cy*d*.6)+'px';
-  });
-});
+<footer><div class="wrap"><span>© 2026 Muskaan Hussain</span><span>Brooklyn, NY</span></div></footer>
 
-// ---- the journey walk : curvy sideways, one scene at a time ----
-const jtrack=document.getElementById('jtrack');
-const jstrip=document.getElementById('jstrip');
-const scenes=[...document.querySelectorAll('.jscene')];
-const texts=[...document.querySelectorAll('.jt')];
-const tcard=document.getElementById('tcard');
-const shint=document.getElementById('shint');
-const jcount=document.getElementById('jcount');
-const figs={f0:document.querySelector('.fg0'),f1:document.querySelector('.fg1'),f2:document.querySelector('.fg2'),f3:document.querySelector('.fg3'),f4:document.querySelector('.fg4')};
-const ROMAN=['I','II','III','IV','V'];
-let prog=0,lookx=0;
-
-function render(){
-  const travel=jstrip.scrollWidth-innerWidth;
-  const p2=Math.max(0,(prog-.06)/.94);            // walk begins after the title card
-  const shift=innerWidth>900?innerWidth*0.07:0;   // keep the frame clear of the narration
-  jstrip.style.transform=`translateY(-50%) translateX(${p2*travel + lookx*-20 + shift}px)`;
-}
-
-let tprog=0;
-function onScroll(){
-  const r=jtrack.getBoundingClientRect();
-  const total=jtrack.offsetHeight-innerHeight;
-  tprog=Math.min(1,Math.max(0,-r.top/total));
-}
-function applyWalk(){
-  render();
-  // title card blurs away as the walk begins
-  const started=prog>.045;
-  const tb=Math.min(1,prog/.05);
-  tcard.style.opacity=1-tb;
-  tcard.style.filter=`blur(${tb*14}px)`;
-  tcard.style.pointerEvents='none';
-  shint.style.opacity=prog>.92?0:1;
-  // nearest scene lights
-  const cx=innerWidth/2;
-  let best=null,bd=1e9;
-  scenes.forEach(s=>{
-    const b=s.getBoundingClientRect();
-    const d=Math.abs(b.left+b.width/2-cx);
-    if(d<bd){bd=d;best=s;}
-  });
-  const on=started&&bd<innerWidth*.44;
-  scenes.forEach(s=>{
-    s.classList.toggle('lit',on&&s===best);
-    const b=s.getBoundingClientRect();
-    const nd=(b.left+b.width/2-cx)/innerWidth;
-    const arc=Math.min(1,Math.abs(nd))**2*7;
-    const turn=Math.max(-1,Math.min(1,nd))*-14;
-    s.style.transform=`translateY(${arc}vh) rotateY(${turn}deg)`;
-  });
-  const idx=on?+best.dataset.i:-1;
-  texts.forEach(t=>t.classList.toggle('on',+t.dataset.i===idx));
-  jcount.textContent=idx>=0?`${ROMAN[idx]} / V`:'';
-  // companions walk in and out: father leaves → teacher enters → teacher leaves → alone
-  const setF=(el,st)=>{el.classList.remove('in','out-left','wait-right');el.classList.add(st);};
-  const order=['f0','f1','f2','f3','f4'];
-  let active; // which figure state for this scene
-  if(!started||idx<=0)active=0;
-  else if(idx===1||idx===2)active=1;   // teacher years, then teaching myself
-  else if(idx===3)active=2;            // alone, self-taught
-  else if(idx===4)active=3;            // BIM/VDC — the site crews join
-  else active=4;                       // AI — even more people
-  order.forEach((k,n)=>{
-    if(n===active)setF(figs[k],'in');
-    else if(n<active)setF(figs[k],'out-left');
-    else setF(figs[k],'wait-right');
-  });
-}
-(function walkLoop(){
-  prog+=(tprog-prog)*.09;
-  if(Math.abs(tprog-prog)<.0002)prog=tprog;
-  applyWalk();
-  requestAnimationFrame(walkLoop);
-})();
-addEventListener('scroll',onScroll,{passive:true});
-addEventListener('resize',onScroll);
-addEventListener('mousemove',e=>{lookx=(e.clientX/innerWidth-.5);render();});
-onScroll();
-
-// reveal for the paintings section
-const rvIO=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');rvIO.unobserve(e.target);}}),{threshold:.15});
-document.querySelectorAll('.rv').forEach(el=>rvIO.observe(el));
-// fallback: reveal anything already on screen even if the observer is asleep
-function rvCheck(){document.querySelectorAll('.rv:not(.in)').forEach(el=>{const r=el.getBoundingClientRect();if(r.top<innerHeight*.92&&r.bottom>0)el.classList.add('in');});}
-addEventListener('scroll',rvCheck,{passive:true});addEventListener('load',rvCheck);setInterval(rvCheck,800);
-// counters tick up once their row is on screen
-const cIO=new IntersectionObserver(es=>es.forEach(e=>{if(!e.isIntersecting)return;cIO.unobserve(e.target);
-  const el=e.target,end=+el.dataset.count,suf=el.dataset.suffix||'',t0=performance.now();
-  (function tick(t){const p=Math.min(1,(t-t0)/1600),v=Math.round(end*(1-Math.pow(1-p,3)));el.textContent=v+(p<1||suf||el.dataset.plain?'':'+')+suf;if(p<1)requestAnimationFrame(tick);})(t0);
-}),{threshold:.6});
-document.querySelectorAll('[data-count]').forEach(el=>cIO.observe(el));
-
-
-
-</script>
-<script>
-(function(){var d=document,r=d.documentElement,c=d.getElementById('cur');
-d.addEventListener('mousemove',function(e){r.style.setProperty('--mx',e.clientX+'px');r.style.setProperty('--my',e.clientY+'px');if(c){c.style.left=e.clientX+'px';c.style.top=e.clientY+'px';}});})();
-</script>
-<script>document.addEventListener('mouseover',function(e){var c=document.getElementById('cur');if(!c)return;var t=e.target.closest('a,button,[onclick],.card,.pc,.proj,.ftile,.feature,.tab');c.classList.toggle('hot',!!t);});
-// scrub the trajectory: the marker rides the curve under the mouse and lights the nearest room
-(function(){
-  var traj=document.getElementById('traj'),path=document.getElementById('tline'),sc=document.getElementById('scrub'),sy=document.getElementById('scrubY');
-  if(!traj||!path)return;var L=path.getTotalLength(),pts=[].slice.call(traj.querySelectorAll('.tp'));
-  // snap every dot onto the curve at its own x, so nothing floats above or below the line
-  function snap(){pts.forEach(function(t){var fx=parseFloat(t.style.left)*10,lo=0,hi=L;for(var k=0;k<18;k++){var m=(lo+hi)/2;if(path.getPointAtLength(m).x<fx)lo=m;else hi=m;}t.style.top=(path.getPointAtLength(lo).y/420*100)+'%';});}
-  snap();
-  function at(fx){var lo=0,hi=L;for(var k=0;k<18;k++){var m=(lo+hi)/2;if(path.getPointAtLength(m).x<fx)lo=m;else hi=m;}return path.getPointAtLength(lo);}
-  traj.addEventListener('mousemove',function(e){
-    var r=traj.getBoundingClientRect(),fx=(e.clientX-r.left)/r.width*1000;fx=Math.max(40,Math.min(960,fx));
-    var p=at(fx);sc.style.left=(p.x/1000*100)+'%';sc.style.top=(p.y/420*100)+'%';
-    var yr=2022+(fx-40)/(960-40)*4.6;sy.textContent=yr<2026.4?Math.floor(yr):'now';
-    traj.classList.add('live');var best=null,bd=1e9;pts.forEach(function(t){var d=Math.abs(parseFloat(t.style.left)-p.x/10);if(d<bd){bd=d;best=t;}t.classList.remove('near');});if(best)best.classList.add('near');
-  });
-  traj.addEventListener('mouseleave',function(){traj.classList.remove('live');pts.forEach(function(t){t.classList.remove('near');});});
-})();
-// chapter video only plays while its frame is lit
-setInterval(()=>{document.querySelectorAll('.vidart').forEach(v=>{const lit=v.closest('.jscene').classList.contains('lit');if(lit&&v.paused)v.play().catch(()=>{});if(!lit&&!v.paused)v.pause();});},400);
-
-// phone layout: rebuild the walk as a vertical stack from the same scenes and narration
-(function(){
-  var m=document.getElementById('mwalk');if(!m)return;
-  var tc=document.getElementById('tcard');
-  var hero=document.createElement('div');hero.className='mhero';
-  hero.innerHTML='<div class="over">'+tc.querySelector('.over').innerHTML+'</div><h1>'+tc.querySelector('h1').innerHTML+'</h1><p class="sub">'+tc.querySelector('.sub').innerHTML+'</p><div class="skstrip">'+tc.querySelector('.skstrip').innerHTML+'</div>'+
-    '<div class="mlinks"><a class="solid" href="resume.pdf">Resume</a><a href="bim.html">Architecture &amp; BIM</a><a href="ai.html">AI</a><a href="interior.html">Interiors</a><a href="#experience">Still growing</a><a href="https://www.linkedin.com/in/muskaanhussainn/">LinkedIn</a></div>';
-  m.appendChild(hero);
-  var down=document.createElement('div');down.className='mdown';down.textContent='Scroll to walk';m.appendChild(down);
-  var ROM=['I','II','III','IV','V','VI','VII'];
-  var scenes=[].slice.call(document.querySelectorAll('.jscene')).sort(function(a,b){return +a.dataset.i-+b.dataset.i;});
-  scenes.forEach(function(sc){
-    var i=+sc.dataset.i,art=document.createElement('article');art.className='mch';
-    var href=(sc.getAttribute('onclick')||'').match(/'([^']+)'/);href=href?href[1]:(sc.querySelector('a.art')?sc.querySelector('a.art').getAttribute('href'):null);
-    var media=sc.querySelector('video,img');var frame=document.createElement(href?'a':'div');frame.className='mframe';if(href)frame.href=href;
-    if(media){var c=media.cloneNode(true);c.className='';c.removeAttribute('style');if(c.tagName==='VIDEO'){c.muted=true;c.autoplay=true;c.loop=true;c.setAttribute('playsinline','');}frame.appendChild(c);}
-    if(href){var cta=document.createElement('span');cta.className='mcta';cta.textContent='Click to enter →';frame.appendChild(cta);}
-    var txt=document.querySelector('.jt[data-i="'+i+'"]');
-    art.innerHTML='<div class="mnum">'+(ROM[i]||'')+' / '+ROM[scenes.length-1]+'</div>';
-    art.appendChild(frame);if(txt)art.appendChild(txt.cloneNode(true));
-    m.appendChild(art);
-  });
-  // touch scrubbing for the graph
-  var traj=document.getElementById('traj');
-  if(traj)traj.addEventListener('touchmove',function(e){var t=e.touches[0];traj.dispatchEvent(new MouseEvent('mousemove',{clientX:t.clientX,clientY:t.clientY,bubbles:true}));},{passive:true});
-})();
-</script>
 <script data-goatcounter="https://muskaan-hussain.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
 </body>
 </html>
